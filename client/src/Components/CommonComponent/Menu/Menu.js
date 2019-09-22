@@ -2,11 +2,11 @@ import React from "react";
 import "./Menu.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
-const Menu = ({ funcClose, protect }) => {
+const Menu = ({ showOrHide, protect, show }) => {
   return (
     <Router>
-      <div className="nav__menu">
-        <i className="close-icon" onClick={funcClose}></i>
+      <div className={show ? "nav__menu" : "hide"}>
+        <i className="close-icon" onClick={() => showOrHide()}></i>
         <ul className="lists">
           <li>
             <NavLink className="list" to="/">
