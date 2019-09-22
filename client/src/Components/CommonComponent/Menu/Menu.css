@@ -1,0 +1,50 @@
+.nav__menu {
+  position: relative;
+  background: #528af5;
+  width: 50%;
+  height: 100vh;
+  right: -50%;
+}
+
+.close-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.close-icon:before,
+.close-icon:after {
+  position: absolute;
+  right: 10px;
+  content: " ";
+  height: 20px;
+  width: 1px;
+  background-color: #fff;
+}
+
+.close-icon:before {
+  transform: rotate(45deg);
+}
+.close-icon:after {
+  transform: rotate(-45deg);
+}
+
+.nav__menu .lists {
+  list-style: none;
+  padding: 20% 0 0 0;
+}
+
+.nav__menu > .lists > li {
+  width: 100%;
+}
+
+.nav__menu > .lists > li > .list {
+  text-decoration: none;
+  padding: 4px 10px;
+  margin-bottom: 5px;
+  display: block;
+  color: #fff;
+}
