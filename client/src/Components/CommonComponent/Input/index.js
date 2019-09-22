@@ -3,13 +3,13 @@ import "./index.css";
 
 export default function index ({
     label ="username",
-    placeholder = "Enter your UserName",
     type = "text",
+    placeholder = "Enter your UserName",
+    className="input-type"
 }){  
-    return (
-        <div className="input-div">   
-            <label className="input-label">{label}</label>     
-            <input type={type} placeholder={placeholder} className="input-type" />
-        </div>
+    return (  
+            <label className="input-label">{ label}   
+                 <input type={type} placeholder={placeholder} className={className} />
+            </label>  
     );
 }
