@@ -1,11 +1,13 @@
 # Parent-assistent - App
 
-## Our Team are :
-
+## Our Team are : 
 - Asma Thabet
 - Alaa Taima
 - Mohammed Qarmout
-- Asem Abu Msameh
+- Asem Abu Msameh    
+
+### **[ Team-Bio #1 ]**
+
 
 ## Overview
 
