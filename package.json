@@ -20,5 +20,7 @@
   "dependencies": {
     "pre-commit": "^1.2.2"
   },
-  "pre-commit": ["lint:react"]
+  "pre-commit": [
+    "lint:react"
+  ]
 }
