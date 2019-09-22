@@ -1,0 +1,20 @@
+.input-label{
+width: 73px;
+height: 31px;
+left: 70px;
+top: 302px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+color: #645B5B;
+}
+.input-type {   
+width: 243px;
+height: 43px;
+background: #FFFFFF;
+border-radius: 8px;
+}
