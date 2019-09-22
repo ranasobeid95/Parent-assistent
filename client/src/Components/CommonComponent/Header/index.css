@@ -1,0 +1,33 @@
+.App-header {
+    height: 59px;
+    width: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #528af5;
+    position: fixed;
+    top: 0;
+  }
+  .App-identifier {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .hamburger {
+    margin-right: 15px;
+  }
+  .hamburger > div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  .logo {
+    width: 56px;
+    height: 59px;
+  }
+  
+  .site-logo {
+    width: 100%;
+    height: 100%;
+  }
+  
