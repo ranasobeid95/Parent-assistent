@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../CommonComponent/Header/Header';
+import Header from '../CommonComponent/Header/index';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
