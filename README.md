@@ -51,3 +51,6 @@ teachers and parents, and this App will provide the following things :
 - As a user I can get a full description about my child class.
 - As a user I can get a full description about the activities of my child school.
 - As a user I can give my feedback about my child class.
+
+## Database Schema 
+![](https://user-images.githubusercontent.com/29041512/65251330-d1a0c200-daff-11e9-9858-2a94f883883a.png)
