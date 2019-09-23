@@ -15,6 +15,6 @@ body, .container {
 }
 
 .container {
-  min-height: calc(100vh - (3.59px + 70px));
+  min-height: calc(100vh - (30px));
 }
 
