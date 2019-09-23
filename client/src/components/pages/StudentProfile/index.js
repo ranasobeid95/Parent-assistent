@@ -1,5 +1,5 @@
 import React from 'react';
-import TeacherTable from '../../CommonComponent/TeacherTable';
+import TeacherTable from '../../common/TeacherTable';
 import './index.css';
 
 const StudentProfile = () => {
