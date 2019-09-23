@@ -8,8 +8,9 @@ export default function index ({
     className="input-type"
 }){  
     return (  
-            <label className="input-label">{ label}   
-                 <input type={type} placeholder={placeholder} className={className} />
+            <label className="input-label">{ label} 
+                 
+                 <input type={type} placeholder={placeholder} className={`input-type ${className}` } />
             </label>  
     );
 }
