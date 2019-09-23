@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Menu from '../Menu/index';
+import Menu from '../Menu';
 import logo from '../../../assets/logo.png';
 import('./index.css');
 
@@ -11,7 +11,6 @@ class Header extends Component {
   };
 
   onClickHandler = () => {
-    console.log(this.state.show);
     this.setState(oldState => ({
       show: !oldState.show
     }));
