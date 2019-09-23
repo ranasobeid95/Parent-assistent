@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 const StudentTable = data => {
@@ -16,18 +16,16 @@ const StudentTable = data => {
         {data.map(({ name, grade, StudentClass, id }) => {
           return (
             <tr>
-              <Router>
-                <td className="parentTable__content1">{name}</td>
-                <td className="parentTable__content2">{grade}</td>
-                <td className="parentTable__content2">
-                  {StudentClass}
-                  <p>
-                    <Link to={`/student/:${id}`} className="parentTable__link">
-                      view profile
-                    </Link>
-                  </p>
-                </td>
-              </Router>
+              <td className="parentTable__content1">{name}</td>
+              <td className="parentTable__content2">{grade}</td>
+              <td className="parentTable__content2">
+                {StudentClass}
+                <p>
+                  <Link to={`/student/:${id}`} className="parentTable__link">
+                    view profile
+                  </Link>
+                </p>
+              </td>
             </tr>
           );
         })}
