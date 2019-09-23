@@ -8,7 +8,7 @@ import('./index.css');
 class Header extends Component {
   state = {
     show: false,
-    isSigned: this.props.auth,
+   isSigned : this.props.auth,
   };
 
   onClickHandler = () => {
