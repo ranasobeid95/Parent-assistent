@@ -1,6 +1,7 @@
 .App-header {
   height: 3.6875rem;
-  width: 17.1875rem;
+  /* width: 17.1875rem; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
