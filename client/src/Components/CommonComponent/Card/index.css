@@ -1,5 +1,5 @@
 .card-box {
-  background-color: #ddd;
+  background-color: #fff;
   border-radius: 0.9rem;
   max-width: 90%;
   margin: 0 auto;
@@ -7,12 +7,22 @@
   display: flex;
 }
 
-.card-box__img {
+.card-box__title {
   background-color: #528af5;
   width: 35%;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.card-box__title > .title {
+  text-align: center;
 }
 
 .card-box__desc {
-  padding: 0.1rem 0.35rem;
+  text-align: center;
+  padding: 0.8rem 0.35rem;
   width: 60%;
 }
