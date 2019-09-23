@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 // import data from './data';
 import './index.css';
 
-const Table = data => {
+const StudentTable = data => {
   return (
     <table className="parentTable">
       <thead className="parentTable__title">
@@ -14,20 +14,17 @@ const Table = data => {
         </tr>
       </thead>
       <tbody className="parentTable__content">
-        {data.map(e => {
+        {data.map(({ name, grade, StudentClass, id }) => {
           return (
             <tr>
               <Router>
-                <td className="parentTable__content1">{e.name}</td>
-                <td className="parentTable__content2">{e.grade}</td>
+                <td className="parentTable__content1">{name}</td>
+                <td className="parentTable__content2">{grade}</td>
                 <td className="parentTable__content2">
-                  {e.class}
+                  {StudentClass}
                   <p>
-                    <Link
-                      to={`/student/:${e.id}`}
-                      className="parentTable__link"
-                    >
-                      view subject
+                    <Link to={`/student/:${id}`} className="parentTable__link">
+                      view profile
                     </Link>
                   </p>
                 </td>
@@ -39,4 +36,4 @@ const Table = data => {
     </table>
   );
 };
-export default Table;
+export default StudentTable;
