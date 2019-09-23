@@ -1,9 +1,9 @@
 .nav__menu {
-  position: relative;
+  position: fixed;
   background: #528af5;
   width: 50%;
   height: 100vh;
-  right: -50%;
+  right: 0;
   margin-top: 58px;
 }
 
