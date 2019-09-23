@@ -5,11 +5,10 @@ import './index.css';
 
 function App() {
   return (
-    <div id="root">
-      <Header />
-      <main className="container"></main>
+    <>
+      <Header /> <main className="container"></main>
       <Footer />
-    </div>
+    </>
   );
 }
 
