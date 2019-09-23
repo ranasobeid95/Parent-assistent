@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import data from './data';
+// import data from './data';
 import './index.css';
 
-const Table = () => {
+const Table = (data, id) => {
   return (
     <table className="studentTable">
       <thead className="studentTable__title">
@@ -20,7 +20,10 @@ const Table = () => {
                 <td className="studentTable__content1">
                   {e.name}
                   <p>
-                    <Link to="/" className="studentTable__link">
+                    <Link
+                      to={`/profile/teacher/:${id}`}
+                      className="studentTable__link"
+                    >
                       view profile
                     </Link>
                   </p>
@@ -28,7 +31,10 @@ const Table = () => {
                 <td className="studentTable__content2">
                   {e.subject}
                   <p>
-                    <Link to="/" className="studentTable__link">
+                    <Link
+                      to={`/student/:subject/:${id}	`}
+                      className="studentTable__link"
+                    >
                       view subject
                     </Link>
                   </p>
