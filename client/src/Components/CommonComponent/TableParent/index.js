@@ -23,10 +23,7 @@ const Table = (data, id) => {
                 <td className="parentTable__content2">
                   {e.class}
                   <p>
-                    <Link
-                      to={`/student/:id${id}`}
-                      className="parentTable__link"
-                    >
+                    <Link to={`/student/:${id}`} className="parentTable__link">
                       view subject
                     </Link>
                   </p>
