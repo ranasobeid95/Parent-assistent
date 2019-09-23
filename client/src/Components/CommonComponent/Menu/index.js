@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
-const Menu = ({ showOrHide, protect, show }) => {
+const Menu = ({ showOrHide, isSigned: protect, show }) => {
   return (
     <Router>
       <div className={show ? 'nav__menu' : 'hide'}>
