@@ -12,7 +12,7 @@
     height: 4.25rem;
     width: 20.7rem;
     font-size: 0.8rem;
-    box-shadow: 0 .25rem 0.25rem 0 #0000000d;
+    box-shadow: 0 0.25rem 0rem 0px #0000000d;
 }
 .parentTable__title tr th  {
     height: 2.1rem;
