@@ -1,12 +1,17 @@
-import React from "react";
-import "./index.css";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import React from 'react';
+import './index.css';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 const Menu = ({ showOrHide, protect, show }) => {
   return (
     <Router>
-      <div className={show ? "nav__menu" : "hide"}>
-        <i className="close-icon" onClick={() => showOrHide()}></i>
+      <div className={show ? 'nav__menu' : 'hide'}>
+        <i
+          className="close-icon"
+          role="button"
+          onClick={() => showOrHide()}
+          tabIndex="0"
+        ></i>
         <ul className="lists">
           <li>
             <NavLink className="list" to="/">
