@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 // import data from './data';
 import './index.css';
 
-const Table = (data, id) => {
+const Table = data => {
   return (
     <table className="parentTable">
       <thead className="parentTable__title">
@@ -23,7 +23,10 @@ const Table = (data, id) => {
                 <td className="parentTable__content2">
                   {e.class}
                   <p>
-                    <Link to={`/student/:${id}`} className="parentTable__link">
+                    <Link
+                      to={`/student/:${e.id}`}
+                      className="parentTable__link"
+                    >
                       view subject
                     </Link>
                   </p>
