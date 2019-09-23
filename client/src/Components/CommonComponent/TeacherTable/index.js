@@ -29,7 +29,7 @@ const TeacherTable = data => {
               {subject}
               <p>
                 <Link
-                  to={`/student/:subject/:${id}	`}
+                  to={`/student/:subject/:${id}`}
                   className="studentTable__link"
                 >
                   view subject
