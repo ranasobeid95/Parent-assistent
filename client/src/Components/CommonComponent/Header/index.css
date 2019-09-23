@@ -1,6 +1,6 @@
 .App-header {
-  height: 3.6875 rem;
-  width: 17.1875 rem;
+  height: 3.6875rem;
+  width: 17.1875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,19 +14,19 @@
 }
 
 .hamburger {
-  margin-right: 0.9375 rem;
+  margin-right: 0.9375rem;
 }
 
 .hamburger > div {
-  width: 2.1875 rem;
-  height: 0.3125 rem;
+  width: 2.1875rem;
+  height: 0.3125rem;
   background-color: white;
-  margin: 0.375 rem 0;
+  margin: 0.375rem 0;
 }
 
 .logo {
-  width: 3.5 rem;
-  height: 3.6875 rem;
+  width: 3.5rem;
+  height: 3.6875rem;
 }
 
 .site-logo {
