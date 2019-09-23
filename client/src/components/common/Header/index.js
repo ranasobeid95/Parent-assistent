@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Menu from '../Menu';
 import logo from '../../../assets/logo.png';
+import Menu from '../Menu';
 
 import('./index.css');
 
