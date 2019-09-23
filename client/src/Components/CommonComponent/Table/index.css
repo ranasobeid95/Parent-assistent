@@ -1,0 +1,45 @@
+.studentTable {
+    width: 100%;
+    font-family: "Roboto", sans-serif; 
+    text-align: center;
+    border-collapse : collapse;
+    border-collapse:separate; 
+    border-spacing: 0 0.5rem;
+}
+
+.studentTable__content tr td  {
+    background-color: white;
+    height: 4.25rem;
+    width: 20.7rem;
+    font-size: 0.9rem;
+    box-shadow: 0 .25rem 0.25rem 0 #0000000d;
+}
+.studentTable__title tr th  {
+    height: 2.1rem;
+    width: 20.7rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #528af5;
+}
+.studentTable__title2 {
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+} 
+.studentTable__title1 {
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+} 
+.studentTable__content2 {
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: .0.5rem;
+}
+
+.studentTable__content1 {
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+.studentTable__link {
+    font-size: 0.68rem;
+    color: #528af5;
+}
