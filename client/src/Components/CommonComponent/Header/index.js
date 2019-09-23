@@ -21,20 +21,20 @@ class Header extends Component {
       <React.Fragment>
         <header className='App-header'>
           <div className='logo'>
-            <img src={ logo } alt="Site Logo" className='site-logo' />
+            <img src={logo} alt='Site Logo' className='site-logo' />
           </div>
 
           <div className='App-identifier'>Parent assistant</div>
-          <Link onClick={ this.onClickHandler } className='hamburger' to='/'>
+          <Link onClick={this.onClickHandler} className='hamburger' to='/'>
             <div></div>
             <div></div>
             <div></div>
           </Link>
         </header>
         <Menu
-          show={ this.state.show }
-          isSigned={ this.state.isSigned }
-          showOrHide={ this.onClickHandler }
+          show={this.state.show}
+          isSigned={this.state.isSigned}
+          showOrHide={this.onClickHandler}
         />
       </React.Fragment>
     );
