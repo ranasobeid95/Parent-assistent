@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-mutable-exports
 const data = [
   {
     id: 1,
