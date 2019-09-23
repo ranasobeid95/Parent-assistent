@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.png';
 import Menu from '../Menu';
+import logo from '../../../assets/logo.png';
 
 import('./index.css');
 
 class Header extends Component {
   state = {
     show: false,
-   isSigned : this.props.auth,
+    isSigned: this.props.auth,
   };
 
   onClickHandler = () => {
