@@ -9,7 +9,6 @@ export default function index ({
 }){  
     return (  
             <label className="input-label">{ label} 
-                 
                  <input type={type} placeholder={placeholder} className={`input-type ${className}` } />
             </label>  
     );
