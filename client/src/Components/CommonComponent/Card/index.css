@@ -1,0 +1,18 @@
+.card-box {
+  background-color: #ddd;
+  border-radius: 0.9rem;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 7rem;
+  display: flex;
+}
+
+.card-box__img {
+  background-color: #528af5;
+  width: 35%;
+}
+
+.card-box__desc {
+  padding: 0.1rem 0.35rem;
+  width: 60%;
+}
