@@ -1,13 +1,13 @@
 .inputClass {
-    width: 12rem;
-    line-height: 0.5rem;
-    margin: 2rem;
+  width: 12rem;
+  line-height: 0.5rem;
+  margin: 2rem;
 }
-.buttonClass{
-margin-top: 3rem;
-text-align: center;
+.buttonClass {
+  margin-top: 3rem;
+  text-align: center;
 }
-.link{    
+.link {
   font-size: 0.8rem;
   display: block;
   text-align: center;

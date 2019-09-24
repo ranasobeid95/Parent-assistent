@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-import * as yup from 'yup'; // for everything
+import * as yup from 'yup';
 
 const singUpValidation = () => {
   return yup.object().shape({
@@ -8,4 +7,4 @@ const singUpValidation = () => {
   });
 };
 
-export { singUpValidation };
+export default singUpValidation;

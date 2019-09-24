@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { singUpValidation } from '../utils/schema';
+import singUpValidation from '../utils/schema';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 
