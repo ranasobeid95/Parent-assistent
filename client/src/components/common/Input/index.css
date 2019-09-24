@@ -7,6 +7,7 @@ display: block;
 align-items: center;
 color: #645B5B;
 font-weight: bold ;
+padding: 1.5rem 0.2rem;
 }
 .input-type {   
 width: 20rem;
