@@ -22,24 +22,25 @@ class LogIn extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { username, password } = this.state;
-    singUpValidation()
-      .isValid({ username, password })
-      .then(res => {
-        if (!res) {
-          this.setState({
-            error: true,
-          });
-        } else {
-          this.setState({
-            error: false,
-          });
-          // axios stuff goes here
-        }
-      });
+    singUpValidation.isValid({ username, password }).then(res => {
+      if (!res) {
+        this.setState({
+          error: true,
+        });
+      } else {
+        this.setState({
+          error: false,
+        });
+        // axios stuff goes here
+      }
+    });
   };
 
   render() {
     const { error, password, username } = this.state;
+    const errorMessage = error ? (
+      <p className="error-message">Please correct your email or password</p>
+    ) : null;
     return (
       <div className="login">
         <p className="login__title">Welcome to parent assistent system</p>
@@ -71,9 +72,7 @@ class LogIn extends Component {
           <Link className="link" to="/">
             Forget password
           </Link>
-          <p className="error-message">
-            {error ? 'Please correct your email or password' : null}
-          </p>
+          {errorMessage}
         </form>
       </div>
     );
