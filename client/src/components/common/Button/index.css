@@ -1,13 +1,15 @@
-.button-input{
-    background-color: #528AF5; 
-    color :#ffffff;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-    border-radius: 15px;
-    width: 207px;
-    height: 33px;
-   
+.button-input {
+  background-color: #528af5;
+  color: #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0.5em;
+  border-radius: 15px;
+  width: 207px;
+  height: 33px;
+  text-align: center;
+  border: 0;
+  outline: 0;
 }
