@@ -1,0 +1,22 @@
+.wrapper-singup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - (30px));
+}
+
+.signup > div:first-child {
+  margin-bottom: 20px;
+}
+
+.button-input__teacher {
+  background-color: #bab9b9;
+  color: #333333;
+}
+
+.signup .button-input {
+  width: 311px;
+  height: 3.5rem;
+  border-radius: 1.8rem;
+}
