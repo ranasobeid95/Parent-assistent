@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { singUpValidation } from '../utils/schema';
+
 import Button from '../../common/Button/index';
 
 import('./index.css');
@@ -8,6 +10,7 @@ class LogIn extends Component {
   state = {
     username: '',
     password: '',
+    error: false,
   };
 
   onChangHandler = ({ target: { name, value } }) => {
@@ -17,8 +20,22 @@ class LogIn extends Component {
   };
 
   handleSubmit = e => {
-    // axios stuff goes here
     e.preventDefault();
+    const { username, password } = this.state;
+    singUpValidation()
+      .isValid({ username, password })
+      .then(res => {
+        if (!res) {
+          this.setState({
+            error: true,
+          });
+        } else {
+          this.setState({
+            error: false,
+          });
+          // axios stuff goes here
+        }
+      });
   };
 
   render() {
@@ -51,10 +68,12 @@ class LogIn extends Component {
           <Link className="link" to="/">
             Forget password
           </Link>
+          <p>
+            {this.state.error ? 'Please correct your email or password' : null}
+          </p>
         </form>
       </div>
     );
   }
 }
-
 export default LogIn;
