@@ -6,10 +6,14 @@ import logo from '../../../assets/logo.png';
 import('./index.css');
 
 class Header extends Component {
-  state = {
-    show: false,
-    isSigned: this.props.auth,
-  };
+  constructor(...args) {
+    super(...args);
+    const { auth } = this.props;
+    this.state = {
+      show: false,
+      isSigned: auth,
+    };
+  }
 
   onClickHandler = () => {
     this.setState(oldState => ({
