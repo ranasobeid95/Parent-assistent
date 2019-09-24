@@ -26,7 +26,7 @@ export default class TeacherTable extends React.Component {
             </thead>
             <tbody className="studentTable__content">
               {data.map(({ teacherName, subject, id }) => (
-                <tr>
+                <tr key={id}>
                   <td className="studentTable__content1">
                     {teacherName}
                     <p>
