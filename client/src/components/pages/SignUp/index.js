@@ -4,8 +4,8 @@ import './index.css';
 
 const Signup = () => {
   return (
-    <div className="wrapper-singup">
-      <div className="signup">
+    <div className="signup">
+      <div className="signup__content">
         <Button
           value="As a Teacher"
           className="button-input button-input__teacher"
