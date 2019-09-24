@@ -23,14 +23,17 @@
   font-weight: bold;
   background-color: #528af5;
 }
+
 .studentTable__title2 {
   border-bottom-right-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+
 .studentTable__title1 {
   border-bottom-left-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }
+
 .studentTable__content2 {
   border-bottom-right-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -40,6 +43,7 @@
   border-bottom-left-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }
+
 .studentTable__link {
   font-size: 0.68rem;
   color: #528af5;
