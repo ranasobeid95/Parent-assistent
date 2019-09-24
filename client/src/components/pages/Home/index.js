@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../../common/Button';
 import './index.css';
 
@@ -21,16 +21,14 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <Router>
-        <div className="buttons">
-          <Link to="/" className="login__button">
-            <Button value="LogIn" />
-          </Link>
-          <Link to="/" className="signup__button">
-            <Button value="Signup" />
-          </Link>
-        </div>
-      </Router>
+      <div className="buttons">
+        <Link to="/" className="login__button">
+          <Button value="LogIn" />
+        </Link>
+        <Link to="/" className="signup__button">
+          <Button value="Signup" />
+        </Link>
+      </div>
     </div>
   );
 };
