@@ -1,0 +1,54 @@
+.home {
+    padding-top: 0rem;
+}
+
+.home__header {
+    margin-top: 3.5rem;
+}
+
+.home__header__img__overlay {
+    background: url('https://images.pexels.com/photos/710743/pexels-photo-710743.jpeg') no-repeat ;
+    background-size: 100%;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 1.8;
+    min-height: 45vh;
+    width: 100%;
+}
+
+.about {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.about__title{
+    color: #666464;
+    font-family: Artifika;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.about__block__text{
+    display: inline-block;
+    vertical-align: middle;
+    width : 100% ;
+    color:#545353;
+    font-family: Roboto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+}
+.login__button,
+.signup__button {
+    text-decoration: none;
+    cursor: pointer;
+
+}
