@@ -16,5 +16,8 @@ body, .container {
 
 .container {
   min-height: calc(100vh - (30px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
