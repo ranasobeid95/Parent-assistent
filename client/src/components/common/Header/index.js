@@ -6,8 +6,8 @@ import logo from '../../../assets/logo.png';
 import('./index.css');
 
 class Header extends Component {
-  constructor(...args) {
-    super(...args);
+  constructor(props) {
+    super(props);
     const { auth } = this.props;
     this.state = {
       show: false,
