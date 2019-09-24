@@ -2,8 +2,8 @@
   background-color: #fff;
   border-radius: 0.9rem;
   max-width: 90%;
-  margin: 0 auto;
-  height: 7rem;
+  margin: 10px auto;
+  height: 6rem;
   display: flex;
 }
 
@@ -13,16 +13,19 @@
   display: flex;
   padding: 0.5rem;
   align-items: center;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  justify-content: center;
+  border-radius: 1rem;
 }
 
-.card-box__title > .title {
+.card-box__title >.title {
   text-align: center;
+  font-size: 14px;
+  color: white;
 }
 
 .card-box__desc {
-  text-align: center;
+  text-align: justify;
   padding: 0.8rem 0.35rem;
   width: 60%;
+  font-size: 12px;
 }
