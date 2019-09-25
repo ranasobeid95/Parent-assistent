@@ -46,13 +46,12 @@ const Menu = ({ showOrHide, isSigned: protect, show }) => {
   );
 };
 Menu.propTypes = {
-  showOrHide: PropTypes.func,
+  showOrHide: PropTypes.func.isRequired,
   isSigned: PropTypes.bool,
   show: PropTypes.bool,
 };
 
 Menu.defaultProps = {
-  showOrHide: PropTypes.func,
   isSigned: false,
   show: false,
 };

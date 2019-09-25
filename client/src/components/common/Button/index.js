@@ -16,11 +16,6 @@ export default function Button({ value, className }) {
 }
 
 Button.propTypes = {
-  value: PropTypes.string,
-  className: PropTypes.string,
-};
-
-Button.defaultProps = {
-  value: 'Login',
-  className: 'button-input',
+  value: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };

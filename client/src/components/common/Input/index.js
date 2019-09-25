@@ -33,23 +33,17 @@ export default function Input({
 Input.propTypes = {
   label: PropTypes.string,
   id: PropTypes.number,
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
   className: PropTypes.string,
-  htmlFor: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-  name: PropTypes.string,
+  htmlFor: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 Input.defaultProps = {
   label: '',
   id: 0,
-  type: 'text',
-  placeholder: '',
-  className: 'input-type',
-  htmlFor: '',
-  value: '',
-  onChange: PropTypes.func,
-  name: '',
+  className: '',
 };
