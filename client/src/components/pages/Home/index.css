@@ -4,7 +4,8 @@
 
 .home__img-overlay{
     background: url('../../../assets/home__img.jpg') no-repeat ;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     z-index: 1;
     cursor: pointer;
     opacity: 1.8;
