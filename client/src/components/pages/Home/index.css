@@ -1,0 +1,58 @@
+.home {
+    padding-top: 0rem;
+}
+
+.home__img-overlay{
+    background: url('../../../assets/home__img.jpg') no-repeat ;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 1.8;
+    min-height: 45vh;
+    width: 100%;
+}
+
+.about {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about__title{
+    color: #666464;
+    font-family: Artifika;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.about__text{
+    display: inline-block;
+    vertical-align: middle;
+    width : 100% ;
+    color:#545353;
+    font-family: Roboto;
+}
+
+.account {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.account__login,
+.account__signup {
+    text-decoration: none;
+    cursor: pointer;
+}
+.account__button{
+    padding: 10px 40px;
+    pointer-events: none;
+    width: 120px;
+    justify-content: center;
+}

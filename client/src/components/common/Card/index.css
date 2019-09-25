@@ -17,7 +17,7 @@
   border-radius: 1rem;
 }
 
-.card-box__title >.title {
+.card-box__title h5 {
   text-align: center;
   font-size: 14px;
   color: white;

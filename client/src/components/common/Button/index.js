@@ -7,7 +7,12 @@ export default function Button({
 }) {
   return (
     <div className="button-div">
-      <input type="submit" name="submit" className={className} value={value} />
+      <input
+        type="submit"
+        name="submit"
+        className={`button-input ${className}`}
+        value={value}
+      />
     </div>
   );
 }
