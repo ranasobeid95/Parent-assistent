@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import TeacherImage from '../../../assets/teacher.jpg';
 import fakeData from './fakeData';
+import teacherTape from '../utils/teacherTap';
 
 class TeacherProfile extends Component {
   state = {
@@ -54,40 +55,7 @@ class TeacherProfile extends Component {
             Interests
           </button>
         </div>
-        {active === 1 && (
-          <div>
-            <p className="teach-profile__desc">{data.about}</p>
-          </div>
-        )}
-
-        {active === 2 && (
-          <div>
-            <ul className="teach-profile__contact-list ">
-              <li>
-                <span className="contact-list__span">Full Name:&nbsp;</span>
-                {data.contact.fullName}
-              </li>
-              <li>
-                <span className="contact-list__span">mobile Number:&nbsp;</span>
-                {data.contact.mobileNumber}
-              </li>
-              <li>
-                <span className="contact-list__span">Email:&nbsp;</span>
-                {data.contact.email}
-              </li>
-            </ul>
-          </div>
-        )}
-
-        {active === 3 && (
-          <div>
-            <ul className="teach-profile__interests-list">
-              {data.interests.map(el => {
-                return <li key={el.id}>{el.text}</li>;
-              })}
-            </ul>
-          </div>
-        )}
+        {teacherTape(active, data)}
       </div>
     );
   }
