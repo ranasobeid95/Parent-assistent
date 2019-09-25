@@ -2,10 +2,6 @@
     padding-top: 0rem;
 }
 
-.home__header {
-    margin-top: 3.5rem;
-}
-
 .home__img-overlay{
     background: url('../../../assets/home__img.jpg') no-repeat ;
     background-size: 100%;
