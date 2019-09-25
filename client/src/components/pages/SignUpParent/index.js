@@ -8,7 +8,7 @@ export default class SignUp extends React.Component {
   state = {
     email: '',
     userName: '',
-    parentId: 123456789,
+    parentId: '',
     password: '',
     confirmPassword: '',
     error: false,
@@ -83,7 +83,7 @@ export default class SignUp extends React.Component {
           />
 
           <Input
-            label="PAssword"
+            label="Password"
             name="password"
             htmlFor="password"
             id="password"
@@ -94,7 +94,7 @@ export default class SignUp extends React.Component {
             onChange={({ target }) => this.setState({ password: target.value })}
           />
           <Input
-            label="Confirm-PAssword"
+            label="Confirm-Password"
             name="confirmpassword"
             htmlFor="confirmpassword"
             id="confirmpassword"

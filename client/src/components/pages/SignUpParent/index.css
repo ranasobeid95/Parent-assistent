@@ -18,7 +18,7 @@
     color: #645B5B;
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 24px;
     flex-direction: column;
     align-items: center;
     background-color: rgb(196, 196, 196, .43);
@@ -40,6 +40,7 @@
     text-align: center;
     border: none;
     width: 15rem;
+    font-size: 10px;
 }
 
 .signUp__header {

@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 3px;
 }
 .input-type {
   width: 20rem;
