@@ -3,11 +3,12 @@ import './index.css';
 import TeacherImage from '../../../assets/teacher.jpg';
 import fakeData from './fakeData';
 import teacherTape from '../utils/teacherTap';
+import renderButton from '../utils/renderButton';
 
 class TeacherProfile extends Component {
   state = {
     data: {},
-    active: 1,
+    activeContent: `about`,
   };
 
   componentDidMount() {
@@ -15,47 +16,27 @@ class TeacherProfile extends Component {
     // we will make a request to get data by using axios, above line is a fake data
   }
 
-  handelerActive = num => {
-    this.setState({ active: num });
+  showContent = tapName => {
+    this.setState({ activeContent: tapName });
   };
 
   render() {
-    const { active } = this.state;
+    const { activeContent } = this.state;
     const { data } = this.state;
 
     return (
       <div className="teach-profile">
-        <div className="teach-profile__top">
-          <div>
-            <img className="img-teacher" src={TeacherImage} alt="teacher img" />
-          </div>
-          <h3 className="teacher-name">{data.name}</h3>
-          <p className="teacher-subject">{data.subject} Teacher</p>
+        <div>
+          <img className="img-teacher" src={TeacherImage} alt="teacher img" />
         </div>
+        <h3 className="teacher-name">{data.name}</h3>
+        <p className="teacher-subject">{data.subject} Teacher</p>
         <div className="teach-profile__list">
-          <button
-            type="button"
-            onClick={() => this.handelerActive(1)}
-            className={`teach-profile__tap ${active === 1 ? 'btn-border' : ''}`}
-          >
-            About
-          </button>
-          <button
-            type="button"
-            onClick={() => this.handelerActive(2)}
-            className={`teach-profile__tap ${active === 2 ? 'btn-border' : ''}`}
-          >
-            Contact
-          </button>
-          <button
-            type="button"
-            onClick={() => this.handelerActive(3)}
-            className={`teach-profile__tap ${active === 3 ? 'btn-border' : ''}`}
-          >
-            Interests
-          </button>
+          {renderButton(activeContent, 'About', this.showContent)}
+          {renderButton(activeContent, 'Contact', this.showContent)}
+          {renderButton(activeContent, 'Interests', this.showContent)}
         </div>
-        {teacherTape(active, data)}
+        {teacherTape(activeContent, data)}
       </div>
     );
   }

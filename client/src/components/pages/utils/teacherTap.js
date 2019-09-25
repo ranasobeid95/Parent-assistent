@@ -1,14 +1,14 @@
 import React from 'react';
 
 const teacherTape = (num, data) => {
-  if (num === 1) {
+  if (num === 'about') {
     return (
       <div>
         <p className="teach-profile__desc">{data.about}</p>
       </div>
     );
   }
-  if (num === 2) {
+  if (num === 'contact') {
     return (
       <div>
         <ul className="teach-profile__contact-list ">
@@ -28,7 +28,7 @@ const teacherTape = (num, data) => {
       </div>
     );
   }
-  if (num === 3) {
+  if (num === 'interests') {
     return (
       <div>
         <ul className="teach-profile__interests-list">
