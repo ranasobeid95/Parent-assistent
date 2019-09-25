@@ -8,7 +8,7 @@ export default class SignUp extends React.Component {
   state = {
     email: '',
     userName: '',
-    parentId: '',
+    parentId: 123456789,
     password: '',
     confirmPassword: '',
     error: false,
