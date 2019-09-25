@@ -1,13 +1,12 @@
 .input-label {
   width: 4.5rem;
-  height: 2rem;
-  font-size: 1rem;
+  font-size: 0.7rem;
   line-height: 1.3rem;
   display: block;
-  align-items: center;
   color: #645b5b;
-  font-weight: bold;
-  padding: 1.5rem 0.2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .input-type {
   width: 20rem;
