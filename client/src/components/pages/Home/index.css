@@ -6,8 +6,8 @@
     margin-top: 3.5rem;
 }
 
-.home__header__img__overlay {
-    background: url('https://images.pexels.com/photos/710743/pexels-photo-710743.jpeg') no-repeat ;
+.home__img-overlay{
+    background: url('../../../assets/home__img.jpg') no-repeat ;
     background-size: 100%;
     z-index: 1;
     cursor: pointer;
@@ -21,6 +21,7 @@
     margin-bottom: 2rem;
     text-align: center;
 }
+
 .about__title{
     color: #666464;
     font-family: Artifika;
@@ -31,7 +32,8 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-.about__block__text{
+
+.about__text{
     display: inline-block;
     vertical-align: middle;
     width : 100% ;
@@ -39,16 +41,19 @@
     font-family: Roboto;
 }
 
-.buttons {
+.account {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-
 }
-.login__button,
-.signup__button {
+
+.account__login,
+.account__signup {
     text-decoration: none;
     cursor: pointer;
-
+}
+.account__button{
+    padding: 10px 20px;
+    pointer-events: none;
 }
