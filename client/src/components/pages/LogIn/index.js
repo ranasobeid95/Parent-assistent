@@ -17,12 +17,6 @@ class LogIn extends Component {
     e.preventDefault();
     const { username, password } = this.state;
     signUpValidation.isValid({ username, password }).then(res => {
-      // true
-      if (!res) {
-        this.setState({
-          error: true,
-        });
-      }
       this.setState({
         error: !!res,
       });

@@ -10,7 +10,7 @@
 .login__title {
   text-align: center;
   flex-basis: 100%;
-  font-family: Artifika;
+  font-family: Artifika, sans-serif;
   color: #645B5B;
   font-weight: bold;
 }
@@ -52,6 +52,6 @@
   border: none;
 }
 
-.login__header{
+.login__header {
   font-weight: bold;
 }
