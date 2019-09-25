@@ -7,6 +7,10 @@
   background-color: #528af5;
   position: fixed;
   top: 0;
+  font-family:Artifika;
+  font-size: 1.3rem;
+  color:#ffffff;
+  font-weight: bold;
 }
 
 .hamburger {
