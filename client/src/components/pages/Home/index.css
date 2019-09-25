@@ -50,6 +50,6 @@
     cursor: pointer;
 }
 .account__button{
-    padding: 10px 20px;
+    padding: 10px 40px;
     pointer-events: none;
 }
