@@ -53,7 +53,7 @@ class LogIn extends Component {
             value={username}
             type="text"
             placeholder="User name"
-            className="inputClass"
+            className="login__input"
             onChange={this.onChangHandler}
           />
 
@@ -63,13 +63,13 @@ class LogIn extends Component {
             value={password}
             type="password"
             placeholder="Passwrod"
-            className="inputClass"
+            className="login__input"
             onChange={this.onChangHandler}
           />
           <div className="buttonClass">
             <Button value="Log In" />
           </div>
-          <Link className="link" to="/">
+          <Link className="link" to="/forgetPassword">
             Forget password?
           </Link>
           {errorMessage}
