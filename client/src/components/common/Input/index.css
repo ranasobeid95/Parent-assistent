@@ -1,16 +1,17 @@
-.input-label{
-width: 4.5rem;
-height: 2rem;
-font-size: 1rem;
-line-height: 1.3rem;
-display: block;
-align-items: center;
-color: #645B5B;
-font-weight: bold ;
+.input-label {
+  width: 4.5rem;
+  height: 2rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  display: block;
+  align-items: center;
+  color: #645b5b;
+  font-weight: bold;
+  padding: 1.5rem 0.2rem;
 }
-.input-type {   
-width: 20rem;
-height: 2rem;
-background: #FFFFFF;
-border-radius: 8px;
+.input-type {
+  width: 20rem;
+  height: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
 }
