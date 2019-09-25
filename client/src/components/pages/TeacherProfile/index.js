@@ -5,8 +5,14 @@ import fakeData from './fakeData';
 
 class TeacherProfile extends Component {
   state = {
+    data: {},
     active: 1,
   };
+
+  componentDidMount() {
+    this.setState({ data: fakeData.teacher1 });
+    // we will make a request to get data by using axios, above line is a fake data
+  }
 
   handelerActive = num => {
     this.setState({ active: num });
@@ -14,15 +20,16 @@ class TeacherProfile extends Component {
 
   render() {
     const { active } = this.state;
-    const { teacher1 } = fakeData;
+    const { data } = this.state;
+
     return (
       <div className="teach-profile">
         <div className="teach-profile__top">
           <div className="box-img">
             <img src={TeacherImage} alt="teacher img" />
           </div>
-          <h3 className="teacher-name">{teacher1.name}</h3>
-          <p className="teacher-subject">{teacher1.subject} Teacher</p>
+          <h3 className="teacher-name">{data.name}</h3>
+          <p className="teacher-subject">{data.subject} Teacher</p>
         </div>
         <div className="teach-profile__list">
           <button
@@ -49,7 +56,7 @@ class TeacherProfile extends Component {
         </div>
         {active === 1 && (
           <div className="teach-profile__about">
-            <p>{teacher1.about}</p>
+            <p>{data.about}</p>
           </div>
         )}
 
@@ -58,15 +65,15 @@ class TeacherProfile extends Component {
             <ul>
               <li>
                 <span>Full Name:&nbsp;</span>
-                {teacher1.contact.fullName}
+                {data.contact.fullName}
               </li>
               <li>
                 <span>mobile Number:&nbsp;</span>
-                {teacher1.contact.mobileNumber}
+                {data.contact.mobileNumber}
               </li>
               <li>
                 <span>Email:&nbsp;</span>
-                {teacher1.contact.email}
+                {data.contact.email}
               </li>
             </ul>
           </div>
@@ -75,7 +82,7 @@ class TeacherProfile extends Component {
         {active === 3 && (
           <div className="teach-profile__interests">
             <ul>
-              {teacher1.interests.map(el => {
+              {data.interests.map(el => {
                 return <li key={el.id}>{el.text}</li>;
               })}
             </ul>
