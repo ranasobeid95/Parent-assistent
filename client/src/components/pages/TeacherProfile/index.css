@@ -3,18 +3,18 @@
   padding: 40px 2px;
 }
 
-.box-img > img {
+.img-teacher {
   width: 170px;
   height: 170px;
   border-radius: 50%;
 }
 
-.teach-profile__top > .teacher-name {
+.teacher-name {
   margin: 10px 0;
   color: #5a5858;
 }
 
-.teach-profile__top > .teacher-subject {
+.teacher-subject {
   color: #554e4e;
 }
 
@@ -25,7 +25,7 @@
   margin: 2rem 0;
 }
 
-.teach-profile__list > button {
+.teach-profile__tap {
   background-color: inherit;
   border: 0;
   outline: 0;
@@ -37,21 +37,21 @@
   cursor: pointer;
 }
 
-.teach-profile__list > .btn-border {
+.btn-border {
   border-bottom: 2px solid #1861ed;
 }
 
-.teach-profile__about > p {
+.teach-profile__desc {
   text-align: left;
 }
 
-.teach-profile__contact > ul,
-.teach-profile__interests > ul {
+.teach-profile__contact-list,
+.teach-profile__interests-list {
   list-style: none;
   text-align: left;
   line-height: 2rem;
 }
 
-.teach-profile__contact > ul > li > span {
+.contact-list__span {
   font-weight: bold;
 }
