@@ -30,7 +30,7 @@ export default class StudentTable extends React.Component {
                 return (
                   <tr key={id}>
                     <td className="parentTable__content1">{name}</td>
-                    <td className="parentTable__content2">{grade}</td>
+                    <td>{grade}</td>
                     <td className="parentTable__content2">
                       {StudentClass}
                       <p>
