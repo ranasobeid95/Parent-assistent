@@ -3,12 +3,12 @@
 }
 
 .error__title {
-  margin-top: 20%;
+  margin-top: 6rem;
   font-size: 2rem;
 }
 
 .error__type {
-  margin: 20% 0;
+  margin: 6.25rem 0;
   font-size: 4rem;
   font-weight: 300;
   color: #528af5;
@@ -16,5 +16,5 @@
 
 .error__desc {
   font-size: 1.5rem;
-  padding: 10%;
+  padding: 0 10%;
 }
