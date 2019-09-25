@@ -8,24 +8,30 @@ import('./index.css');
 
 class LogIn extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
     error: false,
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const { username, password } = this.state;
-    signUpValidation.isValid({ username, password }).then(res => {
-      this.setState({
-        error: !!res,
-      });
-      // axios stuff goes here
+    const { email, password } = this.state;
+    signUpValidation.isValid({ email, password }).then(res => {
+      if (!res) {
+        this.setState({
+          error: true,
+        });
+      } else {
+        this.setState({
+          error: false,
+        });
+        // axios stuff goes here
+      }
     });
   };
 
   render() {
-    const { error, password, username } = this.state;
+    const { error, password, email } = this.state;
     const errorMessage = error ? (
       <p className="error-message">Please correct your email or password</p>
     ) : null;
@@ -38,11 +44,11 @@ class LogIn extends Component {
           <Input
             name="username"
             id="username"
-            value={username}
+            value={email}
             type="text"
             placeholder="User name"
             className="login__input"
-            onChange={({ target }) => this.setState({ username: target.value })}
+            onChange={({ target }) => this.setState({ email: target.value })}
           />
 
           <Input
