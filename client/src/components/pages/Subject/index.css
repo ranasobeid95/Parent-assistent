@@ -1,13 +1,12 @@
-.Student__div {
+.subject {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    /* height: 80vh; */
 }
 
-.subject__p {
+.subject__p--subject {
     font-size: 20px;
     font-weight: bold;
     color: #528af5;
@@ -16,11 +15,11 @@
     margin-top: 80px
 }
 
-.Student__div * {
+.subject * {
     flex-basis: 100%;
 }
 
-.subject__des {
+.subject__p--des {
     color: #666464;
     margin-bottom: 23px;
     margin-left: 15px;
@@ -33,7 +32,7 @@
     margin-bottom: 80px;
 }
 
-.subject__p, .subject__des {
+.subject__p--subject--subject, .subject__p--des {
     align-self: flex-start;
     margin-bottom: 45px;
 }
