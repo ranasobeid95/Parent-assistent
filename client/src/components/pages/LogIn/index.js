@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import singUpValidation from '../utils/schema';
+import signUpValidation from '../utils/schema';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 
@@ -13,26 +13,20 @@ class LogIn extends Component {
     error: false,
   };
 
-  onChangHandler = ({ target: { name, value } }) => {
-    this.setState({
-      [name]: value,
-    });
-  };
-
   handleSubmit = e => {
     e.preventDefault();
     const { username, password } = this.state;
-    singUpValidation.isValid({ username, password }).then(res => {
+    signUpValidation.isValid({ username, password }).then(res => {
+      // true
       if (!res) {
         this.setState({
           error: true,
         });
-      } else {
-        this.setState({
-          error: false,
-        });
-        // axios stuff goes here
       }
+      this.setState({
+        error: !!res,
+      });
+      // axios stuff goes here
     });
   };
 
@@ -54,7 +48,7 @@ class LogIn extends Component {
             type="text"
             placeholder="User name"
             className="login__input"
-            onChange={this.onChangHandler}
+            onChange={({ target }) => this.setState({ username: target.value })}
           />
 
           <Input
@@ -64,9 +58,9 @@ class LogIn extends Component {
             type="password"
             placeholder="Passwrod"
             className="login__input"
-            onChange={this.onChangHandler}
+            onChange={({ target }) => this.setState({ password: target.value })}
           />
-          <div className="buttonClass">
+          <div>
             <Button value="Log In" />
           </div>
           <Link className="link" to="/forgetPassword">
