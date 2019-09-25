@@ -52,4 +52,6 @@
 .account__button{
     padding: 10px 40px;
     pointer-events: none;
+    width: 120px;
+    justify-content: center;
 }
