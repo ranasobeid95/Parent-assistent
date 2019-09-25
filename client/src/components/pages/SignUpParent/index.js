@@ -50,6 +50,7 @@ export default class SignUp extends React.Component {
           <Input
             label="Your-Email"
             name="email"
+            htmlFor="email"
             id="email"
             value={email}
             type="email"
@@ -61,6 +62,7 @@ export default class SignUp extends React.Component {
           <Input
             label="User-Name"
             name="username"
+            htmlFor="username"
             id="username"
             value={userName}
             type="text"
@@ -70,7 +72,8 @@ export default class SignUp extends React.Component {
           />
           <Input
             label="Parent-ID"
-            name="id"
+            name="parentid"
+            htmlFor="parentid"
             id="parentid"
             value={parentId}
             type="number"
@@ -82,6 +85,7 @@ export default class SignUp extends React.Component {
           <Input
             label="PAssword"
             name="password"
+            htmlFor="password"
             id="password"
             value={password}
             type="password"
@@ -92,6 +96,7 @@ export default class SignUp extends React.Component {
           <Input
             label="Confirm-PAssword"
             name="confirmpassword"
+            htmlFor="confirmpassword"
             id="confirmpassword"
             value={confirmPassword}
             type="password"
