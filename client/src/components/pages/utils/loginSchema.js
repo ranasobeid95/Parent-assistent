@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const singUpValidation = yup.object().shape({
+const loginValidation = yup.object().shape({
   email: yup
     .string()
     .email()
@@ -11,4 +11,4 @@ const singUpValidation = yup.object().shape({
     .required(),
 });
 
-export default singUpValidation;
+export default loginValidation;

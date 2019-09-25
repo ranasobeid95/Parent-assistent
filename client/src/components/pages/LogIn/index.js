@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import signUpValidation from '../utils/schema';
+import loginValidation from '../utils/loginSchema';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 
@@ -16,7 +16,7 @@ class LogIn extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { email, password } = this.state;
-    signUpValidation.isValid({ email, password }).then(res => {
+    loginValidation.isValid({ email, password }).then(res => {
       if (!res) {
         this.setState({
           error: true,
