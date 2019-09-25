@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import data from './data';
 import './index.css';
 
-export default class StudentTable extends React.Component {
+export default class studentTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
@@ -26,13 +26,13 @@ export default class StudentTable extends React.Component {
               </tr>
             </thead>
             <tbody className="parentTable__content">
-              {data.map(({ name, grade, StudentClass, id }) => {
+              {data.map(({ name, grade, studentClass, id }) => {
                 return (
                   <tr key={id}>
                     <td className="parentTable__content1">{name}</td>
                     <td>{grade}</td>
                     <td className="parentTable__content2">
-                      {StudentClass}
+                      {studentClass}
                       <p>
                         <Link
                           to={`/student/:${id}`}
