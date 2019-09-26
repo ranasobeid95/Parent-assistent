@@ -18,7 +18,6 @@ const signUpValidation = yup.object().shape({
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password'), null], 'Passwords must match')
-
     .required('Password confirmation is required!'),
 });
 
