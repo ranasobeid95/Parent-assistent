@@ -23,7 +23,7 @@ class Homework extends Component {
           <div className="homework">
             <h3 className="homework__class">Class Homework</h3>
             <div className="homework__calendar">
-              <form action="/">
+              <form>
                 <div className="homework__select">select Date:</div>
                 <input type="date" name="date" className="homework__date" />
                 <Button value="Submit" className="homework__submit" />
@@ -31,7 +31,7 @@ class Homework extends Component {
             </div>
             <div className="homework__box">
               <h3 className="homework__explaination">Homework Explaination</h3>
-              <p className="homework__text">{data[0].Homework_description}</p>
+              <p className="homework__text">{data[0].HomeworkDescription}</p>
             </div>
 
             <div className="homework__materials">
@@ -39,8 +39,11 @@ class Homework extends Component {
               <div>
                 <ul className="homework__links">
                   {data[0].HmURLS.map(resource => (
-                    <li>
-                      <a href={resource} className="homework_resouces">
+                    <li key={resource.id}>
+                      <a
+                        href={resource.link}
+                        className="homework__resource-link"
+                      >
                         Resource
                       </a>
                     </li>

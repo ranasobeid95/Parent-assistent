@@ -60,7 +60,7 @@ margin-bottom: 10px;
     transform: translateX(-50%);
     color: #2F80ED;
 }
-.homework_resouces{
+.homework__resource-link{
     display: flex;
     align-items: center;
     text-align: justify;
