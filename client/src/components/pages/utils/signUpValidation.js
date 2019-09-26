@@ -4,12 +4,17 @@ const signUpValidation = yup.object().shape({
   email: yup
     .string()
     .email('E-mail is not valid!')
-    .required('E-mail is required!'),
-  userName: yup.string().required(),
+    .required('E-mail is required!')
+    .trim('space is invalid'),
+  userName: yup
+    .string()
+    .required()
+    .trim('space is invalid'),
   parentId: yup
     .string()
     .length(10)
-    .required(),
+    .required()
+    .trim('space is invalid'),
   password: yup
     .string()
     .min(8, 'Password has to be longer than 6 characters!')
