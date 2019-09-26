@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint:react": "cd client && npm run lint",
-    "lint": "eslint server/",
+    "lint": "eslint server/ && eslint test/",
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
     "test": "node test/index.test.js | tap-spec"
