@@ -11,31 +11,26 @@ export default class SignUp extends React.Component {
     parentId: '',
     password: '',
     confirmPassword: '',
-    error: false,
+    // errors: [],
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const {
-      error,
-      email,
-      userName,
-      parentId,
-      password,
-      confirmPassword,
-    } = this.state;
+    const { email, userName, parentId, password, confirmPassword } = this.state;
     signUpValidation
-      .isValid({ error, email, userName, parentId, password, confirmPassword })
-      .then(res => {
-        if (!res) {
-          this.setState({
-            error: true,
-          });
-        } else {
-          this.setState({
-            error: false,
-          });
-        }
+      .validate(
+        { email, userName, parentId, password, confirmPassword },
+        { abortEarly: false }
+      )
+      .then(values => {
+        // fetch
+        // console.log(values);
+        return values;
+      })
+      .catch(error => {
+        return error;
+        // console.log(error.errors);
+        // return this.setState({ errors: error.errors });
       });
   };
 
