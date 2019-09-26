@@ -3,16 +3,17 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .subject__p--subject {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #528af5;
     padding-left: 10px;
     padding-bottom: 5px;
-    margin-top: 80px
+    /* margin-top: 80px */
+    margin-bottom: 40px;
 }
 
 .subject * {
@@ -23,16 +24,30 @@
     color: #666464;
     margin-bottom: 23px;
     margin-left: 15px;
+    font-size: 20px
 }
 
 .subject__btn {
     width: 13rem;
     height: 3rem;
     display: inline;
-    margin-bottom: 80px;
+    margin-bottom: 46px;
 }
 
 .subject__p--subject--subject, .subject__p--des {
-    align-self: flex-start;
+    /* align-self: flex-start; */
     margin-bottom: 45px;
+}
+
+.subject__link--activities, .subject__link--homework {
+    text-decoration: none
+}
+
+.subject__title-box {
+    margin: 70px 0 70px 0;
+    margin-bottom: 47px;
+}
+
+.subject__link {
+    text-align: center;
 }
