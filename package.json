@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint:react": "cd client && npm run lint",
+    "lint": "eslint server/",
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
     "test": "node test/index.test.js | tap-spec"
@@ -31,7 +32,7 @@
   },
   "pre-commit": [
     "lint:react",
-    "lint:server"
+    "lint"
   ],
   "devDependencies": {
     "eslint-config-airbnb-base": "^14.0.0",
