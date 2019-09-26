@@ -23,12 +23,13 @@
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     background: #fff;
-    width: 160px;
+    width: 169px;
     margin-left: 5px;
 }
 .homework__submit{
-    margin: 5px 50px;
-    padding: 5px 15px;
+    margin: 5px 0px 5px 192px;
+    padding: 2px 8px;
+    font-size: 14px;
 }
 .homework__box{
     background: #FFFFFF;
