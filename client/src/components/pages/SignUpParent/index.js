@@ -11,7 +11,7 @@ export default class SignUp extends React.Component {
     parentId: '',
     password: '',
     confirmPassword: '',
-    // errors: [],
+    errors: {},
   };
 
   handleSubmit = e => {
@@ -24,19 +24,30 @@ export default class SignUp extends React.Component {
       )
       .then(values => {
         // fetch
-        // console.log(values);
         return values;
       })
       .catch(error => {
-        return error;
-        // console.log(error.errors);
-        // return this.setState({ errors: error.errors });
+        const objError = {};
+        error.inner.forEach(fielderror => {
+          objError[fielderror.path] = fielderror.message;
+        });
+        return this.setState({ errors: objError });
       });
   };
 
-  render() {
-    const { email, userName, parentId, password, confirmPassword } = this.state;
+  handleChange = ({ target: { value, name } }) => {
+    this.setState({ [name]: value });
+  };
 
+  render() {
+    const {
+      errors,
+      email,
+      userName,
+      parentId,
+      password,
+      confirmPassword,
+    } = this.state;
     return (
       <div className="signUp">
         <form className="signUp__form" onSubmit={this.handleSubmit}>
@@ -47,60 +58,71 @@ export default class SignUp extends React.Component {
             name="email"
             htmlFor="email"
             id="email"
-            value={email}
+            value={email.value}
             type="email"
             placeholder="example@gmail.com"
             className="signUp__input"
-            onChange={({ target }) => this.setState({ email: target.value })}
+            onChange={this.handleChange}
           />
-
+          {errors.email && <p className="error-field">email error</p>}
           <Input
             label="User-Name"
-            name="username"
+            name="userName"
             htmlFor="username"
             id="username"
-            value={userName}
+            value={userName.value}
             type="text"
             placeholder="Enter your name"
             className="signUp__input"
-            onChange={({ target }) => this.setState({ userName: target.value })}
+            onChange={this.handleChange}
           />
+          {errors.userName && <p className="error-field">userName error</p>}
+
           <Input
             label="Parent-ID"
-            name="parentid"
+            name="parentId"
             htmlFor="parentid"
             id="parentid"
-            value={parentId}
-            type="number"
+            value={parentId.value}
+            type="text"
             placeholder="Enter your ID"
             className="signUp__input"
-            onChange={({ target }) => this.setState({ parentId: target.value })}
+            onChange={this.handleChange}
           />
+          {errors.parentId && (
+            <p className="error-field">must be 10 characters</p>
+          )}
 
           <Input
             label="Password"
             name="password"
             htmlFor="password"
             id="password"
-            value={password}
+            value={password.value}
             type="password"
             placeholder="Enter your Passwrod"
             className="signUp__input"
-            onChange={({ target }) => this.setState({ password: target.value })}
+            onChange={this.handleChange}
           />
+          {errors.password && (
+            <p className="error-field">must be more than 8</p>
+          )}
+
           <Input
             label="Confirm-Password"
-            name="confirmpassword"
+            name="confirmPassword"
             htmlFor="confirmpassword"
             id="confirmpassword"
-            value={confirmPassword}
+            value={confirmPassword.value}
             type="password"
             placeholder="Enter your Passwrod again"
             className="signUp__input"
-            onChange={({ target }) =>
-              this.setState({ confirmPassword: target.value })
-            }
+            onChange={this.handleChange}
           />
+          {errors.confirmPassword && (
+            <p className="error-field">password must be matched</p>
+          )}
+
           <div>
             <Button className="signUp__button" value="Sign Up" />
           </div>
