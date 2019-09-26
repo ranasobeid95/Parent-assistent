@@ -30,7 +30,8 @@
     "pre-commit": "^1.2.2"
   },
   "pre-commit": [
-    "lint:react"
+    "lint:react",
+    "lint:server"
   ],
   "devDependencies": {
     "eslint-config-airbnb-base": "^14.0.0",
