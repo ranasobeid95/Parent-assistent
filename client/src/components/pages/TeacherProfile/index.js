@@ -12,7 +12,7 @@ class TeacherProfile extends Component {
   ActiveContentEnum = Object.freeze({
     ABOUT: 'about',
     CONTACT: 'contact',
-    INTERESTS: 'interests'
+    INTERESTS: 'interests',
   });
 
   componentDidMount() {
