@@ -1,0 +1,57 @@
+.teach-profile {
+  text-align: center;
+  padding: 40px 2px;
+}
+
+.img-teacher {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+
+.teacher-name {
+  margin: 10px 0;
+  color: #5a5858;
+}
+
+.teacher-subject {
+  color: #554e4e;
+}
+
+.teach-profile__list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.teach-profile__tap {
+  background-color: inherit;
+  border: 0;
+  outline: 0;
+  padding: 10px 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #1861ed;
+  cursor: pointer;
+}
+
+.btn-border {
+  border-bottom: 2px solid #1861ed;
+}
+
+.teach-profile__desc {
+  text-align: left;
+}
+
+.teach-profile__contact-list,
+.teach-profile__interests-list {
+  list-style: none;
+  text-align: left;
+  line-height: 2rem;
+}
+
+.contact-list__span {
+  font-weight: bold;
+}

@@ -39,10 +39,12 @@ class LogIn extends Component {
       <div className="login">
         <p className="login__title">Welcome to parent assistent system</p>
         <form className="login__form" onSubmit={this.handleSubmit}>
-          <p className="login__header">LOGIN</p>
+          <p className="login__header">LOG IN</p>
 
           <Input
+            label="User Name"
             name="username"
+            htmlFor="username"
             id="username"
             value={email}
             type="text"
@@ -52,7 +54,9 @@ class LogIn extends Component {
           />
 
           <Input
+            label="Password"
             name="password"
+            htmlFor="password"
             id="password"
             value={password}
             type="password"
@@ -61,7 +65,7 @@ class LogIn extends Component {
             onChange={({ target }) => this.setState({ password: target.value })}
           />
           <div>
-            <Button value="Log In" />
+            <Button className="login__button" value="Log In" />
           </div>
           <Link className="link" to="/forgetPassword">
             Forget password?
