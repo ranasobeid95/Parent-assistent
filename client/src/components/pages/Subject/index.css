@@ -1,0 +1,49 @@
+.subject {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.subject__p--subject {
+    font-size: 25px;
+    font-weight: bold;
+    color: #528af5;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.subject * {
+    flex-basis: 100%;
+}
+
+.subject__p--des {
+    color: #666464;
+    margin-bottom: 23px;
+    margin-left: 15px;
+    font-size: 20px
+}
+
+.subject__btn {
+    width: 16rem;
+    height: 4rem;
+    display: inline;
+    margin-bottom: 46px;
+}
+
+.subject__p--subject--subject, .subject__p--des {
+    margin-bottom: 10px;
+}
+
+.subject__link--activities, .subject__link--homework {
+    text-decoration: none
+}
+
+.subject__title-box {
+    margin: 70px 0 70px 0;
+    margin-bottom: 47px;
+}
+
+.subject__link {
+    text-align: center;
+}

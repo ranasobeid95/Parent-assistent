@@ -7,14 +7,9 @@ import logo from '../../../assets/logo.png';
 import('./index.css');
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    const { auth } = this.props;
-    this.state = {
-      show: false,
-      isSigned: auth,
-    };
-  }
+  state = {
+    show: false,
+  };
 
   onClickHandler = () => {
     this.setState(oldState => ({
@@ -23,7 +18,8 @@ class Header extends Component {
   };
 
   render() {
-    const { show, isSigned } = this.state;
+    const { auth } = this.props;
+    const { show } = this.state;
     return (
       <React.Fragment>
         <header className="App-header">
@@ -38,11 +34,7 @@ class Header extends Component {
             <div></div>
           </Link>
         </header>
-        <Menu
-          show={show}
-          isSigned={isSigned}
-          showOrHide={this.onClickHandler}
-        />
+        <Menu show={show} isSigned={auth} showOrHide={this.onClickHandler} />
       </React.Fragment>
     );
   }

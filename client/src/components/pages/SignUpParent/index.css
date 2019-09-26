@@ -1,0 +1,60 @@
+.signUp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.signUp__title {
+    text-align: center;
+    flex-basis: 100%;
+    font-family: Artifika, sans-serif;
+    color: #645B5B;
+    font-weight: bold;
+}
+
+.signUp__form {
+    color: #645B5B;
+    display: flex;
+    justify-content: center;
+    margin-top:30%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(196, 196, 196, .43);
+    padding: 1.4rem 0;
+}
+
+.link {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    color: #645B5B;
+    font-weight: bold
+}
+
+.input-label {
+    width: auto;
+}
+
+.signUp__input {
+    text-align: center;
+    border: none;
+    width: 15rem;
+    font-size: 10px;
+}
+
+.signUp__header {
+    font-weight: bold;
+    padding-bottom: 18px;
+}
+
+.signUp__button {
+    height: 2rem;
+    width: 15rem;
+    display: block;
+    margin-top: 24px;
+}
+.error-field{
+    color: red;
+    font-size: 10px;
+}
