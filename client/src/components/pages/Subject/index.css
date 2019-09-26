@@ -11,7 +11,7 @@
     color: #528af5;
     padding-left: 10px;
     padding-bottom: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .subject * {
@@ -26,14 +26,14 @@
 }
 
 .subject__btn {
-    width: 13rem;
-    height: 3rem;
+    width: 16rem;
+    height: 4rem;
     display: inline;
     margin-bottom: 46px;
 }
 
 .subject__p--subject--subject, .subject__p--des {
-    margin-bottom: 45px;
+    margin-bottom: 10px;
 }
 
 .subject__link--activities, .subject__link--homework {
