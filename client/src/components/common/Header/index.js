@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Menu from '../Menu';
 import logo from '../../../assets/logo.png';
 
@@ -38,5 +39,13 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  auth: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  auth: false,
+};
 
 export default Header;

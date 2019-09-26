@@ -16,7 +16,6 @@ module.exports = {
   rules: {
     //  allow .js extensions for JSX.
     'jsx-a11y/click-events-have-key-events': 0,
-    'react/prop-types': 0,
     'react/jsx-filename-extension': [
       1,
       {

@@ -1,6 +1,8 @@
 import React from 'react';
-import './index.css';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import './index.css';
 
 const Menu = ({ showOrHide, isSigned: protect, show }) => {
   return (
@@ -42,6 +44,16 @@ const Menu = ({ showOrHide, isSigned: protect, show }) => {
       </div>
     </Router>
   );
+};
+Menu.propTypes = {
+  showOrHide: PropTypes.func.isRequired,
+  isSigned: PropTypes.bool,
+  show: PropTypes.bool,
+};
+
+Menu.defaultProps = {
+  isSigned: false,
+  show: false,
 };
 
 export default Menu;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Button from '../../common/Button';
 
 import('./index.css');
 
-const Subject = ({ subject = 'Arabic', CalssId, homeworkId, activityId }) => {
+const Subject = ({ subject, CalssId, homeworkId, activityId }) => {
   return (
     <div className="subject">
       <div className="subject__title-box">
@@ -30,6 +31,17 @@ const Subject = ({ subject = 'Arabic', CalssId, homeworkId, activityId }) => {
       </div>
     </div>
   );
+};
+
+Subject.propTypes = {
+  subject: PropTypes.string,
+  CalssId: PropTypes.number.isRequired,
+  homeworkId: PropTypes.number.isRequired,
+  activityId: PropTypes.number.isRequired,
+};
+
+Subject.defaultProps = {
+  subject: 'Arabic',
 };
 
 export default Subject;
