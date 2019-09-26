@@ -39,7 +39,7 @@ class TeacherProfile extends Component {
     );
   };
 
-  renderTape = data => {
+  renderTab = data => {
     const { activeContent } = this.state;
     if (activeContent === 'about') {
       return (
@@ -98,7 +98,7 @@ class TeacherProfile extends Component {
           {this.renderButton(this.ActiveContentEnum.INTERESTS, 'Interests')}
         </div>
 
-        {this.renderTape(data)}
+        {this.renderTab(data)}
       </div>
     );
   }
