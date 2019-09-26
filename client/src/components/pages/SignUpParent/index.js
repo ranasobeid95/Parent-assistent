@@ -64,7 +64,7 @@ export default class SignUp extends React.Component {
             className="signUp__input"
             onChange={this.handleChange}
           />
-          {errors.email && <p className="error-field">email error</p>}
+          {errors.email && <p className="error-field">errors.email</p>}
           <Input
             label="User-Name"
             name="userName"
@@ -76,7 +76,7 @@ export default class SignUp extends React.Component {
             className="signUp__input"
             onChange={this.handleChange}
           />
-          {errors.userName && <p className="error-field">userName error</p>}
+          {errors.userName && <p className="error-field">errors.userName</p>}
 
           <Input
             label="Parent-ID"
@@ -89,9 +89,7 @@ export default class SignUp extends React.Component {
             className="signUp__input"
             onChange={this.handleChange}
           />
-          {errors.parentId && (
-            <p className="error-field">must be 10 characters</p>
-          )}
+          {errors.parentId && <p className="error-field">errors.parentId</p>}
 
           <Input
             label="Password"
@@ -104,9 +102,7 @@ export default class SignUp extends React.Component {
             className="signUp__input"
             onChange={this.handleChange}
           />
-          {errors.password && (
-            <p className="error-field">must be more than 8</p>
-          )}
+          {errors.password && <p className="error-field">errors.password </p>}
 
           <Input
             label="Confirm-Password"
@@ -120,7 +116,7 @@ export default class SignUp extends React.Component {
             onChange={this.handleChange}
           />
           {errors.confirmPassword && (
-            <p className="error-field">password must be matched</p>
+            <p className="error-field">errors.confirmPassword</p>
           )}
 
           <div>
