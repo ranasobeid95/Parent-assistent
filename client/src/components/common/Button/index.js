@@ -17,5 +17,9 @@ export default function Button({ value, className }) {
 
 Button.propTypes = {
   value: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  className: '',
 };

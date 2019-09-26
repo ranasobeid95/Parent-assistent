@@ -1,10 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 
-const Error = ({
-  typeError = '500',
-  errorDesc = 'Sory the website is unavailable',
-}) => {
+const Error = ({ typeError, errorDesc }) => {
   return (
     <div className="error">
       <h2 className="error__title">Error</h2>
@@ -12,6 +10,15 @@ const Error = ({
       <p className="error__desc">{errorDesc}</p>
     </div>
   );
+};
+Error.propTypes = {
+  typeError: PropTypes.string,
+  errorDesc: PropTypes.string,
+};
+
+Error.defaultProps = {
+  typeError: '500',
+  errorDesc: 'Sory the website is unavailable',
 };
 
 export default Error;
