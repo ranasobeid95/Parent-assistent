@@ -54,7 +54,7 @@ CREATE TABLE subjects_teacher(
 
 CREATE TABLE activities(
     id SERIAL PRIMARY KEY,
-    data VARCHAR(255),
+    activity_date date,
     class INTEGER,
     description text,
     title text,
@@ -64,7 +64,7 @@ CREATE TABLE activities(
 
 CREATE TABLE homework (
     id SERIAL PRIMARY KEY,
-    data text, 
+    homework_date date, 
     class INTEGER, 
     urls json,
     subject_id INTEGER,

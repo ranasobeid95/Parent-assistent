@@ -6,9 +6,9 @@
   "scripts": {
     "lint:react": "cd client && npm run lint",
     "lint": "eslint server/ && eslint test/",
-    "start": "NODE_ENV=production node server/index.js",
-    "dev": "NODE_ENV=development nodemon server/index.js",
-    "test": "NODE_ENV=testing node test/index.test.js | tap-spec"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "node test/index.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
