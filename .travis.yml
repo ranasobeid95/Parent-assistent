@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "lts/*"
 services:
- - postgresql
+  - postgresql
 before_script:
- - psql -c "CREATE DATABASE parent_assistant;" -U postgres
- - psql -c "CREATE USER parent WITH PASSWORD '1';" -U postgres
+  - psql -c "CREATE DATABASE parent_assistant;" -U postgres
+  - psql -c "CREATE USER parent WITH PASSWORD '1';" -U postgres
 
