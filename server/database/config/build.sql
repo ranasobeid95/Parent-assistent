@@ -1,6 +1,7 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "user",parent,teacher,student,teacher_student,"subject",subject_teacher,activity,homework CASCADE;
+DROP TABLE IF EXISTS "user", parent, teacher, student, teacher_student, "subject", subject_teacher, activity, homework CASCADE;
+
 CREATE TABLE "user"(
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE, 
