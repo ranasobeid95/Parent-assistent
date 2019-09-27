@@ -1,20 +1,18 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users,parent,teacher,student,teacher-student,subjects,subjects-teacher,
-activities,homework CASCADE;
-
-CREATE TABLE users(
+DROP TABLE IF EXISTS "user",parent,teacher,student,teacher_student,"subject",subject_teacher,activity,homework CASCADE;
+CREATE TABLE "user"(
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE, 
     user_name VARCHAR(50),
-    password VARCHAR(255),
+    password VARCHAR(255)
 );
 
 CREATE TABLE parent(
     id SERIAL PRIMARY KEY,
     parent_id INTEGER,
     user_id INTEGER,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES "user"(id)
 );
 
 CREATE TABLE teacher(
@@ -22,7 +20,7 @@ CREATE TABLE teacher(
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     user_id INTEGER,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES "user"(id)
 );
 
 CREATE TABLE student(
@@ -30,45 +28,47 @@ CREATE TABLE student(
     student_name VARCHAR(255),
     class INTEGER,
     parent_id INTEGER,
-    FOREIGN KEY (parent_id) REFERENCES parent(parent_id)
+    FOREIGN KEY (parent_id) REFERENCES parent(id)
 );
 
-CREATE TABLE teacher-student(
+CREATE TABLE teacher_student(
     id SERIAL PRIMARY KEY,
     teacher_id INTEGER, 
     student_id INTEGER,
-    FOREIGN KEY (teacher_id,student_id) REFERENCES (teacher(id),student(id)),
+    FOREIGN KEY (teacher_id) REFERENCES teacher(id),
+    FOREIGN KEY (student_id) REFERENCES student(id)
 );
 
-CREATE TABLE subjects(
+CREATE TABLE "subject"(
     id SERIAL PRIMARY KEY,
     subject_name VARCHAR(255)
 );
 
-CREATE TABLE subjects-teacher(
-     id SERIAL PRIMARY KEY,
-     teacher_id INTEGER, 
-     subject_id INTEGER,
-     FOREIGN KEY (teacher_id,subject_id) REFERENCES (teacher(id),subjects(id)),
-);
-
-CREATE TABLE activities(
+CREATE TABLE subject_teacher(
     id SERIAL PRIMARY KEY,
-    data VARCHAR(255),
+    teacher_id INTEGER, 
+    subject_id INTEGER,
+    FOREIGN KEY (teacher_id) REFERENCES teacher(id),
+    FOREIGN KEY (subject_id) REFERENCES "subject"(id)
+); 
+
+CREATE TABLE activity(
+    id SERIAL PRIMARY KEY,
+    activity_date date,
     class INTEGER,
     description text,
     title text,
     subject_id INTEGER ,
-    FOREIGN KEY (subject_id) REFERENCES subjects(id)
+    FOREIGN KEY (subject_id) REFERENCES "subject"(id)
 );
 
-CREATE TABLE homework {
+CREATE TABLE homework (
     id SERIAL PRIMARY KEY,
-    data text, 
+    homework_date date, 
     class INTEGER, 
     urls json,
     subject_id INTEGER,
-    FOREIGN KEY (subject_id) REFERENCES subjects(id)
-}
+    FOREIGN KEY (subject_id) REFERENCES "subject"(id)
+);
 
 COMMIT;
