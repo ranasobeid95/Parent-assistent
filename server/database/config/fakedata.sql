@@ -1,4 +1,4 @@
-INSERT INTO users
+INSERT INTO "user"
   ( email,user_name, password)
 VALUES
   ('Ola200@gmail.com', 'asmaa', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
@@ -37,7 +37,7 @@ VALUES
     (3,1),
     (4,3);
     
-INSERT INTO subjects
+INSERT INTO "subject"
     (subject_name)
 VALUES 
     ('English'),
@@ -45,7 +45,7 @@ VALUES
     ('Math'),
     ('Science');
 
-INSERT INTO subjects_teacher
+INSERT INTO subject_teacher
     (teacher_id,subject_id) 
 VALUES 
     (1,1),
@@ -53,7 +53,7 @@ VALUES
     (3,3),
     (4,4);
 
-INSERT INTO activities 
+INSERT INTO activity 
     (activity_date,class, description,title,subject_id)
 VALUES 
     ('2018-11-11',1,'The student knew countries by playing countries game','Countries activity',1),
