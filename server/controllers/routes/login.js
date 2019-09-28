@@ -11,10 +11,11 @@ const login = (req, res, next) => {
     .then((result) => {
       if (result.rows.length === 0) res.send('not signed up');
       const hashedPassword = result.rows[0].password;
+      const parentId = result.rows[0].parent_id;
       bcrypt.compare(password, hashedPassword, (err, value) => {
         if (value) {
           const accessToken = jwt.sign(
-            { id: 1, name: 'parent-assistent' },
+            { parentid: parentId, name: 'parent-assistent' },
             secret,
           );
           res.cookie('access', accessToken);
