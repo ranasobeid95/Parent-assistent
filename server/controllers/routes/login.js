@@ -11,7 +11,6 @@ const login = (req, res, next) => {
     .then((result) => {
       if (result.rows.length === 0) res.send('not signed up');
       const hashedPassword = result.rows[0].password;
-      const id = result.rows[0].parent_id;
       bcrypt.compare(password, hashedPassword, (err, value) => {
         if (value) {
           const accessToken = jwt.sign(
@@ -19,7 +18,7 @@ const login = (req, res, next) => {
             secret,
           );
           res.cookie('access', accessToken);
-          res.redirect(`profile/parent/:${id}`);
+          res.redirect('/api/v1/login');
         } else {
           res.send('Wrong Password');
         }
