@@ -10,6 +10,7 @@ const router = require('./controllers/index');
 
 app.set('port', PORT);
 app.use(express.json());
+// no need for this line since we don't use form in our app
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
