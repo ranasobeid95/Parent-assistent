@@ -11,15 +11,15 @@ const login = (req, res, next) => {
     .then((result) => {
       if (result.rows.length === 0) res.send('not signed up');
       const hashedPassword = result.rows[0].password;
-      const parentId = result.rows[0].parent_id;
+      const id = result.rows[0].parent_id;
       bcrypt.compare(password, hashedPassword, (err, value) => {
         if (value) {
           const accessToken = jwt.sign(
-            { parentid: parentId, name: 'parent-assistent' },
+            { parentid: id, name: 'parent-assistent' },
             secret,
           );
           res.cookie('access', accessToken);
-          res.redirect('/api/v1/login');
+          res.redirect(`/api/v1/profile/parent/:${id}`);
         } else {
           res.send('Wrong Password');
         }
