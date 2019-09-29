@@ -21,6 +21,7 @@ dbBuild().then(
           t.error(err);
           t.end();
         } else {
+          // console.log(res);
           t.deepEqual(
             res.body,
             {
@@ -30,7 +31,7 @@ dbBuild().then(
               user_name: 'Mohammed',
               parent_id: 12345679,
             },
-            'Logout test passed',
+            'should return sthe same data && the hased password',
           );
           t.end();
         }

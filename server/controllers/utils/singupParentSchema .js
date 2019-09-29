@@ -7,12 +7,11 @@ const schema = yup.object().shape({
     .min(3)
     .required(),
   parentId: yup
-    .string()
-    .trim()
+    .number()
+    .integer()
     .required(),
   password: yup
     .string()
-    .trim()
     .matches(/[a-zA-Z0-9]/)
     .min(9)
     .required(),
