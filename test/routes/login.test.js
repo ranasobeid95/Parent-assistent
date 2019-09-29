@@ -1,9 +1,9 @@
-const test = require('tape');
+const tape = require('tape');
 const supertest = require('supertest');
 const app = require('../../server/app');
 const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 
-const loginRoute = test('Test /login route', (t) => {
+tape('Test /login route', (t) => {
   const userInfo = {
     email: 'Ola200@gmail.com',
     password: 'alaa123456789',
@@ -13,9 +13,9 @@ const loginRoute = test('Test /login route', (t) => {
     .then(() => {
       supertest(app)
         .post('/api/v1/login')
-        .send(userInfo)
+        .send()
         .expect(200)
-        .expect('Content-Type', 'application/json; charset=utf-8')
+        .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             t.error(err);
@@ -28,5 +28,3 @@ const loginRoute = test('Test /login route', (t) => {
     })
     .catch(t.error);
 });
-
-module.exports = { loginRoute };
