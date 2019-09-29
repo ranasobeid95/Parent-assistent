@@ -28,8 +28,8 @@ const HomePage = () => {
         <h3 className="about__title">About</h3>
         <div className="about__text">
           <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual mockups.
+            Our App is to help parent to follow their children in the school and
+            know their homeworks and recently activities .
           </p>
         </div>
       </div>
@@ -38,8 +38,10 @@ const HomePage = () => {
         <div className="vision__text">
           <img src={HomeClass} alt="class-img" className="vision__img"></img>
           <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual mockups.
+            We hope that Parents could be in touch all the time with their
+            children teachers, to keep abreast of all new duties and school
+            activities and also to know their children assessment Regularly and
+            sequentially.
           </p>
         </div>
       </div>
