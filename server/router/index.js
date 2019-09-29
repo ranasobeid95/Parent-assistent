@@ -1,5 +1,5 @@
 const express = require('express');
-const { logout } = require('../controllers/routes');
+const { logout } = require('../controllers');
 
 const router = express.Router();
 
