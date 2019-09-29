@@ -19,22 +19,22 @@ const login = (req, res, next) => {
       }
       return loginData(email);
     })
-    .then((result) => {
-      if (result.rows.length === 0) {
+    .then(({ rows }) => {
+      if (rows && rows.length === 0) {
         const validationErr = new Error('you are not/sign up');
         validationErr.statusCode = 400;
         throw validationErr;
       }
-      const hashedPassword = result.rows[0].password;
-      const id = result.rows[0].parent_id;
+      const hashedPassword = rows[0].password;
+      const id = rows[0].parent_id;
       return bcrypt.compare(password, hashedPassword).then((value) => {
         if (value) {
           const accessToken = jwt.sign(
             { parentid: id, name: 'parent-assistent' },
             secret,
           );
-          res.cookie('access', accessToken);
-          res.redirect(`/api/v1/profile/parent/:${id}`);
+          res.cookie('access', accessToken, { httpOnly: true });
+          res.json({ isSuccess: true });
         } else {
           const validationErr = new Error('wrong password');
           validationErr.statusCode = 400;
