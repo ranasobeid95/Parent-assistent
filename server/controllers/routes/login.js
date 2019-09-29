@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const loginSchema = require('../utils/loginSchema');
 require('env2')('./secret.env');
 const { loginData } = require('../../database/quieres/login');
 
@@ -7,27 +8,54 @@ const secret = process.env.SECRET_KEY;
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  loginData(email)
-    .then((result) => {
-      if (result.rows.length === 0) res.send('not signed up');
+
+  loginSchema
+    .isValid(req.body)
+    .then(valid => {
+      if (!valid) {
+        const validationErr = new Error('Please, Check the data you entered');
+        validationErr.statusCode = 400;
+        throw validationErr;
+      } else {
+        return loginData(email);
+      }
+    })
+    .then(result => {
+      if (result.rows.length === 0) {
+        const validationErr = new Error('you are not/sign up');
+        validationErr.statusCode = 400;
+        throw validationErr;
+      }
       const hashedPassword = result.rows[0].password;
       const id = result.rows[0].parent_id;
-      bcrypt.compare(password, hashedPassword, (err, value) => {
+      bcrypt.compare(password, hashedPassword).then(value => {
         if (value) {
           const accessToken = jwt.sign(
             { parentid: id, name: 'parent-assistent' },
-            secret,
+            secret
           );
           res.cookie('access', accessToken);
           res.redirect(`/api/v1/profile/parent/:${id}`);
         } else {
-          res.send('Wrong Password');
+          const validationErr = new Error('wrong error');
+          validationErr.statusCode = 400;
+          throw validationErr;
         }
       });
     })
-    .catch((err) => next(err));
+
+    .catch(err => {
+      const { statusCode } = err;
+      switch (statusCode) {
+        case 400:
+          res.status(400).send({ error: err.message, statusCode: 400 });
+          break;
+        default:
+          next(err);
+      }
+    });
 };
 
 module.exports = {
-  login,
+  login
 };
