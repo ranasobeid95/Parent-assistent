@@ -1,12 +1,12 @@
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const router = require('./router');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(cookieParser());
-const router = require('./router');
 
 app.set('port', PORT);
 app.use(express.json());
