@@ -11,15 +11,15 @@ exports.findUser = (username) => {
 exports.insert = (username, hashed, email, parentId) => {
   const sql = {
     text: `
-      with new_insert as (
+     with new_insert as (
           insert
               into
                   "user" (user_name ,
                   password,
                   email )
               values ( $1 ,
-              $3 ,
-              $2 ) returning id )
+              $2 ,
+              $3 ) returning id )
           insert
               into
               parent (parent_id,
@@ -32,6 +32,16 @@ exports.insert = (username, hashed, email, parentId) => {
               new_insert) );
           `,
     values: [username, hashed, email, parentId],
+  };
+  return connection.query(sql);
+};
+
+exports.select = () => {
+  const sql = {
+    text: ` SELECT email, password , user_name , parent.parent_id 
+  FROM "user"  
+  INNER join parent on "user".id = parent.user_id    
+  `,
   };
   return connection.query(sql);
 };
