@@ -1,7 +1,9 @@
 const express = require('express');
-const { logout } = require('../controllers');
+const { auth, logout } = require('../controllers');
 
 const router = express.Router();
 
+router.use(auth);
 router.get('/logout', logout);
+
 module.exports = router;
