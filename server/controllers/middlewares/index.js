@@ -1,7 +1,4 @@
-const { logout } = require('./logout');
 const { auth } = require('./auth');
 
 
-module.exports = {
-  logout, auth,
-};
+module.exports = { auth };
