@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const loginSchema = require('../utils/loginSchema');
+const { loginSchema } = require('../utils/loginSchema');
 require('env2')('./config.env');
 const { loginData } = require('../../database/quieres/login');
 
@@ -10,7 +10,7 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
 
   loginSchema
-    .validate(req.body)
+    .isValid(req.body)
     .then((valid) => {
       if (!valid) {
         const validationErr = new Error('Please, Check the data you entered');
