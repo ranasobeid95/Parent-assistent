@@ -1,0 +1,1 @@
+exports.logout = require('./logout');
