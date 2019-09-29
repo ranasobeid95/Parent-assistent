@@ -20,7 +20,6 @@ const loginRoute = test('Test /login route', (t) => {
           if (err) {
             t.error(err);
             t.end();
-            console.log(err);
           } else {
             t.equals(res.rows[0].email, userInfo.email, 'must be the same');
             t.end();
