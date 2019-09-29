@@ -21,8 +21,7 @@ test('Test /login route', (t) => {
             t.error(err);
             t.end();
           } else {
-            const userData = JSON.parse(res.text).data;
-            t.equal(userData.email, userInfo.email, 'must be the same');
+            t.equal(res.isSuccess, true, 'you are login successfully');
             t.end();
           }
         });
