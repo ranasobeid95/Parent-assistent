@@ -1,11 +1,13 @@
 const tape = require('tape');
 const supertest = require('supertest');
+const { access } = require('./cookie.test');
 
 const app = require('../../server/app');
 
 tape('testing the logout Route', (t) => {
   supertest(app)
     .get('/api/v1/logout')
+    .set('Cookie', [`access=${access}`])
     .expect(200)
     .expect('content-type', /json/)
     .end((err, res) => {
