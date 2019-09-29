@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const loginSchema = require('../utils/loginSchema');
-require('env2')('./secret.env');
+require('env2')('./config.env');
 const { loginData } = require('../../database/quieres/login');
 
 const secret = process.env.SECRET_KEY;

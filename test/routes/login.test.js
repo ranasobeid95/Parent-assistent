@@ -1,9 +1,9 @@
-const tape = require('tape');
+const test = require('tape');
 const supertest = require('supertest');
 const app = require('../../server/app');
 const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 
-tape('Test /login route', (t) => {
+test('Test /login route', (t) => {
   const userInfo = {
     email: 'Ola200@gmail.com',
     password: 'alaa123456789',
@@ -13,15 +13,16 @@ tape('Test /login route', (t) => {
     .then(() => {
       supertest(app)
         .post('/api/v1/login')
-        .send()
+        .send(userInfo)
         .expect(200)
-        .expect('Content-Type', /json/)
+        .expect('Content-Type', 'application/json; charset=utf-8')
         .end((err, res) => {
           if (err) {
             t.error(err);
             t.end();
           } else {
-            t.equals(res.rows[0].email, userInfo.email, 'must be the same');
+            const userData = JSON.parse(res.text).data;
+            t.equal(userData.email, userInfo.email, 'must be the same');
             t.end();
           }
         });

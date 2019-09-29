@@ -1,6 +1,6 @@
 const yup = require('yup');
 
-exports.loginValidation = yup.object().shape({
+module.exports = yup.object().shape({
   email: yup
     .string()
     .email()
