@@ -1,6 +1,6 @@
 const yup = require('yup');
 
-module.exports = yup.object().shape({
+const loginSchema = yup.object().shape({
   email: yup
     .string()
     .email()
@@ -10,3 +10,5 @@ module.exports = yup.object().shape({
     .min(8)
     .required(),
 });
+
+module.exports = { loginSchema };

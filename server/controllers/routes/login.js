@@ -10,15 +10,14 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
 
   loginSchema
-    .isValid(req.body)
+    .validate(req.body)
     .then((valid) => {
       if (!valid) {
         const validationErr = new Error('Please, Check the data you entered');
         validationErr.statusCode = 400;
         throw validationErr;
-      } else {
-        return loginData(email);
       }
+      return loginData(email);
     })
     .then((result) => {
       if (result.rows.length === 0) {
@@ -28,7 +27,7 @@ const login = (req, res, next) => {
       }
       const hashedPassword = result.rows[0].password;
       const id = result.rows[0].parent_id;
-      bcrypt.compare(password, hashedPassword).then((value) => {
+      return bcrypt.compare(password, hashedPassword).then((value) => {
         if (value) {
           const accessToken = jwt.sign(
             { parentid: id, name: 'parent-assistent' },
@@ -37,13 +36,12 @@ const login = (req, res, next) => {
           res.cookie('access', accessToken);
           res.redirect(`/api/v1/profile/parent/:${id}`);
         } else {
-          const validationErr = new Error('wrong error');
+          const validationErr = new Error('wrong password');
           validationErr.statusCode = 400;
           throw validationErr;
         }
       });
     })
-
     .catch((err) => {
       const { statusCode } = err;
       switch (statusCode) {
