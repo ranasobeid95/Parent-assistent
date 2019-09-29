@@ -3,7 +3,7 @@ const { findUser, insert, select } = require('../../database/quieres/singup');
 
 const { signupValidate } = require('../utils/singupParentSchema ');
 
-exports.signupParent = (req, res, next) => {
+const signupParent = (req, res, next) => {
   const {
     email, username, parentId, password,
   } = req.body;
@@ -40,3 +40,5 @@ exports.signupParent = (req, res, next) => {
       }
     });
 };
+
+module.exports = signupParent;
