@@ -1,5 +1,5 @@
-// require('./quieres');
-// require('./routes');
+// require('./quieres/index.test');
+require('./routes/index.test');
 const test = require('tape');
 
 exports.initalTest = test('index inital test', (t) => {
