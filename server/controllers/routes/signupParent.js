@@ -1,5 +1,5 @@
 const { hash } = require('bcrypt');
-const { findUser, insert, select } = require('../../database/quieres/singup');
+const { findUser, insert, select } = require('../../database/quieres').signUp;
 
 const { signupValidate } = require('../utils/singupParentSchema ');
 

@@ -70,7 +70,7 @@ tape('testing the signupParent validation error', (t) => {
     .catch(t.error);
 });
 
-tape('existing user name', (t) => {
+tape('test for existing user name', (t) => {
   dbBuild()
     .then(dbFakeData)
     .then(() => {
