@@ -2,10 +2,18 @@ const { getClassActivities } = require('../../database/quieres/getClassActivitie
 
 module.exports = (req, res, next) => {
   const { subjectId, classId } = req.params;
-  getClassActivities(subjectId, classId)
-    .then((result) => result.rows)
-    .then((allActivities) => {
-      res.status(200).send({ statusCode: 200, allActivities });
-    })
-    .catch(next);
+  if (Number(subjectId) && Number(classId)) {
+    getClassActivities(subjectId, classId)
+      .then((result) => result.rows)
+      .then((allActivities) => {
+        if (allActivities.length > 0) {
+          res.status(200).json({ allActivities });
+        } else {
+          res.status(404).json({ message: 'No Activities available' });
+        }
+      })
+      .catch(next);
+  } else {
+    next();
+  }
 };
