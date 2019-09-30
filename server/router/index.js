@@ -1,6 +1,6 @@
 const express = require('express');
 const { logout } = require('../controllers');
-const { parentPRofile } = require('../controllers');
+const { parentPRofile } = require('../controllers/index');
 
 const router = express.Router();
 
