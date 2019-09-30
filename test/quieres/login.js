@@ -1,6 +1,6 @@
 const tape = require('tape');
 const { dbFakeData, dbBuild } = require('../../server/database/config/build');
-const loginData = require('../../server/database/quieres/login');
+const { loginData } = require('../../server/database/quieres/login');
 
 tape('testing for login qyuery', (t) => {
   const email = 'Ola200@gmail.com';

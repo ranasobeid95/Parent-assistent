@@ -6,13 +6,13 @@ const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 test('Test /login route', (t) => {
   const userInfo = {
     email: 'Ola200@gmail.com',
-    password: 'alaa123456789',
+    password: '123456',
   };
   dbBuild()
-    .then(dbFakeData)
+    .then(() => dbFakeData())
     .then(() => {
       supertest(app)
-        .post('/api/v1/login')
+        .post('/login')
         .send(userInfo)
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
@@ -21,7 +21,7 @@ test('Test /login route', (t) => {
             t.error(err);
             t.end();
           } else {
-            t.equal(res.isSuccess, true, 'you are login successfully');
+            t.deepEqual(res.isSuccess, true, 'you are login successfully');
             t.end();
           }
         });
