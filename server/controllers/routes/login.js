@@ -25,20 +25,25 @@ const login = (req, res, next) => {
         throw validationErr;
       }
       const { password: hashedPassword, parent_id: parentId, id } = rows[0];
-      return bcrypt.compare(password, hashedPassword).then((value) => {
-        if (value) {
-          const accessToken = jwt.sign(
-            { parentid: parentId, id, name: 'parent-assistent' },
-            secret,
-          );
-          res.cookie('access', accessToken, { httpOnly: true });
-          res.json({ message: 'login successfully' });
-        } else {
-          const validationErr = new Error('wrong password');
-          validationErr.statusCode = 400;
-          throw validationErr;
-        }
-      });
+      return {
+        value: bcrypt.compare(password, hashedPassword),
+        parentId,
+        id,
+      };
+    })
+    .then(({ value, parentId, id }) => {
+      if (value) {
+        const accessToken = jwt.sign(
+          { parentid: parentId, id, name: 'parent-assistent' },
+          secret,
+        );
+        res.cookie('access', accessToken, { httpOnly: true });
+        res.json({ message: 'login successfully' });
+      } else {
+        const validationErr = new Error('wrong password');
+        validationErr.statusCode = 400;
+        throw validationErr;
+      }
     })
     .catch((err) => {
       const { statusCode } = err;
