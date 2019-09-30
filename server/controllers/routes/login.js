@@ -26,11 +26,12 @@ const login = (req, res, next) => {
         throw validationErr;
       }
       const hashedPassword = rows[0].password;
-      const id = rows[0].parent_id;
+      const parentId = rows[0].parent_id;
+      const { id } = rows[0];
       return bcrypt.compare(password, hashedPassword).then((value) => {
         if (value) {
           const accessToken = jwt.sign(
-            { parentid: id, name: 'parent-assistent' },
+            { parentid: parentId, id, name: 'parent-assistent' },
             secret,
           );
           res.cookie('access', accessToken, { httpOnly: true });

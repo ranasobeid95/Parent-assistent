@@ -1,7 +1,7 @@
 INSERT INTO "user"
     ( email,user_name, password)
 VALUES
-    ('Ola200@gmail.com', 'asmaa', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
+    ('Ola200@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
     ('Samah1990@gmail.com', 'asmaa', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
     ('Ahmed54@gmail.com', 'asmaa', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
     ('Kamal2120@gmail.com', 'asmaa', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26');
