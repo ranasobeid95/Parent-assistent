@@ -8,7 +8,7 @@ const app = require('../../server/app');
 tape('Testing for subject Homework Route', (t) => {
   dbBuild()
     .then(() => dbFakeData())
-    .then(() => { 
+    .then(() => {
       supertest(app)
         .get('/api/v1/subject/1/homeworks/1')
         .expect(200)
