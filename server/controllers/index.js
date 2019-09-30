@@ -1,2 +1,4 @@
 exports.logout = require('./routes/logout');
-// const
+const { parentPRofile } = require('./routes/parentProfile');
+
+module.exports = { parentPRofile };
