@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 require('env2')('./config.env');
-const router = require('./router');
+const router = require('./router').default;
 
 const PORT = process.env.PORT || 3000;
 const app = express();
