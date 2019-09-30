@@ -44,7 +44,9 @@ const login = (req, res, next) => {
       const { statusCode } = err;
       switch (statusCode) {
         case 400:
-          res.status(400).send({ error: err.message, statusCode: 400 });
+          res
+            .status(400)
+            .json({ error: 'wrong user name or password', statusCode: 400 });
           break;
         default:
           next(err);
@@ -52,6 +54,4 @@ const login = (req, res, next) => {
     });
 };
 
-module.exports = {
-  login,
-};
+module.exports = login;
