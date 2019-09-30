@@ -7,7 +7,7 @@ const auth = (req, res, next) => {
     if (err) {
       res.status(401).send({ statusCode: 401, error: 'Un Authorized' });
     } else {
-      req.user = { parentid: token.parentid, name: token.name };
+      req.user = { parentid: token.parentid, id: token.id, name: token.name };
       next();
     }
   });
