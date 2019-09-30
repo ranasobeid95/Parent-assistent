@@ -17,7 +17,6 @@ test('Test /login route', (t) => {
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
         .end((err, res) => {
-          console.log(res.body);
           if (err) {
             t.error(err);
             t.end();
