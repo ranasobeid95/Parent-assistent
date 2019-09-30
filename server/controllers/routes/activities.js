@@ -1,4 +1,4 @@
-const getClassActivities = require('../../database/quieres/getClassActivities');
+const { getClassActivities } = require('../../database/quieres/getClassActivities');
 
 module.exports = (req, res, next) => {
   const { subjectId, classId } = req.params;
