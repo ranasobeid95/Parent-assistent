@@ -1,6 +1,6 @@
 const tape = require('tape');
 const supertest = require('supertest');
-const { dbBuild } = require('../../server/database/config/build');
+const { dbBuild, dbFakeData } = require('../../server/database/config/build');
 
 const app = require('../../server/app');
 
@@ -62,6 +62,39 @@ tape('testing the signupParent validation error', (t) => {
                 error: 'validation error',
               },
               'should return correct error type',
+            );
+            t.end();
+          }
+        });
+    })
+    .catch(t.error);
+});
+
+tape('existing user name', (t) => {
+  dbBuild()
+    .then(dbFakeData)
+    .then(() => {
+      supertest(app)
+        .post('/api/v1/signup/parent')
+        .send({
+          email: 'Ola200@gmail.com',
+          username: 'asmaa',
+          parentId: '12345679',
+          password: '123456789',
+        })
+        .expect('Content-Type', /json/)
+        .expect(406)
+        .end((err, res) => {
+          if (err) {
+            t.error(err);
+            t.end();
+          } else {
+            t.deepEqual(
+              { ...res.body },
+              {
+                error: 'username exists',
+              },
+              'username exists',
             );
             t.end();
           }
