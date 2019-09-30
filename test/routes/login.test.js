@@ -21,7 +21,11 @@ test('Test /login route', (t) => {
             t.error(err);
             t.end();
           } else {
-            t.deepEqual(res.body.isSuccess, true, 'you are login successfully');
+            t.deepEqual(
+              res.body.message,
+              'login successfully',
+              'you are login successfully',
+            );
             t.end();
           }
         });

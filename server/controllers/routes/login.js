@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { loginSchema } = require('../utils/loginSchema');
-require('env2')('./config.env');
 const { loginData } = require('../../database/quieres/login');
 
 const secret = process.env.SECRET_KEY;
@@ -25,9 +24,7 @@ const login = (req, res, next) => {
         validationErr.statusCode = 400;
         throw validationErr;
       }
-      const hashedPassword = rows[0].password;
-      const parentId = rows[0].parent_id;
-      const { id } = rows[0];
+      const { password: hashedPassword, parent_id: parentId, id } = rows[0];
       return bcrypt.compare(password, hashedPassword).then((value) => {
         if (value) {
           const accessToken = jwt.sign(
@@ -35,7 +32,7 @@ const login = (req, res, next) => {
             secret,
           );
           res.cookie('access', accessToken, { httpOnly: true });
-          res.json({ isSuccess: true });
+          res.json({ message: 'login successfully' });
         } else {
           const validationErr = new Error('wrong password');
           validationErr.statusCode = 400;
