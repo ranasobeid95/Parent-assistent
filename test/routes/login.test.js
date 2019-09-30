@@ -6,7 +6,7 @@ const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 test('Test /login route', (t) => {
   const userInfo = {
     email: 'Ola200@gmail.com',
-    password: '12345678',
+    password: '123456789',
   };
   dbBuild()
     .then(() => dbFakeData())
@@ -17,6 +17,7 @@ test('Test /login route', (t) => {
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
         .end((err, res) => {
+          // console.log(res.body);
           if (err) {
             t.error(err);
             t.end();
