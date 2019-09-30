@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   password: yup
     .string()
     .matches(/[a-zA-Z0-9]/)
-    .min(9)
+    .min(6)
     .required(),
 });
 

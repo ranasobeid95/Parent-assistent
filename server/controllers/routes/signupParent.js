@@ -25,7 +25,6 @@ const signupParent = (req, res, next) => {
     .then((response) => {
       res.status(200).send({ ...response });
     })
-
     .catch((err) => {
       switch (err.message) {
         case 'username exists':

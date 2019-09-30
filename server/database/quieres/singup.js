@@ -38,7 +38,7 @@ exports.insert = (username, hashed, email, parentId) => {
 
 exports.select = () => {
   const sql = {
-    text: ` SELECT email, password , user_name , parent.parent_id 
+    text: ` SELECT email, user_name , parent.parent_id 
   FROM "user"  
   INNER join parent on "user".id = parent.user_id    
   `,
