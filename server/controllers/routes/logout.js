@@ -1,4 +1,4 @@
 module.exports = (req, res) => {
-  res.clearCookie('token');
+  res.clearCookie('access');
   res.send({ statusCode: 200, message: 'logged out successfully' });
 };
