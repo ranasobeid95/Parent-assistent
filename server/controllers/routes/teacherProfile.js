@@ -16,7 +16,7 @@ const teacherProfile = (req, res, next) => {
             res.redirect('/');
           }
         });
-      }
+      } else res.redirect('/');
     })
     .catch((err) => next(err));
 };

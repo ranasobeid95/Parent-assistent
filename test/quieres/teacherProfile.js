@@ -10,6 +10,8 @@ tape('testing for teacherProfile qyuery', (t) => {
     .then(() => getTeacherProfile())
     .then((res) => {
       t.deepEqual(res.rows[0].first_name, 'Ahmed', 'should be the same');
+      t.deepEqual(res.rows[0].last_name, 'Ghareb', 'should be the same');
+
       t.end();
     })
     .catch((err) => {
