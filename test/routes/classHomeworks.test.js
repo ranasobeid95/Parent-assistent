@@ -10,7 +10,7 @@ tape('Testing for subject Homework Route', (t) => {
     .then(dbFakeData)
     .then(() => {
       supertest(app)
-        .get('/api/v1/subject/1/homeworks/1')
+        .get('/api/v1/subjects/1/homeworks/1')
         .expect(200)
         .expect('content-type', /json/)
         .set('Cookie', [`access=${access}`])

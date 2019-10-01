@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/login', login);
 router.use(auth);
-router.get('/subject/:subjectId/homeworks/:classId', homeworks);
+router.get('/subjects/:subjectId/homeworks/:classId', homeworks);
 router.get('/subjects/:subjectId/activities/:classId', classActivities);
 router.get('/logout', logout);
 
