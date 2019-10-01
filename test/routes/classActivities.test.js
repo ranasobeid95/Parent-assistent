@@ -20,7 +20,7 @@ tape('Testing for classActivites Route', (t) => {
             t.end();
           } else {
             const actual = Object.keys(res.body.allActivities[0]);
-            const expected = ['activity_date', 'description', 'title'];
+            const expected = ['id', 'activity_date', 'class', 'description', 'title', 'subject_id'];
             t.deepEqual(actual, expected, 'Testing pass: All keys must equal expected');
             t.end();
           }
