@@ -4,8 +4,8 @@ const { auth } = require('../controllers/middlewares');
 const { teacherProfile } = require('../controllers/index');
 
 const router = express.Router();
-router.get('/profile/teacher', teacherProfile);
 router.use(auth);
+router.get('/profile/teacher', teacherProfile);
 router.get('/logout', logout);
 
 module.exports = router;

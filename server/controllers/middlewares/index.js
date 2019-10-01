@@ -1,4 +1,4 @@
 const { auth } = require('./auth');
+const { teacherProfile } = require('../routes/teacherProfile');
 
-
-module.exports = { auth };
+module.exports = { auth, teacherProfile };
