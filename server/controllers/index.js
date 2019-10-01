@@ -1,2 +1,9 @@
-exports.logout = require('./routes/logout');
-exports.homeworks = require('./routes/homeworks');
+const { logout } = require('./routes/logout');
+const { login } = require('./routes/login');
+const { homeworks } = require('./routes/homeworks');
+
+module.exports = {
+  logout,
+  login,
+  homeworks,
+};

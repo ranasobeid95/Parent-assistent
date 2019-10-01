@@ -1,6 +1,6 @@
 const getClassHomeworks = require('../../database/quieres/getClassHomeworks');
 
-module.exports = (req, res, next) => {
+const homeworks = (req, res, next) => {
   const { subjectId, classId, homeworkDate } = req.params;
   getClassHomeworks(subjectId, classId, homeworkDate)
     .then((result) => result.rows)
@@ -9,3 +9,5 @@ module.exports = (req, res, next) => {
     })
     .catch(next);
 };
+
+module.exports = { homeworks };

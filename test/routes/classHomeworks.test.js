@@ -7,7 +7,7 @@ const app = require('../../server/app');
 
 tape('Testing for subject Homework Route', (t) => {
   dbBuild()
-    .then(() => dbFakeData())
+    .then(dbFakeData)
     .then(() => {
       supertest(app)
         .get('/api/v1/subject/1/homeworks/1')
@@ -19,7 +19,8 @@ tape('Testing for subject Homework Route', (t) => {
             t.error(err);
             t.end();
           } else {
-            const actual = Object.keys(res.body);
+            console.log(res.body[0]);
+            const actual = res.body[0];
             const expected = ['homework_description', 'urls'];
             t.deepEqual(actual, expected, 'Test pass: All values must be the same');
             t.end();
