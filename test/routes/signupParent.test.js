@@ -6,6 +6,7 @@ const app = require('../../server/app');
 
 tape('testing the signupParent insert quary', (t) => {
   dbBuild()
+    .then(dbFakeData)
     .then(() => {
       supertest(app)
         .post('/api/v1/signup/parent')

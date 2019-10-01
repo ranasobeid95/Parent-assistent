@@ -9,15 +9,10 @@ const { dbBuild, dbFakeData } = require('../../server/database/config/build');
 
 tape('test the findUser & insert query', (t) => {
   const expected = {
-    id: 1,
-    email: 'Ola200@gmail.com',
     user_name: 'Mohammed',
-    password: '123456789',
   };
-  dbBuild()
-    .then(() => {
-      insert('Mohammed', '123456789', 'Ola200@gmail.com', '123456789');
-    })
+  dbBuild().then(dbFakeData)
+    .then(() => insert('Mohammed', '123456789', 'Mhmmase@gmail.com', '123456789'))
     .then(() => findUser('Mohammed'))
     .then((res) => res.rows[0])
     .then((res) => {
@@ -30,34 +25,21 @@ tape('test the findUser & insert query', (t) => {
 // the select gose here
 
 tape('test the seletct query ', (t) => {
-  const expected = [
-    {
-      email: 'Ola200@gmail.com',
-      user_name: 'asmaa',
-      parent_id: 123456789,
-    },
-    {
-      email: 'Samah1990@gmail.com',
-      user_name: 'asmaa',
-      parent_id: 123456789,
-    },
-    {
-      email: 'Ahmed54@gmail.com',
-      user_name: 'asmaa',
-      parent_id: 123456789,
-    },
-    {
-      email: 'Kamal2120@gmail.com',
-      user_name: 'asmaa',
-      parent_id: 123456789,
-    },
-  ];
+  const expected = {
+    email: 'Ola200@gmail.com',
+    user_name: 'asmaa',
+    parent_id: 123456789,
+  };
 
   dbBuild()
     .then(dbFakeData)
-    .then(() => select())
+    .then(() => select(expected.email))
     .then((res) => {
-      t.deepEqual(res.rows, expected, 'select test');
+      t.deepEqual(
+        res.rows[0],
+        expected,
+        'select test to retrive data based on data from insert query ',
+      );
       t.end();
     });
 });

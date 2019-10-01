@@ -21,7 +21,7 @@ const signupParent = (req, res, next) => {
       insert(username, hashed, email, parentId);
     })
     .then(() => select(email))
-    .then((data) => data.rows)
+    .then((data) => data.rows[0])
     .then((response) => {
       res.status(200).send({ ...response });
     })

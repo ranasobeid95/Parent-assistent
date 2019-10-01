@@ -2,7 +2,7 @@ const connection = require('../config/connection');
 
 exports.findUser = (username) => {
   const sql = {
-    text: 'SELECT * FROM "user" WHERE user_name = $1;',
+    text: 'SELECT  user_name FROM "user" WHERE user_name = $1;',
     values: [username],
   };
   return connection.query(sql);
@@ -36,12 +36,12 @@ exports.insert = (username, hashed, email, parentId) => {
   return connection.query(sql);
 };
 
-exports.select = () => {
+exports.select = (email) => {
   const sql = {
-    text: ` SELECT email, user_name , parent.parent_id 
-  FROM "user"  
-  INNER join parent on "user".id = parent.user_id    
-  `,
+    text: `SELECT email, user_name , parent.parent_id  
+    FROM "user"  
+    INNER join parent on "user".id = parent.user_id where "user".email = $1`,
+    values: [email],
   };
   return connection.query(sql);
 };
