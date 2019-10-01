@@ -1,13 +1,12 @@
 const express = require('express');
-const { logout } = require('../controllers');
-const { parentPRofile } = require('../controllers/index');
+const { logout, login, parentPRofile } = require('../controllers');
+const { auth } = require('../controllers/middlewares');
 
 const router = express.Router();
 
-const { auth } = require('../controllers/middlewares');
-
-router.get('/profile/parent', parentPRofile);
+router.post('/login', login);
 router.use(auth);
+router.get('/profile/parent', parentPRofile);
 router.get('/logout', logout);
 
 module.exports = router;
