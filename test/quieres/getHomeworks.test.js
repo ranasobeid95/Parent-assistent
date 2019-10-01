@@ -3,7 +3,7 @@ const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 const { getClassHomeworks } = require('../../server/database/quieres/getClassHomeworks');
 
 tape('test for getHomeworks query', (t) => {
-  const newDate = '2018-11-11';
+  const newDate = '10/1/2019';
   dbBuild()
     .then(dbFakeData)
     .then(() => getClassHomeworks(1, 1, newDate))
