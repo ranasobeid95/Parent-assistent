@@ -1,12 +1,12 @@
 {
   "name": "parent-assistent",
   "version": "1.0.0",
-  "description": "## Our Team are : * Asma Thabet * Alaa Taima * Mohammed Qarmout * Asem Abu Msameh",
+  "description": "## Our Team are : * Asmaa Thabet * Alaa Taima * Mohammed Qarmout * Asem Abu Msameh",
   "main": "index.js",
   "scripts": {
     "lint:react": "cd client && npm run lint",
     "lint": "eslint server/ && eslint test/",
-    "start": "node server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
     "dev": "NODE_ENV=development nodemon server/index.js",
     "test": "NODE_ENV=testing node test/index.test.js | tap-spec"
   },
