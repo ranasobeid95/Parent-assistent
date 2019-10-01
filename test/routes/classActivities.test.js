@@ -5,12 +5,12 @@ const { dbBuild, dbFakeData } = require('../../server/database/config/build');
 
 const app = require('../../server/app');
 
-tape('Testing for classActivites Route', (t) => {
+tape('Testing for classActivites Route: subject/:subjectId/activities/:classId', (t) => {
   dbBuild()
-    .then(() => dbFakeData())
+    .then(dbFakeData)
     .then(() => {
       supertest(app)
-        .get('/api/v1/subject/1/activities/1')
+        .get('/api/v1/subjects/1/activities/1')
         .expect(200)
         .expect('content-type', /json/)
         .set('Cookie', [`access=${access}`])

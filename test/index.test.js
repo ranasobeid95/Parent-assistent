@@ -1,7 +1,7 @@
-const tape = require('tape');
+const { onFinish } = require('tape');
 require('./quieres/index.test');
 require('./routes/index.test');
 
-tape.onFinish(() => {
+onFinish(() => {
   process.exit(0);
 });
