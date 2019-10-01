@@ -17,14 +17,10 @@ const signupParent = (req, res, next) => {
       if (user.rows.length !== 0) throw Error('username exists');
     })
     .then(() => hash(password, 10))
-    .then((hashed) => {
-      insert(username, hashed, email, parentId);
-    })
+    .then((hashed) => insert(username, hashed, email, parentId))
     .then(() => select(email))
     .then((data) => data.rows[0])
-    .then((response) => {
-      res.status(200).send({ ...response });
-    })
+    .then((response) => res.status(200).send({ ...response }))
     .catch((err) => {
       switch (err.message) {
         case 'username exists':
