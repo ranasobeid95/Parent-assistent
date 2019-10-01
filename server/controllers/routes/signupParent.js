@@ -20,8 +20,8 @@ const signupParent = (req, res, next) => {
     .then((hashed) => {
       insert(username, hashed, email, parentId);
     })
-    .then(() => select())
-    .then((data) => data.rows[0])
+    .then(() => select(email))
+    .then((data) => data.rows)
     .then((response) => {
       res.status(200).send({ ...response });
     })
