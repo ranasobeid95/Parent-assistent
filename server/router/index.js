@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/login', login);
 router.use(auth);
-router.get('/profile/teacher', teacherProfile);
+router.get('/profile/teacher/:id', teacherProfile);
 router.get('/logout', logout);
 
 module.exports = router;

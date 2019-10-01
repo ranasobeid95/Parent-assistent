@@ -7,7 +7,7 @@ const {
 tape('testing for teacherProfile qyuery', (t) => {
   dbBuild()
     .then(() => dbFakeData())
-    .then(() => getTeacherProfile())
+    .then(() => getTeacherProfile(1))
     .then((res) => {
       t.deepEqual(res.rows[0].first_name, 'Ahmed', 'should be the same');
       t.deepEqual(res.rows[0].last_name, 'Ghareb', 'should be the same');

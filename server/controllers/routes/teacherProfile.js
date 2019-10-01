@@ -1,11 +1,11 @@
 const { getTeacherProfile } = require('../../database/quieres/teacherProfile');
 
-
 const teacherProfile = (req, res, next) => {
-  getTeacherProfile()
+  const { id } = req.params;
+  getTeacherProfile(id)
     .then(({ rows }) => {
       res.json(rows);
     })
-    .catch((err) => next(err));
+    .catch(next);
 };
 module.exports = { teacherProfile };
