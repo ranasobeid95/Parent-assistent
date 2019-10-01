@@ -1,10 +1,11 @@
 const { getParentProfile } = require('../../database/quieres/parentProfile');
 
 const parentPRofile = (req, res, next) => {
-  getParentProfile()
+  const { id } = req.params;
+  getParentProfile(id)
     .then(({ rows }) => {
       res.json(rows);
     })
-    .catch((err) => next(err));
+    .catch(next);
 };
 module.exports = { parentPRofile };

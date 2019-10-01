@@ -7,7 +7,7 @@ const {
 tape('testing for getParentProfile qyuery', (t) => {
   dbBuild()
     .then(() => dbFakeData())
-    .then(() => getParentProfile())
+    .then(() => getParentProfile(1))
     .then((res) => {
       t.deepEqual(res.rows[0].student_name, 'Sami', 'should be the same');
       t.deepEqual(res.rows[0].class, 5, 'should be 5');

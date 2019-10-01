@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/login', login);
 router.use(auth);
-router.get('/profile/parent', parentPRofile);
+router.get('/profile/parent/:id', parentPRofile);
 router.get('/logout', logout);
 
 module.exports = router;
