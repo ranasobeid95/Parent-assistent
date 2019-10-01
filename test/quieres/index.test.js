@@ -1,9 +1,4 @@
-const test = require('tape');
 const getTeacherProfile = require('./teacherProfile');
+const getLoginData = require('./login');
 
-exports.initalTest = test('initals test', (t) => {
-  t.equal(2, 2, 'should be equal');
-  t.end();
-});
-
-module.exports = { getTeacherProfile };
+module.exports = { getLoginData, getTeacherProfile };
