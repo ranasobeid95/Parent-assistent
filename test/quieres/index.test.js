@@ -1,5 +1,5 @@
-const getParentProfile = require('./parentProfile');
-
-const getLoginData = require('./login');
-
-module.exports = { getLoginData, getParentProfile };
+require('./parentProfile');
+require('./login');
+require('./getHomeworks.test');
+require('./singup.test');
+require('./getClassActivities.test');
