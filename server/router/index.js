@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.use(auth);
-router.get('/subject/:subjectId/activities/:classId', classActivities);
+router.get('/subjects/:subjectId/activities/:classId', classActivities);
 router.get('/logout', logout);
 
 module.exports = router;

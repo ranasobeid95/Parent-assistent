@@ -13,5 +13,4 @@ const dbFakeData = () => {
   return connection.query(fakedataSql);
 };
 
-
 module.exports = { dbBuild, dbFakeData };

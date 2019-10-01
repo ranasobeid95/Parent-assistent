@@ -5,7 +5,7 @@ const { access } = require('./cookie.test');
 
 const app = require('../../server/app');
 
-tape('testing the logout Route', (t) => {
+tape('testing the logout Route: /logout', (t) => {
   dbBuild()
     .then(dbFakeData())
     .then(() => {
