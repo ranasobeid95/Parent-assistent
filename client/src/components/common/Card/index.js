@@ -1,12 +1,15 @@
 import React from 'react';
-// import data from './data';
+import axios from 'axios';
 import './index.css';
 
 export default class Card extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    // we will make a request to fetch data by using (Axios)
+    axios.get('/api/v1//subject/1/activities/1').then(result => {
+      const newData = result.data.allActivities;
+      this.setState({ data: newData });
+    });
   }
 
   render() {
