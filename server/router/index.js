@@ -1,11 +1,7 @@
 
 const express = require('express');
-<<<<<<< HEAD
-const { logout, homeworks } = require('../controllers');
-=======
-const { logout, login } = require('../controllers');
+const { logout, login, homeworks } = require('../controllers');
 
->>>>>>> 8c86d774f939ef2cdb0877c20014dc5d7bc1ad8b
 const { auth } = require('../controllers/middlewares');
 
 const router = express.Router();

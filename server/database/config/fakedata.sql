@@ -1,17 +1,10 @@
 INSERT INTO "user"
     ( email,user_name, password)
 VALUES
-<<<<<<< HEAD
-    ('Ola200@gmail.com', 'Ola', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
-    ('Samah1990@gmail.com', 'Samah', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
-    ('Ahmed54@gmail.com', 'Ahmed', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26'),
-    ('Kamal2120@gmail.com', 'Kamal', '$2y$12$B1wkCbgwLtQfTFXK/uqmD.kiYkAjuu7xzvuBo2qTW9fTInwdMis26');
-=======
-    ('Ola200@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Samah1990@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Ahmed54@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Kamal2120@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
->>>>>>> 8c86d774f939ef2cdb0877c20014dc5d7bc1ad8b
+    ('Ola200@gmail.com', 'Ola', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Samah1990@gmail.com', 'Samah', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Ahmed54@gmail.com', 'Ahmed', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Kamal2120@gmail.com', 'Kamal', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
 
 INSERT INTO parent 
     (parent_id,user_id)  

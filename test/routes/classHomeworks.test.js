@@ -19,9 +19,15 @@ tape('Testing for subject Homework Route', (t) => {
             t.error(err);
             t.end();
           } else {
-            console.log(res.body[0]);
-            const actual = res.body[0];
-            const expected = ['homework_description', 'urls'];
+            const actual = res.body.Homewoks;
+            const expected = [{
+              homework_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              urls:
+             {
+               resource1: 'https://www.github.com',
+               resource2: 'https://www.github.com',
+             },
+            }];
             t.deepEqual(actual, expected, 'Test pass: All values must be the same');
             t.end();
           }
