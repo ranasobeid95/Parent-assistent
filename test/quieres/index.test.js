@@ -1,4 +1,5 @@
 const getHomeworks = require('./getHomeworks.test');
+const getClassActivities = require('./getClassActivities.test');
 const getLoginData = require('./login');
 
-module.exports = { getHomeworks, getLoginData };
+module.exports = { getClassActivities, getHomeworks, getLoginData };
