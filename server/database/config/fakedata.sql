@@ -1,10 +1,10 @@
 INSERT INTO "user"
     ( email,user_name, password)
 VALUES
-    ('Ola200@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Samah1990@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Ahmed54@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Kamal2120@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
+    ('Ola200@gmail.com', 'Ola', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Samah1990@gmail.com', 'Samah', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Ahmed54@gmail.com', 'Ahmed', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Kamal2120@gmail.com', 'Kamal', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
 
 INSERT INTO parent 
     (parent_id,user_id)  
@@ -62,9 +62,9 @@ VALUES
     ('2019-10-1',1,'The student knew a lot of information about the sun','Sun activity',4);
 
 INSERT INTO homework 
-    (homework_date,class, urls, subject_id)  
+    (homework_date,homework_description, class, urls, subject_id)  
 VALUES 
-    ('2018-11-11',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',1),
-    ('2019-7-15',2,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',2),
-    ('2019-9-2',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
-    ('2019-10-1',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4);
+    ('10/1/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',1),
+    ('10/1/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',2,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',2),
+    ('10/1/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
+    ('10/1/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4);
