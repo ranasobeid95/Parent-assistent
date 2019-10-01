@@ -11,4 +11,4 @@ const homeworks = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = { homeworks };
+module.exports = homeworks;

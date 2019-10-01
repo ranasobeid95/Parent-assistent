@@ -78,8 +78,8 @@ tape('test for existing user name', (t) => {
       supertest(app)
         .post('/api/v1/signup/parent')
         .send({
-          email: 'Ola200@gmail.com',
-          username: 'asmaa',
+          email: 'Samah1990@gmail.com',
+          username: 'Samah',
           parentId: '12345679',
           password: '123456789',
         })
