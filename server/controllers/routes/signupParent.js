@@ -36,4 +36,4 @@ const signupParent = (req, res, next) => {
     });
 };
 
-module.exports = signupParent;
+module.exports = { signupParent };
