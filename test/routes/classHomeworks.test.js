@@ -19,7 +19,7 @@ tape('Testing for subject Homework Route', (t) => {
             t.error(err);
             t.end();
           } else {
-            const actual = res.body.Homewoks;
+            const actual = res.body.data;
             const expected = [{
               homework_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               urls:

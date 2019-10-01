@@ -6,7 +6,7 @@ const homeworks = (req, res, next) => {
   getClassHomeworks(subjectId, classId, homeworkDate)
     .then((result) => result.rows)
     .then((Homewoks) => {
-      res.json({ Homewoks });
+      res.json({ data: Homewoks });
     })
     .catch(next);
 };
