@@ -1,4 +1,6 @@
-const getTeacherProfile = require('./teacherProfile');
-const getLoginData = require('./login');
-
-module.exports = { getLoginData, getTeacherProfile };
+require('./teacherProfile');
+require('./login');
+require('./getHomeworks.test');
+require('./singup.test');
+require('./getClassActivities.test');
+require('./login');

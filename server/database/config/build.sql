@@ -68,6 +68,7 @@ CREATE TABLE activity(
 CREATE TABLE homework (
     id SERIAL PRIMARY KEY,
     homework_date date, 
+    homework_description text, 
     class INTEGER, 
     urls json,
     subject_id INTEGER,
