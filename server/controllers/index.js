@@ -1,11 +1,5 @@
-const { logout } = require('./routes/logout');
-const { login } = require('./routes/login');
-const { homeworks } = require('./routes/homeworks');
-const classActivities = require('./routes/activities');
-
-module.exports = {
-  logout,
-  login,
-  homeworks,
-  classActivities,
-};
+exports.logout = require('./routes/logout');
+exports.signupParent = require('./routes/signupParent');
+exports.login = require('./routes/login');
+exports.classActivities = require('./routes/activities');
+exports.homeworks = require('./routes/homeworks');
