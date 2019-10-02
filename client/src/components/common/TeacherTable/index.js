@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import './index.css';
 
 export default class TeacherTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    const {
-      match: {
-        params: { id },
-      },
-    } = this.props;
-    axios.get(`/api/v1/profile/parent/${id}`).then(res => {
-      this.setState({ data: res.data });
-    });
+    // const {
+    //   match: {
+    //     params: { id },
+    //   },
+    // } = this.props;
+    // axios.get(`/api/v1/profile/parent/${id}`).then(res => {
+    //   this.setState({ data: res.data });
+    // });
   }
 
   render() {
