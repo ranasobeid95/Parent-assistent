@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import Button from '../../common/Button';
-// import data from './data';
 
 import './index.css';
 
@@ -11,13 +12,19 @@ class Homework extends Component {
 
   componentDidMount() {
     // we will make a request to fetch data by using (Axios)
+    axios.get('/api/v1/subjects/1/homeworks/1').then(result => {
+      console.log(result.data.data[0]);
+      const AllHomeworks = result.data.data[0];
+      this.setState({ data: AllHomeworks });
+    });
   }
 
   render() {
     const { data } = this.state;
+    console.log(data.urls);
     return (
       <>
-        {!data ? (
+        {data.length === 0 ? (
           <h1>loading...</h1>
         ) : (
           <div className="homework">
@@ -31,14 +38,14 @@ class Homework extends Component {
             </div>
             <div className="homework__box">
               <h3 className="homework__explaination">Homework Explaination</h3>
-              <p className="homework__text">{data[0].HomeworkDescription}</p>
+              <p className="homework__text">{data.homework_description}</p>
             </div>
 
             <div className="homework__materials">
               <h3 className="homework__helping">Helping materials</h3>
               <div>
                 <ul className="homework__links">
-                  {data[0].HmURLS.map(resource => (
+                  {Object.entries(data.urls).map(resource => (
                     <li key={resource.id}>
                       <a
                         href={resource.link}
