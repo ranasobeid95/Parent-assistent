@@ -1,15 +1,21 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import './index.css';
 
 export default class Card extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    axios.get('/api/v1//subject/1/activities/1').then(result => {
-      const newData = result.data.allActivities;
-      this.setState({ data: newData });
-    });
+    const {
+      params: { subjectId, classId },
+    } = this.props;
+    axios
+      .get(`/api/v1/subjects/${subjectId}/activities/${classId}`)
+      .then(result => {
+        const newData = result.data.allActivities;
+        this.setState({ data: newData });
+      });
   }
 
   render() {
@@ -34,3 +40,7 @@ export default class Card extends React.Component {
     );
   }
 }
+
+Card.propTypes = {
+  params: PropTypes.objectOf(PropTypes.any).isRequired,
+};
