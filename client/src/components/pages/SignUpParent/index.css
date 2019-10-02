@@ -18,7 +18,7 @@
     color: #645B5B;
     display: flex;
     justify-content: center;
-    margin-top:30%;
+    margin-top: 10%;
     flex-direction: column;
     align-items: center;
     background-color: rgb(196, 196, 196, .43);
@@ -34,6 +34,8 @@
 
 .input-label {
     width: auto;
+    font-size: 12px;
+    margin-bottom: 5px;
 }
 
 .signUp__input {
