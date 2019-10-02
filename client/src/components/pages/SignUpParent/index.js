@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 import signUpValidation from '../utils/signUpValidation';
@@ -30,16 +31,17 @@ export default class SignUp extends React.Component {
         { abortEarly: false }
       )
       .then(() => {
-        fetch('/api/v1/signup/parent', {
-          method: 'POST',
-          headers: {
-            'Content-Type': /json/,
-          },
-          body: JSON.stringify({ email, username, parentId, password }),
-        }).then(() => {
-          const { history } = this.props;
-          history.push('/login');
-        });
+        axios
+          .post('/api/v1/signup/parent', {
+            email,
+            username,
+            parentId,
+            password,
+          })
+          .then(() => {
+            const { history } = this.props;
+            history.push('/login');
+          });
       })
       .catch(error => {
         const objError = {};
