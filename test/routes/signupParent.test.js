@@ -47,7 +47,7 @@ tape('testing the signupParent validation error', (t) => {
         .send({
           email: 'mhmmade',
           username: 'Mohammed',
-          parentId: 'sss',
+          parentId: '123',
           password: '123456789',
         })
         .expect('Content-Type', /json/)

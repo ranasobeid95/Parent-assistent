@@ -6,6 +6,8 @@ const { signupParent } = require('./routes/signupParent');
 const { classActivities } = require('./routes/activities');
 const { homeworks } = require('./routes/homeworks');
 const { subjectPage } = require('./routes/subjectPage');
+const { clientError } = require('./error/clientError');
+const { serverError } = require('./error/serverError');
 
 module.exports = {
   logout,
@@ -16,4 +18,6 @@ module.exports = {
   classActivities,
   homeworks,
   subjectPage,
+  clientError,
+  serverError,
 };
