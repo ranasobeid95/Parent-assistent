@@ -57,6 +57,12 @@ INSERT INTO activity
     (activity_date,class, description,title,subject_id)
 VALUES 
     ('2018-11-11',1,'The student knew countries by playing countries game','Countries activity',1),
+    ('2018-11-12',1,'The student palying with eachother football','Fun Activity',1),
+    ('2018-11-15',1,'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been','Lorem Ipsum',1),
+    ('2018-11-17',1,'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been','typesetting industry',1),
+    ('2018-11-20',1,'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been','printing and typesetting',1),
+    ('2018-11-20',1,'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been','printing and typesetting',1),
+    ('2018-11-20',1,'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been','printing and typesetting',1),
     ('2019-7-15',2,'The student knew Letters by playing Letters game','Letters activity',2),
     ('2019-9-2',1,'The student knew Numbers by playing Numbers game','Numbers activity',3),
     ('2019-10-1',1,'The student knew a lot of information about the sun','Sun activity',4);
