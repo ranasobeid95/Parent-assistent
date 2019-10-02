@@ -43,13 +43,13 @@ function App() {
           />
           <Route
             exact
-            path="/student/:subject/:activites/:class"
-            render={() => <Activities />}
+            path="/students/:subjectId/activites/:classId"
+            render={props => <Activities {...props} />}
           />
           <Route
             exact
-            path="/student/:subject/:homework/:class"
-            render={() => <HomeWork />}
+            path="/student/:subject/homework/:class"
+            render={props => <HomeWork {...props} />}
           />
           <Route
             render={() => <Error typeError="404" errorDesc="Page Not Found" />}

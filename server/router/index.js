@@ -1,5 +1,6 @@
 const express = require('express');
 const {
+  subjectPage,
   logout,
   classActivities,
   homeworks,
@@ -16,6 +17,7 @@ const router = express.Router();
 router.post('/signup/parent', signupParent);
 router.post('/login', login);
 router.use(auth);
+router.get('/student/subject/:id', subjectPage);
 router.get('/profile/teacher/:id', teacherProfile);
 router.get('/profile/parent/:id', parentPRofile);
 router.get('/subjects/:subjectId/homeworks/:classId', homeworks);

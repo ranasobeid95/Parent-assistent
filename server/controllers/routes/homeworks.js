@@ -4,7 +4,7 @@ const {
 
 const homeworks = (req, res, next) => {
   const { subjectId, classId } = req.params;
-  const homeworkDate = new Date().toLocaleDateString();
+  const { homeworkDate } = req.body;
   getClassHomeworks(subjectId, classId, homeworkDate)
     .then((result) => result.rows)
     .then((Homewoks) => {
