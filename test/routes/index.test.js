@@ -1,2 +1,10 @@
-require('./logout.test');
 require('./login.test');
+require('./teacherProfile.test');
+require('./logout.test');
+require('./logout.test');
+require('./parentProfile.test');
+require('./signupParent.test');
+require('./classActivities.test');
+require('./login.test');
+require('./subjecrPage.test');
+// require('./classHomeworks.test');
