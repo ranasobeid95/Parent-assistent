@@ -21,6 +21,8 @@ CREATE TABLE teacher(
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     user_id INTEGER,
+    bio text,
+    image_url text,
     FOREIGN KEY (user_id) REFERENCES "user"(id)
 );
 

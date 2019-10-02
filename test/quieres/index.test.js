@@ -1,5 +1,6 @@
-const getHomeworks = require('./getHomeworks.test');
-const getClassActivities = require('./getClassActivities.test');
-const getLoginData = require('./login');
-
-module.exports = { getClassActivities, getHomeworks, getLoginData };
+require('./teacherProfile');
+require('./parentProfile');
+require('./login');
+require('./getHomeworks.test');
+require('./singup.test');
+require('./getClassActivities.test');

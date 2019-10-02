@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import axios from 'axios';
 
 import Button from '../../common/Button';
@@ -12,11 +14,12 @@ class Homework extends Component {
 
   componentDidMount() {
     // we will make a request to fetch data by using (Axios)
-    console.log(this.props.match.params.subjectID);
+    const {
+      props: { subjectId, classId },
+    } = this.props;
+
     axios
-      .get(
-        `/api/v1/subjects/${this.props.match.params.subjectId}/homeworks/${this.props.match.params.classId}`
-      )
+      .get(`/api/v1/subjects/${subjectId}/homeworks/${classId}`)
       .then(result => {
         const AllHomeworks = result.data.data[0];
         this.setState({ data: AllHomeworks });
@@ -67,5 +70,9 @@ class Homework extends Component {
     );
   }
 }
+
+Homework.propTypes = {
+  props: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default Homework;
