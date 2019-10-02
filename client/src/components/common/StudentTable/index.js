@@ -9,7 +9,9 @@ export default class studentTable extends React.Component {
 
   componentDidMount() {
     const {
-      props: { id },
+      match: {
+        params: { id },
+      },
     } = this.props;
     axios.get(`/api/v1/profile/parent/${id}`).then(res => {
       this.setState({ data: res.data });
@@ -62,5 +64,5 @@ export default class studentTable extends React.Component {
 }
 
 studentTable.propTypes = {
-  props: PropTypes.objectOf(PropTypes.any).isRequired,
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
