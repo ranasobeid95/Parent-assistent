@@ -33,7 +33,7 @@ export default class SignUp extends React.Component {
         fetch('/api/v1/signup/parent', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': /json/,
           },
           body: JSON.stringify({ email, username, parentId, password }),
         }).then(() => {
