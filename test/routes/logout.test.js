@@ -7,7 +7,7 @@ const app = require('../../server/app');
 
 tape('testing the logout Route: /logout', (t) => {
   dbBuild()
-    .then(dbFakeData())
+    .then(dbFakeData)
     .then(() => {
       supertest(app)
         .get('/api/v1/logout')

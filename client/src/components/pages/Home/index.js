@@ -14,10 +14,10 @@ const HomePage = () => {
               Help parents to follow their children
             </h3>
             <div className="home__account">
-              <Link to="/" className="account__login">
+              <Link to="/login" className="account__login">
                 <Button value="LogIn" className="account__button" />
               </Link>
-              <Link to="/" className="account__signup">
+              <Link to="/signup" className="account__signup">
                 <Button value="Signup" className="account__button" />
               </Link>
             </div>

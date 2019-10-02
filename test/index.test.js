@@ -1,7 +1,6 @@
 const { onFinish } = require('tape');
-require('./quieres/index.test');
-require('./routes/index.test');
 
-onFinish(() => {
-  process.exit(0);
-});
+require('./routes/index.test');
+require('./quieres/index.test');
+
+onFinish(() => process.exit(0));

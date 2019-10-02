@@ -1,10 +1,10 @@
 INSERT INTO "user"
     ( email,user_name, password)
 VALUES
-    ('Ola200@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Samah1990@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Ahmed54@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
-    ('Kamal2120@gmail.com', 'asmaa', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
+    ('Ola200@gmail.com', 'Ola', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Samah1990@gmail.com', 'Samah', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Ahmed54@gmail.com', 'Ahmed', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm'),
+    ('Kamal2120@gmail.com', 'Kamal', '$2b$12$/u9SrIHbjUKFTD2wlEU2heoyvHEImp7yvDknO6OV.qoLBNgiykCKm');
 
 INSERT INTO parent 
     (parent_id,user_id)  
@@ -14,12 +14,12 @@ VALUES
     (0123456789, 3),
     (0123456789, 4);  
 INSERT INTO teacher   
-    (first_name,last_name,user_id) 
+    (first_name,last_name,user_id, bio, image_url) 
 VALUES 
-    ('Ahmed','Ghareb',1),
-    ('Ali','Taha',2),
-    ('Arwa','Omar',3),
-    ('Hala','salah',4);
+    ('Ahmed','Ghareb',1, 'Hi Iam Ahmed Ghareb Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png'),
+    ('Ali','Taha',2, 'Hi Iam Ali Taha Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png'),
+    ('Arwa','Omar',3, 'Hi Iam Arwa Omar Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png'),
+    ('Hala','salah',4, 'Hi Iam Hala Salah Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png');
 
 INSERT INTO student   
     (student_name,class,parent_id) 
@@ -68,9 +68,9 @@ VALUES
     ('2019-10-1',1,'The student knew a lot of information about the sun','Sun activity',4);
 
 INSERT INTO homework 
-    (homework_date,class, urls, subject_id)  
+    (homework_date,homework_description, class, urls, subject_id)  
 VALUES 
-    ('2018-11-11',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',1),
-    ('2019-7-15',2,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',2),
-    ('2019-9-2',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
-    ('2019-10-1',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4);
+    ('10/1/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',1),
+    ('10/2/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',2,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',2),
+    ('10/3/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
+    ('10/4/2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4);

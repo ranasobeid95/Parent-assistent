@@ -1,19 +1,17 @@
 const test = require('tape');
 const supertest = require('supertest');
 const app = require('../../server/app');
+const { access } = require('./cookie.test');
+
 const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 
-test('Test /login route', (t) => {
-  const userInfo = {
-    email: 'Ola200@gmail.com',
-    password: '123456789',
-  };
+test('Test /teacher/profile route', (t) => {
   dbBuild()
     .then(() => dbFakeData())
     .then(() => {
       supertest(app)
-        .post('/api/v1/login')
-        .send(userInfo)
+        .get('/api/v1/profile/teacher/1')
+        .set('Cookie', [`access=${access}`])
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
         .end((err, res) => {
@@ -21,11 +19,9 @@ test('Test /login route', (t) => {
             t.error(err);
             t.end();
           } else {
-            t.deepEqual(
-              res.body.message,
-              1,
-              'you are login successfully and user id 1',
-            );
+            t.deepEqual(res.body[0].first_name, 'Ahmed', 'should be the same');
+            t.deepEqual(res.body[0].last_name, 'Ghareb', 'should be the same');
+
             t.end();
           }
         });
