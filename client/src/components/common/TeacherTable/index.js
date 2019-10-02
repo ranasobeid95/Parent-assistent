@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+// import PropTypes from 'prop-types';
+import axios from 'axios';
 import './index.css';
 
 export default class TeacherTable extends React.Component {
@@ -12,9 +13,9 @@ export default class TeacherTable extends React.Component {
     //     params: { id },
     //   },
     // } = this.props;
-    // axios.get(`/api/v1/profile/parent/${id}`).then(res => {
-    //   this.setState({ data: res.data });
-    // });
+    axios.get(`/api/v1/student/${1}`).then(res => {
+      this.setState({ data: res.data });
+    });
   }
 
   render() {
@@ -32,32 +33,39 @@ export default class TeacherTable extends React.Component {
               </tr>
             </thead>
             <tbody className="studentTable__content">
-              {data.map(({ teacherName, subject, id }) => (
-                <tr key={id}>
-                  <td className="studentTable__content1">
-                    {teacherName}
-                    <p>
-                      <Link
-                        to={`/profile/teacher/:${id}`}
-                        className="studentTable__link"
-                      >
-                        view profile
-                      </Link>
-                    </p>
-                  </td>
-                  <td className="studentTable__content2">
-                    {subject}
-                    <p>
-                      <Link
-                        to={`/student/:subject/:${id}`}
-                        className="studentTable__link"
-                      >
-                        view subject
-                      </Link>
-                    </p>
-                  </td>
-                </tr>
-              ))}
+              {data.map(
+                ({
+                  first_name: firstName,
+                  last_name: lastName,
+                  subject_name: subjectName,
+                  teacher_id: id,
+                }) => (
+                  <tr key={id}>
+                    <td className="studentTable__content1">
+                      {`${firstName} ${lastName}`}
+                      <p>
+                        <Link
+                          to={`/profile/teacher/:${id}`}
+                          className="studentTable__link"
+                        >
+                          view profile
+                        </Link>
+                      </p>
+                    </td>
+                    <td className="studentTable__content2">
+                      {subjectName}
+                      <p>
+                        <Link
+                          to={`/student/:subject/:${id}`}
+                          className="studentTable__link"
+                        >
+                          view subject
+                        </Link>
+                      </p>
+                    </td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         )}
@@ -65,3 +73,6 @@ export default class TeacherTable extends React.Component {
     );
   }
 }
+// TeacherTable.propTypes = {
+//   match: PropTypes.objectOf(PropTypes.any).isRequired,
+// };

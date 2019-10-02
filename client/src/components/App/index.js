@@ -35,7 +35,11 @@ function App() {
             path="/profile/teacher/:id"
             render={() => <TeacherProfile />}
           />
-          <Route exact path="/student/:id" render={() => <StudentProfile />} />
+          <Route
+            exact
+            path="/student/:id"
+            render={props => <StudentProfile {...props} />}
+          />
           <Route
             exact
             path="/student/:subject/:idstudent"
