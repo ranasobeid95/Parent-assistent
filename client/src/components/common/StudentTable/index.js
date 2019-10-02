@@ -15,10 +15,6 @@ export default class studentTable extends React.Component {
     } = this.props;
     axios.get(`/api/v1/profile/parent/${id}`).then(res => {
       this.setState({ data: res.data });
-      // const {
-      //   history: { push },
-      // } = this.props;
-      // push(`/student/${res.data.id}`);
     });
   }
 
@@ -39,18 +35,17 @@ export default class studentTable extends React.Component {
             </thead>
             <tbody className="parentTable__content">
               {data.map(
-                ({
-                  student_name: studenName,
-                  class: className,
-                  parent_id: id,
-                }) => {
+                ({ student_name: studenName, class: className, id }) => {
                   return (
                     <tr key={id}>
                       <td className="parentTable__content1">{studenName}</td>
                       <td>{className}</td>
                       <td className="parentTable__content2">
                         <p>
-                          <Link to="/student/:id" className="parentTable__link">
+                          <Link
+                            to={`/student/${id}`}
+                            className="parentTable__link"
+                          >
                             view profile
                           </Link>
                         </p>
