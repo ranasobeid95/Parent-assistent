@@ -4,7 +4,7 @@ const teacherProfile = (req, res, next) => {
   const { id } = req.params;
   getTeacherProfile(id)
     .then(({ rows }) => {
-      res.json(rows[0]);
+      res.json(rows);
     })
     .catch(next);
 };
