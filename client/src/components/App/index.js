@@ -52,8 +52,8 @@ function App() {
           />
           <Route
             exact
-            path="/student/:subject/:homework/:class"
-            render={() => <HomeWork />}
+            path="/student/:subject/homework/:class"
+            render={props => <HomeWork {...props} />}
           />
           <Route
             render={() => <Error typeError="404" errorDesc="Page Not Found" />}

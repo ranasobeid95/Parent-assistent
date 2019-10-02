@@ -5,6 +5,7 @@ const { parentPRofile } = require('./routes/parentProfile');
 const { signupParent } = require('./routes/signupParent');
 const { classActivities } = require('./routes/activities');
 const { homeworks } = require('./routes/homeworks');
+const { subjectPage } = require('./routes/subjectPage');
 
 module.exports = {
   logout,
@@ -14,4 +15,5 @@ module.exports = {
   signupParent,
   classActivities,
   homeworks,
+  subjectPage,
 };
