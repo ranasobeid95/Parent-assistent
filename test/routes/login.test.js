@@ -23,8 +23,8 @@ test('Test /login route', (t) => {
           } else {
             t.deepEqual(
               res.body.message,
-              'login successfully',
-              'you are login successfully',
+              1,
+              'you are login successfully and user id 1',
             );
             t.end();
           }
