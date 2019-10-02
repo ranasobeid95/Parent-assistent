@@ -1,6 +1,5 @@
 const clientError = (req, res) => {
-  res.status(404)
-    .send('clientError');
+  res.status(400).send({ error: { code: 400, msg: 'clientError' }, data: null });
 };
 
 module.exports = { clientError };
