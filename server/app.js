@@ -10,8 +10,6 @@ app.use(cookieParser());
 
 app.set('port', PORT);
 app.use(express.json());
-// no need for this line since we don't use form in our app
-app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1', router);
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
