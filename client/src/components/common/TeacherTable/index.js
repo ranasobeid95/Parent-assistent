@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import data from './data';
+import axios from 'axios';
 import './index.css';
 
 export default class TeacherTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    // we will make a request to fetch data by using (Axios)
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    axios.get(`/api/v1/profile/parent/${id}`).then(res => {
+      this.setState({ data: res.data });
+    });
   }
 
   render() {

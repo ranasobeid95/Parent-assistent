@@ -46,7 +46,7 @@ export default class studentTable extends React.Component {
                       <td>{className}</td>
                       <td className="parentTable__content2">
                         <p>
-                          <Link to="/" className="parentTable__link">
+                          <Link to="/student/:id" className="parentTable__link">
                             view profile
                           </Link>
                         </p>

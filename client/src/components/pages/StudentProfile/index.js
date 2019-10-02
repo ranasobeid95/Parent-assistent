@@ -6,7 +6,7 @@ const StudentProfile = () => {
   return (
     <div className="schoolName">
       <p className="schoolName__tiltle">Gaza Primary School</p>
-      <TeacherTable />
+      <TeacherTable {...props} />
     </div>
   );
 };
