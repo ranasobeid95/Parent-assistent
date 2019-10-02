@@ -28,7 +28,7 @@ function App() {
           <Route
             exact
             path="/profile/parent/:id"
-            render={() => <ParentProfile />}
+            render={props => <ParentProfile {...props} />}
           />
           <Route
             exact
