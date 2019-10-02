@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import './index.css';
 
@@ -8,12 +8,13 @@ export default class TeacherTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    // const {
-    //   match: {
-    //     params: { id },
-    //   },
-    // } = this.props;
-    axios.get(`/api/v1/student/${1}`).then(res => {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    // console.log(this.props);
+    axios.get(`/api/v1/student/${id}`).then(res => {
       this.setState({ data: res.data });
     });
   }
@@ -73,6 +74,6 @@ export default class TeacherTable extends React.Component {
     );
   }
 }
-// TeacherTable.propTypes = {
-//   match: PropTypes.objectOf(PropTypes.any).isRequired,
-// };
+TeacherTable.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};

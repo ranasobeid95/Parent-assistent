@@ -18,7 +18,7 @@ export default class studentTable extends React.Component {
       // const {
       //   history: { push },
       // } = this.props;
-      // push(`/student/${res.data[0].id}`);
+      // push(`/student/${res.data.id}`);
     });
   }
 
