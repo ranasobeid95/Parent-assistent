@@ -37,7 +37,7 @@ function App() {
           <Route
             exact
             path="/profile/teacher/:id"
-            render={() => <TeacherProfile />}
+            render={props => <TeacherProfile {...props} />}
           />
           <Route exact path="/student/:id" render={() => <StudentProfile />} />
           <Route
