@@ -24,7 +24,11 @@ function App() {
           <Route exact path="/" render={props => <Home {...props} />} />
           <Route exact path="/login" render={props => <LogIn {...props} />} />
           <Route exact path="/signup" render={() => <SignUp />} />
-          <Route exact path="/signup/parent" render={() => <SignUpParent />} />
+          <Route
+            exact
+            path="/signup/parent"
+            render={props => <SignUpParent {...props} />}
+          />
           <Route
             exact
             path="/profile/parent/:id"

@@ -7,8 +7,7 @@ const schema = yup.object().shape({
     .min(3)
     .required(),
   parentId: yup
-    .number()
-    .integer()
+    .string()
     .required(),
   password: yup
     .string()
