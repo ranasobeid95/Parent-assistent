@@ -43,8 +43,8 @@ function App() {
           />
           <Route
             exact
-            path="/student/:subject/:activites/:class"
-            render={() => <Activities />}
+            path="/students/:subjectId/activites/:classId"
+            render={props => <Activities {...props} />}
           />
           <Route
             exact
