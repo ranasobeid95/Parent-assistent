@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import './index.css';
 import TeacherImage from '../../../assets/teacher.jpg';
-import fakeData from './fakeData';
 
 class TeacherProfile extends Component {
   state = {
@@ -16,8 +17,15 @@ class TeacherProfile extends Component {
   });
 
   componentDidMount() {
-    this.setState({ data: fakeData.teacher1 });
-    // we will make a request to get data by using axios, above line is a fake data
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    axios.get(`/api/v1/profile/teacher/${id}`).then(result => {
+      const { data } = result;
+      this.setState({ data });
+    });
   }
 
   showContent = tapName => {
@@ -44,7 +52,7 @@ class TeacherProfile extends Component {
     if (activeContent === 'about') {
       return (
         <div>
-          <p className="teach-profile__desc">{data.about}</p>
+          <p className="teach-profile__desc">{data.bio}</p>
         </div>
       );
     }
@@ -54,15 +62,15 @@ class TeacherProfile extends Component {
           <ul className="teach-profile__contact-list ">
             <li>
               <span className="contact-list__span">Full Name:&nbsp;</span>
-              {data.contact.fullName}
+              {`${data.first_name}  ${data.last_name}`}
             </li>
             <li>
               <span className="contact-list__span">mobile Number:&nbsp;</span>
-              {data.contact.mobileNumber}
+              99999999999999
             </li>
             <li>
               <span className="contact-list__span">Email:&nbsp;</span>
-              {data.contact.email}
+              testing@email.com
             </li>
           </ul>
         </div>
@@ -72,9 +80,7 @@ class TeacherProfile extends Component {
       return (
         <div>
           <ul className="teach-profile__interests-list">
-            {data.interests.map(el => {
-              return <li key={el.id}>{el.text}</li>;
-            })}
+            <li>Helping people</li>
           </ul>
         </div>
       );
@@ -90,7 +96,10 @@ class TeacherProfile extends Component {
         <div>
           <img className="img-teacher" src={TeacherImage} alt="teacher img" />
         </div>
-        <h3 className="teacher-name">{data.name}</h3>
+        <h3 className="teacher-name">
+          {data.first_name}&nbsp;
+          {data.last_name}
+        </h3>
         <p className="teacher-subject">{data.subject} Teacher</p>
         <div className="teach-profile__list">
           {this.renderButton(this.ActiveContentEnum.ABOUT, 'About')}
@@ -103,5 +112,13 @@ class TeacherProfile extends Component {
     );
   }
 }
+
+TeacherProfile.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.any,
+    }),
+  }).isRequired,
+};
 
 export default TeacherProfile;
