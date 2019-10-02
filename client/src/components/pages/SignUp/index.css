@@ -10,10 +10,13 @@
   background-color: #bab9b9;
   color: #333333;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
-.button-input {
+.button-input__teacher,
+.button-input__parent {
   width: 311px;
   height: 50px;
   border-radius: 30px;
+  justify-content: center;
 }

@@ -7,12 +7,9 @@ const Signup = () => {
   return (
     <div className="signup">
       <div className="signup__content">
-        <Button
-          value="As a Teacher"
-          className="button-input button-input__teacher"
-        />
+        <Button value="As a Teacher" className="button-input__teacher" />
         <Link to="/signup/parent" style={{ textDecoration: 'none' }}>
-          <Button value="As a Parent" className="button-input" />
+          <Button value="As a Parent" className="button-input__parent" />
         </Link>
       </div>
     </div>
