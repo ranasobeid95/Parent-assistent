@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import data from './data';
+// import axios from 'axios';
 import './index.css';
 
 export default class studentTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
+    // axios.get('api/v1/profile/parent/2').then(res => {
+    //   console.log(res);
+    //   this.setState({ data: res.data });
+    // });
     // we will make a request to fetch data by using (Axios)
   }
 
@@ -26,18 +30,14 @@ export default class studentTable extends React.Component {
               </tr>
             </thead>
             <tbody className="parentTable__content">
-              {data.map(({ name, grade, studentClass, id }) => {
+              {data.map(({ studentName, class: className }) => {
                 return (
-                  <tr key={id}>
-                    <td className="parentTable__content1">{name}</td>
-                    <td>{grade}</td>
+                  <tr key={1}>
+                    <td className="parentTable__content1">{studentName}</td>
+                    <td>{className}</td>
                     <td className="parentTable__content2">
-                      {studentClass}
                       <p>
-                        <Link
-                          to={`/student/:${id}`}
-                          className="parentTable__link"
-                        >
+                        <Link to="/" className="parentTable__link">
                           view profile
                         </Link>
                       </p>

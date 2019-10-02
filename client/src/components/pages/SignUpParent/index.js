@@ -58,7 +58,7 @@ export default class SignUp extends React.Component {
             name="email"
             htmlFor="email"
             id="email"
-            value={email.value}
+            value={email}
             type="email"
             placeholder="example@gmail.com"
             className="signUp__input"
@@ -70,7 +70,7 @@ export default class SignUp extends React.Component {
             name="userName"
             htmlFor="username"
             id="username"
-            value={userName.value}
+            value={userName}
             type="text"
             placeholder="Enter your name"
             className="signUp__input"
@@ -83,7 +83,7 @@ export default class SignUp extends React.Component {
             name="parentId"
             htmlFor="parentid"
             id="parentid"
-            value={parentId.value}
+            value={parentId}
             type="text"
             placeholder="Enter your ID"
             className="signUp__input"
@@ -96,7 +96,7 @@ export default class SignUp extends React.Component {
             name="password"
             htmlFor="password"
             id="password"
-            value={password.value}
+            value={password}
             type="password"
             placeholder="Enter your Passwrod"
             className="signUp__input"
@@ -109,7 +109,7 @@ export default class SignUp extends React.Component {
             name="confirmPassword"
             htmlFor="confirmpassword"
             id="confirmpassword"
-            value={confirmPassword.value}
+            value={confirmPassword}
             type="password"
             placeholder="Enter your Passwrod again"
             className="signUp__input"

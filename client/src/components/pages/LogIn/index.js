@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import loginValidation from '../utils/loginSchema';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
@@ -25,7 +27,18 @@ class LogIn extends Component {
         this.setState({
           error: false,
         });
-        // axios stuff goes here
+        axios
+          .post(
+            '/api/v1/login',
+            { email, password },
+            { headers: { Accept: 'application/json' } }
+          )
+          .then(result => {
+            const {
+              history: { push },
+            } = this.props;
+            push(`/profile/parent/${result.data.id}`);
+          });
       }
     });
   };
@@ -47,8 +60,8 @@ class LogIn extends Component {
             htmlFor="username"
             id="username"
             value={email}
-            type="text"
-            placeholder="User name"
+            type="email"
+            placeholder="your email"
             className="login__input"
             onChange={({ target }) => this.setState({ email: target.value })}
           />
@@ -76,4 +89,11 @@ class LogIn extends Component {
     );
   }
 }
+
+LogIn.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 export default LogIn;
