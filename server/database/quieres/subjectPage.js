@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 
-const subjectPageQ = (id) => {
+const subject = (id) => {
   const sql = {
     text: ` select
     subject_teacher.teacher_id ,
@@ -24,4 +24,4 @@ const subjectPageQ = (id) => {
   return connection.query(sql);
 };
 
-module.exports = { subjectPageQ };
+module.exports = { subject };

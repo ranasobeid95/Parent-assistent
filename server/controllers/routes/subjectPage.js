@@ -1,13 +1,13 @@
-const { subjectPageQ } = require('../../database/quieres/subjectPage');
+const { subject } = require('../../database/quieres/subjectPage');
 
 const subjectPage = (req, res, next) => {
   const { id } = req.params;
-  subjectPageQ(id)
+  subject(id)
     .then((data) => data.rows)
-    .then((returnd) => {
-      if (returnd.length === 0) {
+    .then((rows) => {
+      if (rows.length === 0) {
         throw new Error('bad request');
-      } else return returnd;
+      } else return rows;
     })
     .then((result) => {
       res.status(200).send(result);
