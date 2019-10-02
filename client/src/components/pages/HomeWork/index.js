@@ -13,7 +13,6 @@ class Homework extends Component {
   componentDidMount() {
     // we will make a request to fetch data by using (Axios)
     axios.get('/api/v1/subjects/1/homeworks/1').then(result => {
-      console.log(result.data.data[0]);
       const AllHomeworks = result.data.data[0];
       this.setState({ data: AllHomeworks });
     });
@@ -21,7 +20,6 @@ class Homework extends Component {
 
   render() {
     const { data } = this.state;
-    console.log(data.urls);
     return (
       <>
         {data.length === 0 ? (
