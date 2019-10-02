@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 import signUpValidation from '../utils/signUpValidation';
@@ -16,15 +18,30 @@ export default class SignUp extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { email, userName, parentId, password, confirmPassword } = this.state;
+    const {
+      email,
+      userName: username,
+      parentId,
+      password,
+      confirmPassword,
+    } = this.state;
     signUpValidation
       .validate(
-        { email, userName, parentId, password, confirmPassword },
+        { email, username, parentId, password, confirmPassword },
         { abortEarly: false }
       )
-      .then(values => {
-        // fetch
-        return values;
+      .then(() => {
+        axios
+          .post('/api/v1/signup/parent', {
+            email,
+            username,
+            parentId,
+            password,
+          })
+          .then(() => {
+            const { history } = this.props;
+            history.push('/login');
+          });
       })
       .catch(error => {
         const objError = {};
@@ -127,3 +144,7 @@ export default class SignUp extends React.Component {
     );
   }
 }
+
+SignUp.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+};

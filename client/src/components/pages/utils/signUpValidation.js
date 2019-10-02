@@ -6,7 +6,7 @@ const signUpValidation = yup.object().shape({
     .email('E-mail is not valid!')
     .required('E-mail is required!')
     .trim('space is invalid'),
-  userName: yup
+  username: yup
     .string()
     .required()
     .trim('space is invalid'),
