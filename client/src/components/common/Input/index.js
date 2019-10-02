@@ -32,7 +32,7 @@ export default function Input({
 
 Input.propTypes = {
   label: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   className: PropTypes.string,

@@ -38,7 +38,7 @@ const login = (req, res, next) => {
           secret,
         );
         res.cookie('access', accessToken, { httpOnly: true });
-        res.json({ message: 'login successfully' });
+        res.json({ message: id });
       } else {
         const validationErr = new Error('wrong password');
         validationErr.statusCode = 400;
