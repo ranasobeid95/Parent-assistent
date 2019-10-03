@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './index.css';
-import TeacherImage from '../../../assets/teacher.jpg';
 
 class TeacherProfile extends Component {
   state = {
@@ -23,10 +22,7 @@ class TeacherProfile extends Component {
       },
     } = this.props;
     axios.get(`/api/v1/profile/teacher/${id}`).then(result => {
-      const {
-        data: [data],
-      } = result;
-      this.setState({ data });
+      this.setState({ data: result.data[0] });
     });
   }
 
@@ -68,11 +64,11 @@ class TeacherProfile extends Component {
             </li>
             <li>
               <span className="contact-list__span">mobile Number:&nbsp;</span>
-              99999999999999
+              {data.mobile}
             </li>
             <li>
               <span className="contact-list__span">Email:&nbsp;</span>
-              testing@email.com
+              {data.email}
             </li>
           </ul>
         </div>
@@ -82,7 +78,7 @@ class TeacherProfile extends Component {
       return (
         <div>
           <ul className="teach-profile__interests-list">
-            <li>Helping people</li>
+            <li>{data.interest}</li>
           </ul>
         </div>
       );
@@ -96,7 +92,7 @@ class TeacherProfile extends Component {
     return (
       <div className="teach-profile">
         <div>
-          <img className="img-teacher" src={TeacherImage} alt="teacher img" />
+          <img className="img-teacher" src={data.image_url} alt="teacher img" />
         </div>
         <h3 className="teacher-name">
           {data.first_name}&nbsp;

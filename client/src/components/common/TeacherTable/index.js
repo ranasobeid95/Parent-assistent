@@ -45,7 +45,7 @@ export default class TeacherTable extends React.Component {
                       {`${firstName} ${lastName}`}
                       <p>
                         <Link
-                          to={`/profile/teacher/:${id}`}
+                          to={`/profile/teacher/${id}`}
                           className="studentTable__link"
                         >
                           view profile
@@ -56,7 +56,7 @@ export default class TeacherTable extends React.Component {
                       {subjectName}
                       <p>
                         <Link
-                          to={`/student/:subject/:${id}`}
+                          to={`/student/:subject/${id}`}
                           className="studentTable__link"
                         >
                           view subject
