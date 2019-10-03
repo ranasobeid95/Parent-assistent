@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import './index.css';
 
 export default class studentTable extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    // axios.get('api/v1/profile/parent/2').then(res => {
-    //   console.log(res);
-    //   this.setState({ data: res.data });
-    // });
-    // we will make a request to fetch data by using (Axios)
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    axios.get(`/api/v1/profile/parent/${id}`).then(res => {
+      this.setState({ data: res.data });
+    });
   }
 
   render() {
@@ -30,21 +34,26 @@ export default class studentTable extends React.Component {
               </tr>
             </thead>
             <tbody className="parentTable__content">
-              {data.map(({ studentName, class: className }) => {
-                return (
-                  <tr key={1}>
-                    <td className="parentTable__content1">{studentName}</td>
-                    <td>{className}</td>
-                    <td className="parentTable__content2">
-                      <p>
-                        <Link to="/" className="parentTable__link">
-                          view profile
-                        </Link>
-                      </p>
-                    </td>
-                  </tr>
-                );
-              })}
+              {data.map(
+                ({ student_name: studenName, class: className, id }) => {
+                  return (
+                    <tr key={id}>
+                      <td className="parentTable__content1">{studenName}</td>
+                      <td>{className}</td>
+                      <td className="parentTable__content2">
+                        <p>
+                          <Link
+                            to={`/student/${id}`}
+                            className="parentTable__link"
+                          >
+                            view profile
+                          </Link>
+                        </p>
+                      </td>
+                    </tr>
+                  );
+                }
+              )}
             </tbody>
           </table>
         )}
@@ -52,3 +61,10 @@ export default class studentTable extends React.Component {
     );
   }
 }
+
+studentTable.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
