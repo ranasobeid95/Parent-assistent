@@ -97,8 +97,8 @@ class App extends Component {
                 />
                 <Route
                   exact
-                  path="/student/:subject/:idstudent"
-                  render={() => <Subject />}
+                  path="/student/subject/:subjectId/:idClass"
+                  render={props => <Subject {...props} />}
                 />
                 <Route
                   exact
@@ -107,7 +107,7 @@ class App extends Component {
                 />
                 <Route
                   exact
-                  path="/student/:subject/homework/:class"
+                  path="/student/:subjectId/homework/:classId"
                   render={props => <HomeWork {...props} />}
                 />
                 <Route

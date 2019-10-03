@@ -39,6 +39,8 @@ export default class TeacherTable extends React.Component {
                   last_name: lastName,
                   subject_name: subjectName,
                   teacher_id: id,
+                  subject_id: subjectId,
+                  class: classId,
                 }) => (
                   <tr key={id}>
                     <td className="studentTable__content1">
@@ -56,7 +58,12 @@ export default class TeacherTable extends React.Component {
                       {subjectName}
                       <p>
                         <Link
-                          to={`/student/:subject/${id}`}
+                          to={{
+                            pathname: `/student/subject/${subjectId}/${classId}`,
+                            state: {
+                              subjectName,
+                            },
+                          }}
                           className="studentTable__link"
                         >
                           view subject

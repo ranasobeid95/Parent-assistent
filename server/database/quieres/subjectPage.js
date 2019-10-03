@@ -7,7 +7,8 @@ const subject = (id) => {
     teacher.last_name ,
     teacher.first_name ,
     subject_teacher.subject_id ,
-    subject.subject_name
+    subject.subject_name,
+    student.class
   from
     teacher_student
   inner join subject_teacher on
@@ -16,6 +17,8 @@ const subject = (id) => {
     teacher.id = teacher_student.teacher_id
   inner join subject on
     subject_teacher.subject_id = subject.id
+  inner join student on
+  teacher_student.student_id = student.id
   where
     student_id = $1
   `,

@@ -24,7 +24,7 @@ router.use(auth);
 router.get('/student/:id', subjectPage);
 router.get('/profile/teacher/:id', teacherProfile);
 router.get('/profile/parent/:id', parentPRofile);
-router.get('/subjects/:subjectId/homeworks/:classId', homeworks);
+router.post('/subjects/:subjectId/homeworks/:classId', homeworks);
 router.get('/subjects/:subjectId/activities/:classId', classActivities);
 router.get('/logout', logout);
 

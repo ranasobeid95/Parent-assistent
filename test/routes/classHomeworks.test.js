@@ -10,8 +10,8 @@ tape('Testing for subject Homework Route', (t) => {
     .then(dbFakeData)
     .then(() => {
       supertest(app)
-        .post('/api/v1/subjects/1/homeworks/1')
-        .send({ homeworkDate: '2019-10-02' })
+        .post('/api/v1/subjects/2/homeworks/2')
+        .send({ homeworkDate: '2019-03-10' })
         .expect(200)
         .expect('content-type', /json/)
         .set('Cookie', [`access=${access}`])
@@ -23,11 +23,7 @@ tape('Testing for subject Homework Route', (t) => {
             const actual = res.body.data;
             const expected = [{
               homework_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-              urls:
-             {
-               resource1: 'https://www.github.com',
-               resource2: 'https://www.github.com',
-             },
+              urls: { resource1: 'https://www.github.com', resource2: 'https://www.github.com' },
             }];
             t.deepEqual(actual, expected, 'Test pass: All values must be the same');
             t.end();

@@ -12,6 +12,7 @@ test('Test subject Page', (t) => {
     first_name: 'Arwa',
     subject_id: 3,
     subject_name: 'Math',
+    class: 5,
   };
   dbBuild()
     .then(() => dbFakeData())
