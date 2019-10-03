@@ -8,6 +8,7 @@ const { homeworks } = require('./routes/homeworks');
 const { subjectPage } = require('./routes/subjectPage');
 const { clientError } = require('./error/clientError');
 const { serverError } = require('./error/serverError');
+const { authUser } = require('./routes/auth');
 
 module.exports = {
   logout,
@@ -20,4 +21,5 @@ module.exports = {
   subjectPage,
   clientError,
   serverError,
+  authUser,
 };

@@ -58,7 +58,12 @@ export default class TeacherTable extends React.Component {
                       {subjectName}
                       <p>
                         <Link
-                          to={`/student/subject/${subjectId}/${classId}`}
+                          to={{
+                            pathname: `/student/subject/${subjectId}/${classId}`,
+                            state: {
+                              subjectName,
+                            },
+                          }}
                           className="studentTable__link"
                         >
                           view subject

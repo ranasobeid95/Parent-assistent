@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Menu from '../Menu';
 import logo from '../../../assets/logo.png';
@@ -18,7 +17,7 @@ class Header extends Component {
   };
 
   render() {
-    const { auth } = this.props;
+    const { auth, logoutHandler } = this.props;
     const { show } = this.state;
     return (
       <React.Fragment>
@@ -28,13 +27,23 @@ class Header extends Component {
           </div>
 
           <div className="App-identifier">Parent assistant</div>
-          <Link onClick={this.onClickHandler} className="hamburger" to="/">
+          <button
+            type="button"
+            onClick={this.onClickHandler}
+            className="hamburger"
+            style={{ background: 'none', border: 0 }}
+          >
             <div></div>
             <div></div>
             <div></div>
-          </Link>
+          </button>
         </header>
-        <Menu show={show} isSigned={auth} showOrHide={this.onClickHandler} />
+        <Menu
+          logoutHandler={logoutHandler}
+          show={show}
+          isSigned={auth}
+          showOrHide={this.onClickHandler}
+        />
       </React.Fragment>
     );
   }
@@ -42,6 +51,7 @@ class Header extends Component {
 
 Header.propTypes = {
   auth: PropTypes.bool,
+  logoutHandler: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {

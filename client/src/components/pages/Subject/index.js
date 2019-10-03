@@ -5,11 +5,16 @@ import Button from '../../common/Button';
 
 import('./index.css');
 const Subject = props => {
-  console.log(props);
+  const {
+    match: {
+      params: { subjectId, idClass },
+    },
+    location,
+  } = props;
   return (
     <div className="subject">
       <div className="subject__title-box">
-        <p className="subject__p--subject"></p>
+        <p className="subject__p--subject">{location.state.subjectName}</p>
         <p className="subject__p--des">
           you will find a complete description of the class
         </p>
@@ -17,14 +22,14 @@ const Subject = props => {
       <div className="subject__link">
         <Link
           className="subject__link--activities"
-          to={`/students/${props.match.params.idsubject}/activites/${props.match.params.class}`}
+          to={`/students/${subjectId}/activites/${idClass}`}
         >
           <Button className="subject__btn" value="Class Activities"></Button>
         </Link>
 
         <Link
           className="subject__link--homework"
-          to={`/student/${props.match.params.idsubject}/homework/${props.match.params.class}`}
+          to={`/student/${subjectId}/homework/${idClass}`}
         >
           <Button className="subject__btn" value="Class Homeworks"></Button>
         </Link>
@@ -34,10 +39,17 @@ const Subject = props => {
 };
 
 Subject.propTypes = {
-  subject: PropTypes.string.isRequired,
-  CalssId: PropTypes.number.isRequired,
-  homeworkId: PropTypes.number.isRequired,
-  subject_id: PropTypes.number.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      subjectId: PropTypes.any,
+      idClass: PropTypes.any,
+    }),
+  }).isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      subjectName: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default Subject;

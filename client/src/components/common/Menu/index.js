@@ -1,54 +1,61 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './index.css';
 
-const Menu = ({ showOrHide, isSigned: protect, show }) => {
+const Menu = ({ showOrHide, isSigned: protect, show, logoutHandler }) => {
   return (
-    <Router>
-      <div className={show ? 'nav__menu' : 'hide'}>
-        <i
-          className="close-icon"
-          role="button"
-          onClick={() => showOrHide()}
-          tabIndex="0"
-        ></i>
-        <ul className="lists">
-          <li>
-            <NavLink className="list" to="/">
-              Home
-            </NavLink>
-          </li>
-          {protect ? (
+    <div className={show ? 'nav__menu' : 'hide'}>
+      <i
+        className="close-icon"
+        role="button"
+        onClick={() => showOrHide()}
+        tabIndex="0"
+      ></i>
+      <ul className="lists">
+        {protect ? (
+          <>
             <li>
-              <NavLink className="list" to="/">
-                Sign Out
+              <NavLink
+                onClick={() => {
+                  logoutHandler();
+                }}
+                className="list"
+                to="/logout"
+              >
+                Log out
               </NavLink>
             </li>
-          ) : (
-            <>
-              <li>
-                <NavLink className="list" to="/signup">
-                  Sign Up
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="list" to="/login">
-                  Log In
-                </NavLink>
-              </li>
-            </>
-          )}
-        </ul>
-      </div>
-    </Router>
+          </>
+        ) : (
+          <>
+            <li>
+              <NavLink className="list" to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="list" to="/signup">
+                Sign up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="list" to="/login">
+                Log in
+              </NavLink>
+            </li>
+          </>
+        )}
+      </ul>
+    </div>
   );
 };
 Menu.propTypes = {
   showOrHide: PropTypes.func.isRequired,
   isSigned: PropTypes.bool,
   show: PropTypes.bool,
+  logoutHandler: PropTypes.func.isRequired,
 };
 
 Menu.defaultProps = {

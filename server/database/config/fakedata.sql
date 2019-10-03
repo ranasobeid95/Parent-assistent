@@ -12,9 +12,10 @@ VALUES
     (0123456789, 1),
     (0123456789, 2),
     (0123456789, 3),
-    (0123456789, 4);  
-INSERT INTO teacher   
-    (first_name,last_name,user_id, bio, image_url, mobile, email, interest) 
+    (0123456789, 4);
+
+INSERT INTO teacher
+    (first_name,last_name,user_id, bio, image_url, mobile, email, interest)
 VALUES 
     ('Ahmed','Ghareb',1, 'Hi Iam Ahmed Ghareb Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels'),
     ('Ali','Taha',2, 'Hi Iam Ali Taha Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels'),
@@ -72,5 +73,8 @@ INSERT INTO homework
 VALUES 
     ('10-2-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',1),
     ('10-3-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',2,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',2),
-    ('10-2-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
+    ('10-2-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',5,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
+    ('10-3-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4),
+    ('10-3-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',5,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',3),
+    ('10-3-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4),
     ('10-3-2019','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',1,'{"resource1": "https://www.github.com","resource2": "https://www.github.com"}',4);
