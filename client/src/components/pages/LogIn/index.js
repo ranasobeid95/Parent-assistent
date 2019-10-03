@@ -37,7 +37,7 @@ class LogIn extends Component {
             const {
               history: { push },
             } = this.props;
-            push(`/profile/parent/${result.data.id}`);
+            push(`/profile/parent/${result.data.message}`);
           });
       }
     });

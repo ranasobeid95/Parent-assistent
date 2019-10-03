@@ -32,14 +32,18 @@ function App() {
           <Route
             exact
             path="/profile/parent/:id"
-            render={() => <ParentProfile />}
+            render={props => <ParentProfile {...props} />}
           />
           <Route
             exact
             path="/profile/teacher/:id"
             render={props => <TeacherProfile {...props} />}
           />
-          <Route exact path="/student/:id" render={() => <StudentProfile />} />
+          <Route
+            exact
+            path="/student/:id"
+            render={props => <StudentProfile {...props} />}
+          />
           <Route
             exact
             path="/student/:subject/:idstudent"
