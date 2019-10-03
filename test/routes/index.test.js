@@ -7,4 +7,4 @@ require('./signupParent.test');
 require('./classActivities.test');
 require('./login.test');
 require('./subjecrPage.test');
-// require('./classHomeworks.test');
+require('./classHomeworks.test');
