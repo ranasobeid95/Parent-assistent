@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import Button from '../../common/Button';
 
 import('./index.css');
-
-const Subject = ({ subject, CalssId, homeworkId, activityId }) => {
+const Subject = props => {
+  console.log(props);
   return (
     <div className="subject">
       <div className="subject__title-box">
-        <p className="subject__p--subject">{subject}</p>
+        <p className="subject__p--subject"></p>
         <p className="subject__p--des">
           you will find a complete description of the class
         </p>
@@ -17,14 +17,14 @@ const Subject = ({ subject, CalssId, homeworkId, activityId }) => {
       <div className="subject__link">
         <Link
           className="subject__link--activities"
-          to={`${subject}/${activityId}/${CalssId}`}
+          to={`/students/${props.match.params.idsubject}/activites/${props.match.params.class}`}
         >
           <Button className="subject__btn" value="Class Activities"></Button>
         </Link>
 
         <Link
           className="subject__link--homework"
-          to={`${subject}/${homeworkId}/${CalssId}`}
+          to={`/student/${props.match.params.idsubject}/homework/${props.match.params.class}`}
         >
           <Button className="subject__btn" value="Class Homeworks"></Button>
         </Link>
@@ -34,14 +34,10 @@ const Subject = ({ subject, CalssId, homeworkId, activityId }) => {
 };
 
 Subject.propTypes = {
-  subject: PropTypes.string,
+  subject: PropTypes.string.isRequired,
   CalssId: PropTypes.number.isRequired,
   homeworkId: PropTypes.number.isRequired,
-  activityId: PropTypes.number.isRequired,
-};
-
-Subject.defaultProps = {
-  subject: 'Arabic',
+  subject_id: PropTypes.number.isRequired,
 };
 
 export default Subject;

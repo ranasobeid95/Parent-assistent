@@ -14,13 +14,16 @@ class Homework extends Component {
 
   componentDidMount() {
     // we will make a request to fetch data by using (Axios)
+    console.log(this.props);
     const {
-      props: { subjectId, classId },
+      match: { subjectId, classId },
     } = this.props;
-
     axios
-      .get(`/api/v1/subjects/${subjectId}/homeworks/${classId}`)
+      .get(
+        `/api/v1/subjects/${this.props.match.params.subjectId}/homeworks/${this.props.match.params.classId}`
+      )
       .then(result => {
+        console.log(result);
         const AllHomeworks = result.data.data[0];
         this.setState({ data: AllHomeworks });
       });

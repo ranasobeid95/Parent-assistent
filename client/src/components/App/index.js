@@ -46,8 +46,8 @@ function App() {
           />
           <Route
             exact
-            path="/student/:subject/:idstudent"
-            render={() => <Subject />}
+            path="/student/subject/:idsubject/:class"
+            render={props => <Subject {...props} />}
           />
           <Route
             exact
@@ -56,7 +56,7 @@ function App() {
           />
           <Route
             exact
-            path="/student/:subject/homework/:class"
+            path="/student/:subjectId/homework/:classId"
             render={props => <HomeWork {...props} />}
           />
           <Route
