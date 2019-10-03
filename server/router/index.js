@@ -10,8 +10,8 @@ const {
   parentPRofile,
   clientError,
   serverError,
+  authUser,
 } = require('../controllers');
-
 
 const { auth } = require('../controllers/middlewares');
 
@@ -19,6 +19,7 @@ const router = express.Router();
 
 router.post('/signup/parent', signupParent);
 router.post('/login', login);
+router.get('/auth', authUser);
 router.use(auth);
 router.get('/student/:id', subjectPage);
 router.get('/profile/teacher/:id', teacherProfile);

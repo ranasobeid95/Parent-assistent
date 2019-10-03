@@ -12,8 +12,8 @@ app.use(cookieParser());
 app.set('port', PORT);
 app.use(express.json());
 
-app.use('/api/v1', router);
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
+app.use('/api/v1', router);
 
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
