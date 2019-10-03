@@ -4,7 +4,6 @@ const secret = process.env.SECRET_KEY;
 
 const authUser = (req, res) => {
   jwt.verify(req.cookies.access, secret, (err, token) => {
-    console.log(token);
     if (err) {
       res.status(401).send({ auth: false });
     } else {
