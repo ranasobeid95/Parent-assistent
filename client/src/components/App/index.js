@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
@@ -15,54 +15,85 @@ import HomeWork from '../pages/HomeWork';
 import Error from '../pages/Error';
 import './index.css';
 
-function App() {
-  return (
-    <>
-      <Header />
-      <main className="container">
-        <Switch>
-          <Route exact path="/" render={props => <Home {...props} />} />
-          <Route exact path="/login" render={props => <LogIn {...props} />} />
-          <Route exact path="/signup" render={() => <SignUp />} />
-          <Route
-            exact
-            path="/signup/parent"
-            render={props => <SignUpParent {...props} />}
-          />
-          <Route
-            exact
-            path="/profile/parent/:id"
-            render={() => <ParentProfile />}
-          />
-          <Route
-            exact
-            path="/profile/teacher/:id"
-            render={props => <TeacherProfile {...props} />}
-          />
-          <Route exact path="/student/:id" render={() => <StudentProfile />} />
-          <Route
-            exact
-            path="/student/:subject/:idstudent"
-            render={() => <Subject />}
-          />
-          <Route
-            exact
-            path="/students/:subjectId/activites/:classId"
-            render={props => <Activities {...props} />}
-          />
-          <Route
-            exact
-            path="/student/:subject/homework/:class"
-            render={props => <HomeWork {...props} />}
-          />
-          <Route
-            render={() => <Error typeError="404" errorDesc="Page Not Found" />}
-          />
-        </Switch>
-      </main>
-      <Footer />
-    </>
-  );
-}
+class App extends Component {
+  state = {
+    auth: false,
+  };
 
+  signupHandler = () => {
+    this.setState({
+      auth: true,
+    });
+  };
+
+  logoutHandler = () => {
+    this.setState({
+      auth: false,
+    });
+  };
+
+  render() {
+    const { auth } = this.state;
+    return (
+      <>
+        <Header logoutHandler={this.logoutHandler} auth={auth} />
+        <main className="container">
+          <Switch>
+            <Route exact path="/" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path="/login"
+              render={props => (
+                <LogIn signupHandler={this.signupHandler} {...props} />
+              )}
+            />
+            <Route exact path="/signup" render={() => <SignUp />} />
+            <Route exact path="/logout" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path="/signup/parent"
+              render={props => <SignUpParent {...props} />}
+            />
+            <Route
+              exact
+              path="/profile/parent/:id"
+              render={() => <ParentProfile />}
+            />
+            <Route
+              exact
+              path="/profile/teacher/:id"
+              render={props => <TeacherProfile {...props} />}
+            />
+            <Route
+              exact
+              path="/student/:id"
+              render={() => <StudentProfile />}
+            />
+            <Route
+              exact
+              path="/student/:subject/:idstudent"
+              render={() => <Subject />}
+            />
+            <Route
+              exact
+              path="/students/:subjectId/activites/:classId"
+              render={props => <Activities {...props} />}
+            />
+            <Route
+              exact
+              path="/student/:subject/homework/:class"
+              render={props => <HomeWork {...props} />}
+            />
+            <Route
+              render={() => (
+                <Error typeError="404" errorDesc="Page Not Found" />
+              )}
+            />
+          </Switch>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+}
 export default App;

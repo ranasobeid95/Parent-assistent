@@ -16,6 +16,7 @@ class LogIn extends Component {
   };
 
   handleSubmit = e => {
+    const { signupHandler } = this.props;
     e.preventDefault();
     const { email, password } = this.state;
     loginValidation.isValid({ email, password }).then(res => {
@@ -37,7 +38,8 @@ class LogIn extends Component {
             const {
               history: { push },
             } = this.props;
-            push(`/profile/parent/${result.data.id}`);
+            push(`/profile/parent/${result.data.message}`);
+            signupHandler();
           });
       }
     });
@@ -91,6 +93,7 @@ class LogIn extends Component {
 }
 
 LogIn.propTypes = {
+  signupHandler: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
