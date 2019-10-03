@@ -45,7 +45,7 @@
 .account__button{
     padding: 10px 40px;
     pointer-events: none;
-    width: 120px;
+    width: 120px !important;
     justify-content: center;
 }
 .about , .vision {
