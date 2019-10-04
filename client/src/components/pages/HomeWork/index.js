@@ -14,7 +14,6 @@ class Homework extends Component {
   handleOnchange = e => {
     // we will make a request to fetch data by using (Axios)
     const { value } = e.target;
-    console.log(value);
     const {
       match: {
         params: { subjectId, classId },
