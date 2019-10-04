@@ -1,8 +1,10 @@
-# Parent-assistent - App
+# Parent Assistent App 
 
-## Our Team are : 
+## [ Heroku Link ](https://parent-assistent.herokuapp.com/)
+
+## Team  
 - Amin Alkhsham (Team Lead)
-- Asma Thabet
+- Asmaa Thabet
 - Alaa Taima
 - Mohammed Qarmout
 - Asem Abu Msameh    
@@ -37,14 +39,8 @@ teachers and parents, and this App will provide the following things :
 
 ## User Journey
 
-- Enter the App.
-- Sign up if you are a new user.
-- Log in if you are a regestered user.
-- Choose your child class.
-- Choose your child subject.
-- OR Choose your child teacher.
-- You will get a full description about the choosed subject and also you can see the teacher profile.
-- Choose contact to get an online chat with teacher.
+The user (parent) open the app to see landing page that contain general information about the app and school vision, then he can sign up by pressing on signup button to redirect after that to login page to start dealing with the app , the user will enter his profile that contains his children names ,Grade and class , then he/she can see their children class subjects and teachers profiles, For every subject there is a page to display subject activities and homeworks , the user can also see teacher profile that contains teacher details , the user can contact with the teacher to ask about his/her children level and assessment .  
+
 
 ## User Story
 
@@ -56,7 +52,8 @@ teachers and parents, and this App will provide the following things :
 - As a user I can give my feedback about my child class.
 
 ## Database Schema 
-![](https://user-images.githubusercontent.com/29041512/65251330-d1a0c200-daff-11e9-9858-2a94f883883a.png)
+![schema](https://user-images.githubusercontent.com/29041512/66233087-2133e000-e6f3-11e9-9b6f-a13399873371.png)
 
-## Prototype :
-## [Prototype Link :](https://www.figma.com/file/Aqb9cdOtWWRIicrUI9u0m6/ParentAssistant?node-id=0%3A1)
+## Prototype 
+## [Prototype Link ](https://www.figma.com/file/Aqb9cdOtWWRIicrUI9u0m6/ParentAssistant?node-id=0%3A1)
+
