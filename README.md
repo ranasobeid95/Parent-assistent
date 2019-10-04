@@ -1,4 +1,6 @@
-# Parent-assistent - App
+# Parent Assistent App 
+
+## [ Heroku Link ](https://parent-assistent.herokuapp.com/)
 
 ## Team  
 - Amin Alkhsham (Team Lead)
@@ -54,3 +56,4 @@ The user (parent) open the app to see landing page that contain general informat
 
 ## Prototype 
 ## [Prototype Link ](https://www.figma.com/file/Aqb9cdOtWWRIicrUI9u0m6/ParentAssistant?node-id=0%3A1)
+
