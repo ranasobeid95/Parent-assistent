@@ -14,6 +14,7 @@ class Homework extends Component {
   handleOnchange = e => {
     // we will make a request to fetch data by using (Axios)
     const { value } = e.target;
+    console.log(value);
     const {
       match: {
         params: { subjectId, classId },
@@ -24,6 +25,7 @@ class Homework extends Component {
         homeworkDate: value,
       })
       .then(result => {
+        console.log(result);
         const AllHomeworks = result.data.data[0];
         this.setState({ data: AllHomeworks });
       });
