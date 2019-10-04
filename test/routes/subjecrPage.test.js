@@ -7,12 +7,12 @@ const { access } = require('./cookie.test');
 
 test('Test subject Page', (t) => {
   const expected = {
-    teacher_id: 3,
-    last_name: 'Omar',
-    first_name: 'Arwa',
-    subject_id: 3,
-    subject_name: 'Math',
-    class: 5,
+    teacher_id: 1,
+    last_name: 'Ghareb',
+    first_name: 'Ahmed',
+    subject_id: 1,
+    subject_name: 'English',
+    class: 1,
   };
   dbBuild()
     .then(() => dbFakeData())
@@ -31,7 +31,7 @@ test('Test subject Page', (t) => {
               res.body[0],
               expected,
               'Sami',
-              'test for seccess response',
+              'test for success response',
             );
 
             t.end();

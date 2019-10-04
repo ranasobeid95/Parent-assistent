@@ -5,7 +5,7 @@ const { dbFakeData, dbBuild } = require('../../server/database/config/build');
 
 test('Test /login route', (t) => {
   const userInfo = {
-    email: 'Ola200@gmail.com',
+    email: 'ola200@gmail.com',
     password: '123456789',
   };
   dbBuild()

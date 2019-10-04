@@ -11,7 +11,7 @@ tape('Testing for subject Homework Route', (t) => {
     .then(() => {
       supertest(app)
         .post('/api/v1/subjects/2/homeworks/2')
-        .send({ homeworkDate: '2019-03-10' })
+        .send({ homeworkDate: '2019-08-03' })
         .expect(200)
         .expect('content-type', /json/)
         .set('Cookie', [`access=${access}`])
