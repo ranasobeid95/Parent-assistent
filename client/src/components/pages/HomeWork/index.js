@@ -24,7 +24,6 @@ class Homework extends Component {
         homeworkDate: value,
       })
       .then(result => {
-        console.log(result);
         const AllHomeworks = result.data.data[0];
         this.setState({ data: AllHomeworks });
       });
