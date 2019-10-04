@@ -52,70 +52,66 @@ class App extends Component {
       <>
         <Header logoutHandler={this.logoutHandler} auth={auth} />
         <main className="container">
-          <Switch>
-            {!auth === null ? (
-              <h1>loading</h1>
-            ) : auth === false ? (
-              <>
-                <Route exact path="/" render={props => <Home {...props} />} />
-                <Route
-                  exact
-                  path="/login"
-                  render={props => (
-                    <LogIn signupHandler={this.signupHandler} {...props} />
-                  )}
-                />
-                <Route exact path="/signup" render={() => <SignUp />} />
-                <Route
-                  exact
-                  path="/signup/parent"
-                  render={props => <SignUpParent {...props} />}
-                />
-                <Route render={() => <Redirect to="/" />} />
-              </>
-            ) : (
-              <>
-                <Route
-                  exact
-                  path="/logout"
-                  render={props => <Home {...props} />}
-                />
-                <Route
-                  exact
-                  path="/profile/parent/:id"
-                  render={props => <ParentProfile {...props} />}
-                />
-                <Route
-                  exact
-                  path="/profile/teacher/:id"
-                  render={props => <TeacherProfile {...props} />}
-                />
-                <Route
-                  exact
-                  path="/student/:id"
-                  render={props => <StudentProfile {...props} />}
-                />
-                <Route
-                  exact
-                  path="/student/subject/:subjectId/:idClass"
-                  render={props => <Subject {...props} />}
-                />
-                <Route
-                  exact
-                  path="/students/:subjectId/activites/:classId"
-                  render={props => <Activities {...props} />}
-                />
-                <Route
-                  exact
-                  path="/student/:subjectId/homework/:classId"
-                  render={props => <HomeWork {...props} />}
-                />
-                <Route
-                  render={() => <Redirect to={`/profile/parent/${id}`} />}
-                />
-              </>
-            )}
-          </Switch>
+          {auth === null ? (
+            <h1>loading</h1>
+          ) : auth === false ? (
+            <Switch>
+              <Route exact path="/" render={props => <Home {...props} />} />
+              <Route
+                exact
+                path="/login"
+                render={props => (
+                  <LogIn signupHandler={this.signupHandler} {...props} />
+                )}
+              />
+              <Route exact path="/signup" render={() => <SignUp />} />
+              <Route
+                exact
+                path="/signup/parent"
+                render={props => <SignUpParent {...props} />}
+              />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
+          ) : (
+            <Switch>
+              <Route
+                exact
+                path="/logout"
+                render={props => <Home {...props} />}
+              />
+              <Route
+                exact
+                path="/profile/parent/:id"
+                render={props => <ParentProfile {...props} />}
+              />
+              <Route
+                exact
+                path="/profile/teacher/:id"
+                render={props => <TeacherProfile {...props} />}
+              />
+              <Route
+                exact
+                path="/student/:id"
+                render={props => <StudentProfile {...props} />}
+              />
+              <Route
+                exact
+                path="/student/subject/:subjectId/:idClass"
+                render={props => <Subject {...props} />}
+              />
+              <Route
+                exact
+                path="/students/:subjectId/activites/:classId"
+                render={props => <Activities {...props} />}
+              />
+              <Route
+                exact
+                path="/student/:subjectId/homework/:classId"
+                render={props => <HomeWork {...props} />}
+              />
+              <Route render={() => <Redirect to={`/profile/parent/${id}`} />} />
+            </Switch>
+          )}
         </main>
         <Footer />
       </>
