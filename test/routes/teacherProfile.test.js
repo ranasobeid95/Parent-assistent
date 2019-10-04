@@ -10,7 +10,7 @@ test('Test /teacher/profile route', (t) => {
     .then(() => dbFakeData())
     .then(() => {
       supertest(app)
-        .get('/api/v1/profile/teacher/1')
+        .get('/api/v1/profile/teacher/5')
         .set('Cookie', [`access=${access}`])
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')

@@ -24,9 +24,9 @@ tape('test the findUser & insert query', (t) => {
 
 // the select gose here
 
-tape('test the seletct query ', (t) => {
+tape('test select query ', (t) => {
   const expected = {
-    email: 'Ola200@gmail.com',
+    email: 'ola200@gmail.com',
     user_name: 'Ola',
     parent_id: 123456789,
   };

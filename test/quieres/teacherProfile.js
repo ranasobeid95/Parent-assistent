@@ -4,10 +4,10 @@ const {
   getTeacherProfile,
 } = require('../../server/database/quieres/teacherProfile');
 
-tape('testing for teacherProfile qyuery', (t) => {
+tape('testing for teacherProfile query', (t) => {
   dbBuild()
     .then(() => dbFakeData())
-    .then(() => getTeacherProfile(1))
+    .then(() => getTeacherProfile(5))
     .then((res) => {
       t.deepEqual(res.rows[0].first_name, 'Ahmed', 'should be the same');
       t.deepEqual(res.rows[0].last_name, 'Ghareb', 'should be the same');
