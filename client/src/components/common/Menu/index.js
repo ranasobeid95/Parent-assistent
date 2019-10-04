@@ -17,6 +17,9 @@ const Menu = ({ showOrHide, isSigned: protect, show, logoutHandler }) => {
         {protect ? (
           <>
             <li>
+              <NavLink className="list" to="/profile/parent">
+                Home
+              </NavLink>
               <NavLink
                 onClick={() => {
                   logoutHandler();

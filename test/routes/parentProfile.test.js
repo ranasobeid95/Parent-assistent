@@ -19,7 +19,7 @@ test('Test /parent/profile route', (t) => {
             t.error(err);
             t.end();
           } else {
-            t.deepEqual(res.body[0].student_name, 'Sami', 'should be the same');
+            t.deepEqual(res.body[0].student_name, 'sohad', 'should be the same');
             t.end();
           }
         });
