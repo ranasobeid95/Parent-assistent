@@ -47,7 +47,7 @@ class App extends Component {
   };
 
   render() {
-    const { auth, id } = this.state;
+    const { auth } = this.state;
     return (
       <>
         <Header logoutHandler={this.logoutHandler} auth={auth} />
@@ -81,7 +81,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/profile/parent/:id"
+                path="/profile/parent"
                 render={props => <ParentProfile {...props} />}
               />
               <Route
@@ -109,7 +109,7 @@ class App extends Component {
                 path="/student/:subjectId/homework/:classId"
                 render={props => <HomeWork {...props} />}
               />
-              <Route render={() => <Redirect to={`/profile/parent/${id}`} />} />
+              <Route render={() => <Redirect to="/profile/parent" />} />
             </Switch>
           )}
         </main>
