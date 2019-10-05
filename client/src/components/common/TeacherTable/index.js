@@ -38,7 +38,7 @@ export default class TeacherTable extends React.Component {
                   first_name: firstName,
                   last_name: lastName,
                   subject_name: subjectName,
-                  teacher_id: id,
+                  user_id: id,
                   subject_id: subjectId,
                   class: classId,
                 }) => (

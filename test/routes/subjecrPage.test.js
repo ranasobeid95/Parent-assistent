@@ -9,6 +9,7 @@ test('Test subject Page', (t) => {
   const expected = {
     teacher_id: 1,
     last_name: 'Ghareb',
+    user_id: 5,
     first_name: 'Ahmed',
     subject_id: 1,
     subject_name: 'English',
