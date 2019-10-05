@@ -22,7 +22,6 @@ class TeacherProfile extends Component {
       },
     } = this.props;
     axios.get(`/api/v1/profile/teacher/${id}`).then(result => {
-      console.log(result);
       this.setState({ data: result.data[0] });
     });
   }

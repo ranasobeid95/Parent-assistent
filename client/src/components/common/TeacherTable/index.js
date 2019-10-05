@@ -14,7 +14,6 @@ export default class TeacherTable extends React.Component {
       },
     } = this.props;
     axios.get(`/api/v1/student/${id}`).then(res => {
-      console.log(res);
       this.setState({ data: res.data });
     });
   }
