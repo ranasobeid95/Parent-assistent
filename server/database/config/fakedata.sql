@@ -19,7 +19,7 @@ VALUES
     (0127893456, 4);
 
 INSERT INTO teacher
-    (first_name,last_name,user_id, bio, image_url, mobile, email, interest)
+    (first_name,last_name,user_id, bio, image_url, mobile, interest)
 VALUES 
     ('Ahmed','Ghareb',5, 'Hi Iam Ahmed Ghareb Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels'),
     ('Ali','Taha',6, 'Hi Iam Ali Taha Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels'),
