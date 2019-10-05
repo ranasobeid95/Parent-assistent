@@ -24,7 +24,6 @@ CREATE TABLE teacher(
     bio text,
     image_url text,
     mobile INTEGER,
-    email  VARCHAR(255),
     interest text,
     FOREIGN KEY (user_id) REFERENCES "user"(id)
 );

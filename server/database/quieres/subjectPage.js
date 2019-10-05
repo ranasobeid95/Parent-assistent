@@ -4,6 +4,7 @@ const subject = (id) => {
   const sql = {
     text: ` select
     subject_teacher.teacher_id ,
+    teacher.user_id ,
     teacher.last_name ,
     teacher.first_name ,
     subject_teacher.subject_id ,

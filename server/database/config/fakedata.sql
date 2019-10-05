@@ -21,10 +21,10 @@ VALUES
 INSERT INTO teacher
     (first_name,last_name,user_id, bio, image_url, mobile, email, interest)
 VALUES 
-    ('Ahmed','Ghareb',5, 'Hi Iam Ahmed Ghareb Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels'),
-    ('Ali','Taha',6, 'Hi Iam Ali Taha Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels'),
-    ('Arwa','Omar',7, 'Hi Iam Arwa Omar Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels'),
-    ('Hala','salah',8, 'Hi Iam Hala Salah Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'ahm-214@gmail.com','Reading novels');
+    ('Ahmed','Ghareb',5, 'Hi Iam Ahmed Ghareb Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels'),
+    ('Ali','Taha',6, 'Hi Iam Ali Taha Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels'),
+    ('Arwa','Omar',7, 'Hi Iam Arwa Omar Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels'),
+    ('Hala','salah',8, 'Hi Iam Hala Salah Iam a teacher in Gaza Primary School you can contact me', 'https://cdn4.iconfinder.com/data/icons/BRILLIANT/accounting/png/400/executive.png',0599542154,'Reading novels');
 
 INSERT INTO student   
     (student_name,class,parent_id) 
