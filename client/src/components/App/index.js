@@ -32,7 +32,7 @@ class App extends Component {
       });
   }
 
-  signupHandler = () => {
+  loginHandler = () => {
     this.setState({
       auth: true,
     });
@@ -56,12 +56,12 @@ class App extends Component {
             <h1>loading</h1>
           ) : auth === false ? (
             <Switch>
-              <Route exact path="/" render={props => <Home {...props} />} />
+              <Route exact path="/" render={props => <Home {...props} />} /> 
               <Route
                 exact
                 path="/login"
                 render={props => (
-                  <LogIn signupHandler={this.signupHandler} {...props} />
+                  <LogIn loginHandler={this.loginHandler} {...props} />
                 )}
               />
               <Route exact path="/signup" render={() => <SignUp />} />
@@ -70,7 +70,7 @@ class App extends Component {
                 path="/signup/parent"
                 render={props => <SignUpParent {...props} />}
               />
-              <Route render={() => <Redirect to="/" />} />
+              <Route render={() => <Redirect to="/" />} /> // ? why you use this way with redirect commen
             </Switch>
           ) : (
             <Switch>
@@ -109,7 +109,7 @@ class App extends Component {
                 path="/student/:subjectId/homework/:classId"
                 render={props => <HomeWork {...props} />}
               />
-              <Route render={() => <Redirect to="/profile/parent" />} />
+              <Route render={() => <Redirect to="/profile/parent" />} /> 
             </Switch>
           )}
         </main>
