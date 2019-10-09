@@ -12,8 +12,8 @@ class Homework extends Component {
   };
 
   handleOnchange = e => {
-    // we will make a request to fetch data by using (Axios)
     const { value } = e.target;
+    const { history } = this.props;
     const {
       match: {
         params: { subjectId, classId },
@@ -26,6 +26,11 @@ class Homework extends Component {
       .then(result => {
         const AllHomeworks = result.data.data[0];
         this.setState({ data: AllHomeworks });
+      })
+      .catch(err => {
+        if (err) {
+          history.push('/serverError');
+        }
       });
   };
 
@@ -91,6 +96,7 @@ Homework.propTypes = {
       subjectName: PropTypes.string,
     }),
   }).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Homework;
