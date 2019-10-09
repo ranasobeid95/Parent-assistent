@@ -16,7 +16,7 @@ class LogIn extends Component {
   };
 
   handleSubmit = e => {
-    const { signupHandler } = this.props;
+    const { signupHandler, history } = this.props;
     e.preventDefault();
     const { email, password } = this.state;
     loginValidation.isValid({ email, password }).then(res => {
@@ -40,6 +40,15 @@ class LogIn extends Component {
             } = this.props;
             push(`/profile/parent/${result.data.message}`);
             signupHandler();
+          })
+          .catch(err => {
+            if (err.message.includes('400')) {
+              this.setState({
+                error: true,
+              });
+            } else {
+              history.push('/serverError');
+            }
           });
       }
     });

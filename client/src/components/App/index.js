@@ -1,7 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+import Error from '../pages/Error';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import Home from '../pages/Home';
@@ -39,11 +41,19 @@ class App extends Component {
   };
 
   logoutHandler = () => {
-    axios.get('/api/v1/logout').then(() => {
-      this.setState({
-        auth: false,
+    const { history } = this.props;
+    axios
+      .get('/api/v1/logout')
+      .then(() => {
+        this.setState({
+          auth: false,
+        });
+      })
+      .catch(err => {
+        if (err) {
+          history.push('/serverError');
+        }
       });
-    });
   };
 
   render() {
@@ -70,18 +80,28 @@ class App extends Component {
                 path="/signup/parent"
                 render={props => <SignUpParent {...props} />}
               />
-              <Route render={() => <Redirect to="/" />} />
+              <Route path="/serverError" component={Error} />
+              <Route
+                path="*"
+                render={props => (
+                  <Error
+                    {...props}
+                    typeError="404"
+                    errorDesc="Page Not found"
+                  />
+                )}
+              />
             </Switch>
           ) : (
             <Switch>
               <Route
                 exact
                 path="/logout"
-                render={props => <Home {...props} />}
+                render={props => <Redirect to="/" {...props} />}
               />
               <Route
                 exact
-                path="/profile/parent"
+                path="/profile/parent/:id"
                 render={props => <ParentProfile {...props} />}
               />
               <Route
@@ -109,7 +129,17 @@ class App extends Component {
                 path="/student/:subjectId/homework/:classId"
                 render={props => <HomeWork {...props} />}
               />
-              <Route render={() => <Redirect to="/profile/parent" />} />
+              <Route path="/serverError" component={Error} />
+              <Route
+                path="*"
+                render={props => (
+                  <Error
+                    {...props}
+                    typeError="404"
+                    errorDesc="Page Not found"
+                  />
+                )}
+              />
             </Switch>
           )}
         </main>
@@ -118,4 +148,8 @@ class App extends Component {
     );
   }
 }
+App.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
 export default App;
