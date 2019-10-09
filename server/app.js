@@ -1,5 +1,4 @@
 const { join } = require('path');
-const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 require('env2')('./config.env');
@@ -11,8 +10,10 @@ app.use(cookieParser());
 
 app.set('port', PORT);
 app.use(express.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(join(__dirname, '..', 'client', 'build')));
 app.use('/api/v1', router);
 
 app.get('*', (req, res) => {
