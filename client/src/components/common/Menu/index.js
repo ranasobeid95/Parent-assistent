@@ -11,7 +11,7 @@ const Menu = ({ showOrHide, isSigned: protect, show, logoutHandler }) => {
         className="close-icon"
         role="button"
         onClick={() => showOrHide()}
-        tabIndex="0"
+        tabIndex={0}
       ></i>
       <ul className="lists">
         {protect ? (

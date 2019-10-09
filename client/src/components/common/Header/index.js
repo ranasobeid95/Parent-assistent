@@ -31,7 +31,6 @@ class Header extends Component {
             type="button"
             onClick={this.onClickHandler}
             className="hamburger"
-            style={{ background: 'none', border: 0 }}
           >
             <div></div>
             <div></div>
