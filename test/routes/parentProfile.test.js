@@ -10,7 +10,7 @@ test('Test /parent/profile route', (t) => {
     .then(() => dbFakeData())
     .then(() => {
       supertest(app)
-        .get('/api/v1/profile/parent/2')
+        .get('/api/v1/profile/parent/1')
         .set('Cookie', [`access=${access}`])
         .expect(200)
         .expect('Content-Type', 'application/json; charset=utf-8')
@@ -19,7 +19,7 @@ test('Test /parent/profile route', (t) => {
             t.error(err);
             t.end();
           } else {
-            t.deepEqual(res.body[0].student_name, 'sohad', 'should be the same');
+            t.deepEqual(res.body[0].student_name, 'Sami', 'should be the same');
             t.end();
           }
         });

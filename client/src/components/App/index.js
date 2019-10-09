@@ -122,7 +122,7 @@ class App extends Component {
               <Route
                 exact
                 path="/students/:subjectId/activites/:classId"
-                component={Activities}
+                render={props => <Activities {...props} />}
               />
               <Route
                 exact
