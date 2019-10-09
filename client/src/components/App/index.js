@@ -1,7 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+import Error from '../pages/Error';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import Home from '../pages/Home';
@@ -52,11 +54,19 @@ class App extends Component {
   };
 
   logoutHandler = () => {
-    axios.get('/api/v1/logout').then(() => {
-      this.setState({
-        auth: false,
+    const { history } = this.props;
+    axios
+      .get('/api/v1/logout')
+      .then(() => {
+        this.setState({
+          auth: false,
+        });
+      })
+      .catch(err => {
+        if (err) {
+          history.push('/serverError');
+        }
       });
-    });
   };
 
   render() {
@@ -102,7 +112,17 @@ class App extends Component {
                   <SignUpParent {...props} onBlurFun={this.onBlurFun} />
                 )}
               />
-              <Route render={() => <Redirect to="/" />} />
+              <Route path="/serverError" component={Error} />
+              <Route
+                path="*"
+                render={props => (
+                  <Error
+                    {...props}
+                    typeError="404"
+                    errorDesc="Page Not found"
+                  />
+                )}
+              />
             </Switch>
           ) : (
             <Switch>
@@ -113,7 +133,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/profile/parent"
+                path="/profile/parent/:id"
                 render={props => (
                   <ParentProfile {...props} onBlurFun={this.onBlurFun} />
                 )}
@@ -153,7 +173,17 @@ class App extends Component {
                   <HomeWork {...props} onBlurFun={this.onBlurFun} />
                 )}
               />
-              <Route render={() => <Redirect to="/profile/parent" />} />
+              <Route path="/serverError" component={Error} />
+              <Route
+                path="*"
+                render={props => (
+                  <Error
+                    {...props}
+                    typeError="404"
+                    errorDesc="Page Not found"
+                  />
+                )}
+              />
             </Switch>
           )}
         </main>
@@ -162,4 +192,8 @@ class App extends Component {
     );
   }
 }
+App.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
 export default App;
