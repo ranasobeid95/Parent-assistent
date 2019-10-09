@@ -12,10 +12,19 @@ export default class TeacherTable extends React.Component {
       match: {
         params: { id },
       },
+      history,
     } = this.props;
-    axios.get(`/api/v1/student/${id}`).then(res => {
-      this.setState({ data: res.data });
-    });
+
+    axios
+      .get(`/api/v1/student/${id}`)
+      .then(res => {
+        this.setState({ data: res.data });
+      })
+      .catch(err => {
+        if (err) {
+          history.push('/serverError');
+        }
+      });
   }
 
   render() {
@@ -82,4 +91,5 @@ export default class TeacherTable extends React.Component {
 }
 TeacherTable.propTypes = {
   match: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
