@@ -14,10 +14,16 @@ class TeacherProfile extends Component {
       match: {
         params: { id },
       },
+      history,
     } = this.props;
-    axios.get(`/api/v1/profile/teacher/${id}`).then(result => {
-      this.setState({ data: result.data[0] });
-    });
+    axios
+      .get(`/api/v1/profile/teacher/${id}`)
+      .then(result => {
+        this.setState({ data: result.data[0] });
+      })
+      .catch(() => {
+        history.push('/serverError');
+      });
   }
 
   showContent = tapName => {
@@ -111,6 +117,7 @@ TeacherProfile.propTypes = {
       id: PropTypes.any,
     }),
   }).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default TeacherProfile;
