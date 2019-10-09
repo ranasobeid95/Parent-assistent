@@ -16,7 +16,7 @@ class LogIn extends Component {
   };
 
   handleSubmit = e => {
-    const { loginHandler } = this.props;
+    const { loginHandler, history } = this.props;
     e.preventDefault();
     const { email, password } = this.state;
     loginValidation.isValid({ email, password }).then(res => {
@@ -34,12 +34,21 @@ class LogIn extends Component {
             { email, password },
             { headers: { Accept: 'application/json' } }
           )
-          .then(({ data: { message }}) => {
+          .then(({ data: { message } }) => {
             const {
               history: { push },
             } = this.props;
             push(`/profile/parent/${message}`);
             loginHandler();
+          })
+          .catch(err => {
+            if (err.message.includes('400')) {
+              this.setState({
+                error: true,
+              });
+            } else {
+              history.push('/serverError');
+            }
           });
       }
     });
