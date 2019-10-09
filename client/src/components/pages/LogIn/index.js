@@ -34,7 +34,7 @@ class LogIn extends Component {
             { email, password },
             { headers: { Accept: 'application/json' } }
           )
-          .then(({ data: { message }}) => {
+          .then(({ data: { message } }) => {
             const {
               history: { push },
             } = this.props;

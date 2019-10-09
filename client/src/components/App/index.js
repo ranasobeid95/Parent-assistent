@@ -56,7 +56,7 @@ class App extends Component {
             <h1>loading</h1>
           ) : auth === false ? (
             <Switch>
-              <Route exact path="/" render={props => <Home {...props} />} /> 
+              <Route exact path="/" render={props => <Home {...props} />} />
               <Route
                 exact
                 path="/login"
@@ -70,7 +70,7 @@ class App extends Component {
                 path="/signup/parent"
                 render={props => <SignUpParent {...props} />}
               />
-              <Route render={() => <Redirect to="/" />} /> // ? why you use this way with redirect commen
+              <Route render={() => <Redirect to="/" />} />
             </Switch>
           ) : (
             <Switch>
@@ -109,7 +109,7 @@ class App extends Component {
                 path="/student/:subjectId/homework/:classId"
                 render={props => <HomeWork {...props} />}
               />
-              <Route render={() => <Redirect to="/profile/parent" />} /> 
+              <Route render={() => <Redirect to="/profile/parent" />} />
             </Switch>
           )}
         </main>
