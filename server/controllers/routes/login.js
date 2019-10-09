@@ -24,11 +24,13 @@ const login = (req, res, next) => {
         throw validationErr;
       }
       const { password: hashedPassword, parent_id: parentId, id } = rows[0];
-      return bcrypt.compare(password, hashedPassword).then((value) => ({
+      const value = bcrypt.compareSync(password, hashedPassword);
+
+      return {
         value,
         parentId,
         id,
-      }));
+      };
     })
     .then(({ value, parentId, id }) => {
       if (value) {
