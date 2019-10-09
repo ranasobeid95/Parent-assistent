@@ -57,6 +57,7 @@ export default class SignUp extends React.Component {
   };
 
   render() {
+    const { onBlurFun } = this.props;
     const {
       errors,
       email,
@@ -66,7 +67,7 @@ export default class SignUp extends React.Component {
       confirmPassword,
     } = this.state;
     return (
-      <div className="signUp">
+      <div className="signUp" role="button" tabIndex={0} onClick={onBlurFun}>
         <form className="signUp__form" onSubmit={this.handleSubmit}>
           <p className="signUp__header">Sign Up</p>
 
@@ -147,4 +148,5 @@ export default class SignUp extends React.Component {
 
 SignUp.propTypes = {
   history: PropTypes.objectOf(PropTypes.any).isRequired,
+  onBlurFun: PropTypes.func.isRequired,
 };

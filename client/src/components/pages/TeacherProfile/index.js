@@ -88,9 +88,15 @@ class TeacherProfile extends Component {
 
   render() {
     const { data } = this.state;
+    const { onBlurFun } = this.props;
 
     return (
-      <div className="teach-profile">
+      <div
+        className="teach-profile"
+        role="button"
+        tabIndex={0}
+        onClick={onBlurFun}
+      >
         <div>
           <img className="img-teacher" src={data.image_url} alt="teacher img" />
         </div>
@@ -117,6 +123,7 @@ TeacherProfile.propTypes = {
       id: PropTypes.any,
     }),
   }).isRequired,
+  onBlurFun: PropTypes.func.isRequired,
 };
 
 export default TeacherProfile;

@@ -31,10 +31,16 @@ class Homework extends Component {
 
   render() {
     const { data } = this.state;
+    const { onBlurFun } = this.props;
 
     return (
       <>
-        <div className="homework">
+        <div
+          className="homework"
+          role="button"
+          tabIndex={0}
+          onClick={onBlurFun}
+        >
           <h3 className="homework__class">Class Homework</h3>
           <div className="homework__calendar">
             <form>
@@ -91,6 +97,7 @@ Homework.propTypes = {
       subjectName: PropTypes.string,
     }),
   }).isRequired,
+  onBlurFun: PropTypes.func.isRequired,
 };
 
 export default Homework;

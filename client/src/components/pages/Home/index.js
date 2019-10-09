@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Button from '../../common/Button';
 import HomeClass from '../../../assets/home__class.jpg';
 import './index.css';
 
-const HomePage = () => {
+const HomePage = ({ onBlurFun }) => {
   return (
-    <div className="home">
+    <div className="home" role="button" tabIndex={0} onClick={onBlurFun}>
       <div className="home__header">
         <div className="home__img-overlay">
           <div className="home__box">
@@ -47,6 +49,10 @@ const HomePage = () => {
       </div>
     </div>
   );
+};
+
+HomePage.propTypes = {
+  onBlurFun: PropTypes.func.isRequired,
 };
 
 export default HomePage;

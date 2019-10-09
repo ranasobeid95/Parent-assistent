@@ -10,9 +10,10 @@ const Subject = props => {
       params: { subjectId, idClass },
     },
     location,
+    onBlurFun,
   } = props;
   return (
-    <div className="subject">
+    <div className="subject" role="button" tabIndex={0} onClick={onBlurFun}>
       <div className="subject__title-box">
         <p className="subject__p--subject">{location.state.subjectName}</p>
         <p className="subject__p--des">
@@ -45,6 +46,7 @@ Subject.propTypes = {
       idClass: PropTypes.any,
     }),
   }).isRequired,
+  onBlurFun: PropTypes.func.isRequired,
   location: PropTypes.shape({
     state: PropTypes.shape({
       subjectName: PropTypes.string,
