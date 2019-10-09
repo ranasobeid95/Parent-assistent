@@ -34,7 +34,7 @@ class App extends Component {
       });
   }
 
-  signupHandler = () => {
+  loginHandler = () => {
     this.setState({
       auth: true,
     });
@@ -71,7 +71,7 @@ class App extends Component {
                 exact
                 path="/login"
                 render={props => (
-                  <LogIn signupHandler={this.signupHandler} {...props} />
+                  <LogIn loginHandler={this.loginHandler} {...props} />
                 )}
               />
               <Route exact path="/signup" render={() => <SignUp />} />
