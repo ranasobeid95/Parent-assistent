@@ -16,7 +16,7 @@ class LogIn extends Component {
   };
 
   handleSubmit = e => {
-    const { signupHandler } = this.props;
+    const { loginHandler, history } = this.props;
     e.preventDefault();
     const { email, password } = this.state;
     loginValidation.isValid({ email, password }).then(res => {
@@ -34,12 +34,21 @@ class LogIn extends Component {
             { email, password },
             { headers: { Accept: 'application/json' } }
           )
-          .then(result => {
+          .then(({ data: { message } }) => {
             const {
               history: { push },
             } = this.props;
-            push(`/profile/parent/${result.data.message}`);
-            signupHandler();
+            push(`/profile/parent/${message}`);
+            loginHandler();
+          })
+          .catch(err => {
+            if (err.message.includes('400')) {
+              this.setState({
+                error: true,
+              });
+            } else {
+              history.push('/serverError');
+            }
           });
       }
     });
@@ -93,7 +102,7 @@ class LogIn extends Component {
 }
 
 LogIn.propTypes = {
-  signupHandler: PropTypes.func.isRequired,
+  loginHandler: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,

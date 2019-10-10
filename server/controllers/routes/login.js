@@ -7,7 +7,6 @@ const secret = process.env.SECRET_KEY;
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-
   loginSchema
     .isValid(req.body)
     .then((valid) => {
@@ -25,8 +24,10 @@ const login = (req, res, next) => {
         throw validationErr;
       }
       const { password: hashedPassword, parent_id: parentId, id } = rows[0];
+      const value = bcrypt.compareSync(password, hashedPassword);
+
       return {
-        value: bcrypt.compare(password, hashedPassword),
+        value,
         parentId,
         id,
       };

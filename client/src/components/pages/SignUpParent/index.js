@@ -17,6 +17,8 @@ export default class SignUp extends React.Component {
   };
 
   handleSubmit = e => {
+    const { history } = this.props;
+
     e.preventDefault();
     const {
       email,
@@ -31,24 +33,26 @@ export default class SignUp extends React.Component {
         { abortEarly: false }
       )
       .then(() => {
-        axios
-          .post('/api/v1/signup/parent', {
-            email,
-            username,
-            parentId,
-            password,
-          })
-          .then(() => {
-            const { history } = this.props;
-            history.push('/login');
-          });
+        return axios.post('/api/v1/signup/parent', {
+          email,
+          username,
+          parentId,
+          password,
+        });
+      })
+      .then(() => {
+        history.push('/login');
       })
       .catch(error => {
-        const objError = {};
-        error.inner.forEach(fielderror => {
-          objError[fielderror.path] = fielderror.message;
-        });
-        return this.setState({ errors: objError });
+        if (error.toString().includes('ValidationError')) {
+          const objError = {};
+          error.inner.forEach(fielderror => {
+            objError[fielderror.path] = fielderror.message;
+          });
+          return this.setState({ errors: objError });
+        }
+        history.push('/serverError');
+        return '';
       });
   };
 
@@ -119,7 +123,7 @@ export default class SignUp extends React.Component {
             className="signUp__input"
             onChange={this.handleChange}
           />
-          {errors.password && <p className="error-field">{errors.password}</p>}
+          {errors.password && <p className="error-field">{errors.password} </p>}
 
           <Input
             label="Confirm Password"
