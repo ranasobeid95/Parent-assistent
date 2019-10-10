@@ -88,15 +88,27 @@ SECRET_KEY
 ```
 ### Testing
 To pass the tests you need to :
-create new database for testing by repeate the previous pgcli commands and declare it in the config file .
 
-create 
+1- Create new database for testing by repeate the previous pgcli commands and declare it in the config file .
+
+2- Change access value depending on the secret key that you use
+
+## Start the Server
+You can now start the server! In your terminal write:
+```
+npm run dev
+```
+then you should be able to go to localhost and view the app!
 
 
+## Start the React App 
+You can now start the client side  In your terminal write:
+```
+ cd client/
+ npm start
+```
 
-
-
-
-
-
-
+## Technologies
+- Database: [PostgreSQL](https://www.postgresql.org/)
+- Styling: CSS
+- [Express](https://expressjs.com/)  and  [React](https://reactjs.org/) .
