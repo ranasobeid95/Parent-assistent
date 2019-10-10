@@ -1,5 +1,5 @@
 const clientError = (req, res) => {
-  res.status(400).send({ error: { code: 400, msg: 'clientError' }, data: null });
+  res.status(404).send({ error: { code: 404, msg: 'Not Found' }, data: null });
 };
 
 module.exports = { clientError };
