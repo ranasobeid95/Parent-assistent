@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Error from '../pages/Error';
@@ -21,6 +21,7 @@ import './index.css';
 class App extends Component {
   state = {
     auth: null,
+    show: false,
   };
 
   componentDidMount() {
@@ -33,6 +34,18 @@ class App extends Component {
         this.setState({ auth: false });
       });
   }
+
+  onClickHandler = () => {
+    this.setState(oldState => ({
+      show: !oldState.show,
+    }));
+  };
+
+  onBlurFun = () => {
+    this.setState({
+      show: false,
+    });
+  };
 
   loginHandler = () => {
     this.setState({
@@ -57,33 +70,52 @@ class App extends Component {
   };
 
   render() {
-    const { auth } = this.state;
+    const { auth, show } = this.state;
     return (
       <>
-        <Header logoutHandler={this.logoutHandler} auth={auth} />
+        <Header
+          showMenuFun={this.onClickHandler}
+          logoutHandler={this.logoutHandler}
+          auth={auth}
+          show={show}
+        />
         <main className="container">
           {auth === null ? (
             <h1>loading</h1>
           ) : auth === false ? (
             <Switch>
-              <Route exact path="/" render={props => <Home {...props} />} />
+              <Route
+                exact
+                path="/"
+                render={props => <Home {...props} onBlurFun={this.onBlurFun} />}
+              />
               <Route
                 exact
                 path="/login"
                 render={props => (
-                  <LogIn loginHandler={this.loginHandler} {...props} />
+                  <LogIn
+                    loginHandler={this.loginHandler}
+                    {...props}
+                    onBlurFun={this.onBlurFun}
+                  />
                 )}
               />
               <Route
                 exact
-                path="/logout"
-                render={props => <Redirect to="/" {...props} />}
+                path="/signup"
+                render={() => <SignUp onBlurFun={this.onBlurFun} />}
               />
-              <Route exact path="/signup" render={() => <SignUp />} />
+              <Route
+                exact
+                path="/logout"
+                render={props => <Home {...props} onBlurFun={this.onBlurFun} />}
+              />
               <Route
                 exact
                 path="/signup/parent"
-                render={props => <SignUpParent {...props} />}
+                render={props => (
+                  <SignUpParent {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route path="/serverError" component={Error} />
               <Route
@@ -102,42 +134,56 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => <ParentProfile {...props} />}
+                render={props => (
+                  <ParentProfile {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/logout"
-                render={props => <Redirect to="/" {...props} />}
+                render={props => <Home {...props} onBlurFun={this.onBlurFun} />}
               />
               <Route
                 exact
                 path="/profile/parent/:id"
-                render={props => <ParentProfile {...props} />}
+                render={props => (
+                  <ParentProfile {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/profile/teacher/:id"
-                render={props => <TeacherProfile {...props} />}
+                render={props => (
+                  <TeacherProfile {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/student/:id"
-                render={props => <StudentProfile {...props} />}
+                render={props => (
+                  <StudentProfile {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/student/subject/:subjectId/:idClass"
-                render={props => <Subject {...props} />}
+                render={props => (
+                  <Subject {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/students/:subjectId/activites/:classId"
-                render={props => <Activities {...props} />}
+                render={props => (
+                  <Activities {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact
                 path="/student/:subjectId/homework/:classId"
-                render={props => <HomeWork {...props} />}
+                render={props => (
+                  <HomeWork {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route path="/serverError" component={Error} />
               <Route
