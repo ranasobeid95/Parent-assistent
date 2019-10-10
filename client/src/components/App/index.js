@@ -107,6 +107,11 @@ class App extends Component {
               />
               <Route
                 exact
+                path="/logout"
+                render={props => <Home {...props} onBlurFun={this.onBlurFun} />}
+              />
+              <Route
+                exact
                 path="/signup/parent"
                 render={props => (
                   <SignUpParent {...props} onBlurFun={this.onBlurFun} />
@@ -126,6 +131,11 @@ class App extends Component {
             </Switch>
           ) : (
             <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => <ParentProfile {...props} />}
+              />
               <Route
                 exact
                 path="/logout"
