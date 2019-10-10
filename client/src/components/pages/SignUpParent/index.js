@@ -27,6 +27,7 @@ export default class SignUp extends React.Component {
       password,
       confirmPassword,
     } = this.state;
+
     signUpValidation
       .validate(
         { email, username, parentId, password, confirmPassword },
@@ -44,15 +45,16 @@ export default class SignUp extends React.Component {
         history.push('/login');
       })
       .catch(error => {
+        const objError = {};
         if (error.toString().includes('ValidationError')) {
-          const objError = {};
           error.inner.forEach(fielderror => {
             objError[fielderror.path] = fielderror.message;
           });
           return this.setState({ errors: objError });
         }
-        history.push('/serverError');
-        return '';
+        return this.setState({
+          errors: { parentId: 'parent Id is not exist' },
+        });
       });
   };
 
