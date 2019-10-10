@@ -74,6 +74,11 @@ class App extends Component {
                   <LogIn loginHandler={this.loginHandler} {...props} />
                 )}
               />
+              <Route
+                exact
+                path="/logout"
+                render={props => <Redirect to="/" {...props} />}
+              />
               <Route exact path="/signup" render={() => <SignUp />} />
               <Route
                 exact
@@ -94,6 +99,11 @@ class App extends Component {
             </Switch>
           ) : (
             <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => <ParentProfile {...props} />}
+              />
               <Route
                 exact
                 path="/logout"
