@@ -134,7 +134,9 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => <ParentProfile {...props} />}
+                render={props => (
+                  <ParentProfile {...props} onBlurFun={this.onBlurFun} />
+                )}
               />
               <Route
                 exact

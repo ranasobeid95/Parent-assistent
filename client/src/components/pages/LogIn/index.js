@@ -56,11 +56,12 @@ class LogIn extends Component {
 
   render() {
     const { error, password, email } = this.state;
+    const { onBlurFun } = this.props;
     const errorMessage = error ? (
       <p className="error-message">Please correct your email or password</p>
     ) : null;
     return (
-      <div className="login">
+      <div className="login" role="button" tabIndex={0} onClick={onBlurFun}>
         <p className="login__title">Welcome to parent assistent system</p>
         <form className="login__form" onSubmit={this.handleSubmit}>
           <p className="login__header">LOG IN</p>
@@ -106,6 +107,7 @@ LogIn.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  onBlurFun: PropTypes.func.isRequired,
 };
 
 export default LogIn;
