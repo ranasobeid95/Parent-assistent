@@ -110,6 +110,7 @@ class App extends Component {
                 render={props => <Redirect to="/" {...props} />}
               />
               <Route
+                exact
                 path="/profile/parent/:id"
                 render={props => <ParentProfile {...props} />}
               />
