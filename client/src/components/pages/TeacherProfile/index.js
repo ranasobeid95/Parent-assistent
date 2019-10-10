@@ -9,12 +9,6 @@ class TeacherProfile extends Component {
     activeContent: `about`,
   };
 
-  ActiveContentEnum = Object.freeze({
-    ABOUT: 'about',
-    CONTACT: 'contact',
-    INTERESTS: 'interests',
-  });
-
   componentDidMount() {
     const {
       match: {
@@ -36,14 +30,14 @@ class TeacherProfile extends Component {
     this.setState({ activeContent: tapName });
   };
 
-  renderButton = (contentId, text) => {
+  renderButton = text => {
     const { activeContent } = this.state;
     return (
       <button
         type="button"
-        onClick={() => this.showContent(contentId)}
+        onClick={() => this.showContent(text)}
         className={`teach-profile__tap ${
-          activeContent === contentId ? 'btn-border' : ''
+          activeContent === text ? 'btn-border' : ''
         }`}
       >
         {text}
@@ -112,9 +106,9 @@ class TeacherProfile extends Component {
         </h3>
         <p className="teacher-subject">{data.subject} Teacher</p>
         <div className="teach-profile__list">
-          {this.renderButton(this.ActiveContentEnum.ABOUT, 'About')}
-          {this.renderButton(this.ActiveContentEnum.CONTACT, 'Contact')}
-          {this.renderButton(this.ActiveContentEnum.INTERESTS, 'Interests')}
+          {this.renderButton('about')}
+          {this.renderButton('contact')}
+          {this.renderButton('interests')}
         </div>
 
         {this.renderTab(data)}

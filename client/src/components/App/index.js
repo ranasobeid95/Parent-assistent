@@ -47,7 +47,7 @@ class App extends Component {
     });
   };
 
-  signupHandler = () => {
+  loginHandler = () => {
     this.setState({
       auth: true,
     });
@@ -94,7 +94,7 @@ class App extends Component {
                 path="/login"
                 render={props => (
                   <LogIn
-                    signupHandler={this.signupHandler}
+                    loginHandler={this.loginHandler}
                     {...props}
                     onBlurFun={this.onBlurFun}
                   />
@@ -195,5 +195,4 @@ class App extends Component {
 App.propTypes = {
   history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
-
 export default App;

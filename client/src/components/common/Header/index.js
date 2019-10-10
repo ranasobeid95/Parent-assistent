@@ -14,12 +14,7 @@ const Header = ({ auth, logoutHandler, showMenuFun, show }) => {
         </div>
 
         <div className="App-identifier">Parent assistant</div>
-        <button
-          type="button"
-          onClick={showMenuFun}
-          className="hamburger"
-          style={{ background: 'none', border: 0 }}
-        >
+        <button type="button" onClick={showMenuFun} className="hamburger">
           <div></div>
           <div></div>
           <div></div>
